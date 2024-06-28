@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
+class ComposerStaticInitce08922112a16e1381ee776920d75578
 {
     public static $files = array (
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
@@ -18,16 +18,17 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '662a729f963d39afe703c9d9b7ab4a8c' => __DIR__ . '/..' . '/symfony/polyfill-php83/bootstrap.php',
-        '3bd81c9b8fcc150b69d8b63b4d2ccf23' => __DIR__ . '/..' . '/spatie/flare-client-php/src/helpers.php',
-        '35a6ad97d21e794e7e22a17d806652e4' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
+        '3bd81c9b8fcc150b69d8b63b4d2ccf23' => __DIR__ . '/..' . '/spatie/flare-client-php/src/helpers.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        '35a6ad97d21e794e7e22a17d806652e4' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Functions.php',
         '09f6b20656683369174dd6fa83b7e5fb' => __DIR__ . '/..' . '/symfony/polyfill-uuid/bootstrap.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '47e1160838b5e5a10346ac4084b58c23' => __DIR__ . '/..' . '/laravel/prompts/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        '3109cb1a231dcd04bee1f9f620d46975' => __DIR__ . '/..' . '/paragonie/sodium_compat/autoload.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
-        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
         'f57d353b41eb2e234b26064d63d8c5dd' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Filesystem/functions.php',
@@ -38,6 +39,8 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
         'a1cfe24d14977df6878b9bf804af2d1c' => __DIR__ . '/..' . '/nunomaduro/collision/src/Adapters/Phpunit/Autoload.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
+        '377b22b161c09ed6e5152de788ca020a' => __DIR__ . '/..' . '/spatie/laravel-permission/src/helpers.php',
+        'd21d43db5f6e840ee7b10744ec7fdf66' => __DIR__ . '/../..' . '/app/Helpers/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -86,6 +89,7 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
             'Symfony\\Component\\ErrorHandler\\' => 31,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Spatie\\Permission\\' => 18,
             'Spatie\\LaravelIgnition\\' => 23,
             'Spatie\\Ignition\\' => 16,
             'Spatie\\FlareClient\\' => 19,
@@ -98,6 +102,7 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
         ),
         'P' => 
         array (
+            'Pusher\\' => 7,
             'Psy\\' => 4,
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
@@ -108,6 +113,7 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
             'Psr\\Clock\\' => 10,
             'PhpParser\\' => 10,
             'PhpOption\\' => 10,
+            'Paytrail\\SDK\\' => 13,
         ),
         'N' => 
         array (
@@ -178,6 +184,7 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
         'A' => 
         array (
             'App\\' => 4,
+            'Anhskohbo\\NoCaptcha\\' => 20,
         ),
     );
 
@@ -201,6 +208,7 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
         'Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
+            1 => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests',
         ),
         'Termwind\\' => 
         array (
@@ -318,6 +326,10 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Spatie\\Permission\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-permission/src',
+        ),
         'Spatie\\LaravelIgnition\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/laravel-ignition/src',
@@ -342,6 +354,10 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
         array (
             0 => __DIR__ . '/..' . '/ramsey/collection/src',
         ),
+        'Pusher\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pusher/pusher-php-server/src',
+        ),
         'Psy\\' => 
         array (
             0 => __DIR__ . '/..' . '/psy/psysh/src',
@@ -356,8 +372,8 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -382,6 +398,10 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
         'PhpOption\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
+        ),
+        'Paytrail\\SDK\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src',
         ),
         'NunoMaduro\\Collision\\' => 
         array (
@@ -536,13 +556,38 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
             0 => __DIR__ . '/../..' . '/app',
             1 => __DIR__ . '/..' . '/laravel/pint/app',
         ),
+        'Anhskohbo\\NoCaptcha\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/anhskohbo/no-captcha/src',
+        ),
     );
 
     public static $classMap = array (
+        'Anhskohbo\\NoCaptcha\\Facades\\NoCaptcha' => __DIR__ . '/..' . '/anhskohbo/no-captcha/src/Facades/NoCaptcha.php',
+        'Anhskohbo\\NoCaptcha\\NoCaptcha' => __DIR__ . '/..' . '/anhskohbo/no-captcha/src/NoCaptcha.php',
+        'Anhskohbo\\NoCaptcha\\NoCaptchaServiceProvider' => __DIR__ . '/..' . '/anhskohbo/no-captcha/src/NoCaptchaServiceProvider.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Events\\PlaceOrder' => __DIR__ . '/../..' . '/app/Events/PlaceOrder.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Admin\\AdsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AdsController.php',
         'App\\Http\\Controllers\\Admin\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CategoryController.php',
-        'App\\Http\\Controllers\\Admin\\NewsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/NewsController.php',
+        'App\\Http\\Controllers\\Admin\\CouponController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CouponController.php',
+        'App\\Http\\Controllers\\Admin\\CurrencyController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CurrencyController.php',
+        'App\\Http\\Controllers\\Admin\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DashboardController.php',
+        'App\\Http\\Controllers\\Admin\\DelivaryChargeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DelivaryChargeController.php',
+        'App\\Http\\Controllers\\Admin\\Location' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Location.php',
+        'App\\Http\\Controllers\\Admin\\NutritionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/NutritionController.php',
+        'App\\Http\\Controllers\\Admin\\OptionTitleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/OptionTitleController.php',
+        'App\\Http\\Controllers\\Admin\\PermissionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PermissionController.php',
+        'App\\Http\\Controllers\\Admin\\ProductContoller' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProductContoller.php',
+        'App\\Http\\Controllers\\Admin\\ProductMnagementController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProductMnagementController.php',
+        'App\\Http\\Controllers\\Admin\\ProductOptionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProductOptionController.php',
+        'App\\Http\\Controllers\\Admin\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/RoleController.php',
+        'App\\Http\\Controllers\\Admin\\SizeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SizeController.php',
+        'App\\Http\\Controllers\\Admin\\SliderController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SliderController.php',
+        'App\\Http\\Controllers\\Admin\\TimeScheduleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TimeScheduleController.php',
+        'App\\Http\\Controllers\\Admin\\TopingsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TopingsController.php',
+        'App\\Http\\Controllers\\Admin\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -550,8 +595,11 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
-        'App\\Http\\Controllers\\FrontendController' => __DIR__ . '/../..' . '/app/Http/Controllers/FrontendController.php',
+        'App\\Http\\Controllers\\CustomerController' => __DIR__ . '/../..' . '/app/Http/Controllers/CustomerController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\NotificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/NotificationController.php',
+        'App\\Http\\Controllers\\OrderController' => __DIR__ . '/../..' . '/app/Http/Controllers/OrderController.php',
+        'App\\Http\\Controllers\\PaytrailController' => __DIR__ . '/../..' . '/app/Http/Controllers/PaytrailController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -562,8 +610,35 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Mail\\ContactFormMail' => __DIR__ . '/../..' . '/app/Mail/ContactFormMail.php',
+        'App\\Mail\\PlaceOrderMail' => __DIR__ . '/../..' . '/app/Mail/PlaceOrderMail.php',
+        'App\\Mail\\VerificationMail' => __DIR__ . '/../..' . '/app/Mail/VerificationMail.php',
+        'App\\Models\\Address' => __DIR__ . '/../..' . '/app/Models/Address.php',
         'App\\Models\\Admin\\Category' => __DIR__ . '/../..' . '/app/Models/Admin/Category.php',
-        'App\\Models\\Admin\\News' => __DIR__ . '/../..' . '/app/Models/Admin/News.php',
+        'App\\Models\\Admin\\ContactForm' => __DIR__ . '/../..' . '/app/Models/Admin/ContactForm.php',
+        'App\\Models\\Admin\\Coupon' => __DIR__ . '/../..' . '/app/Models/Admin/Coupon.php',
+        'App\\Models\\Admin\\Currency' => __DIR__ . '/../..' . '/app/Models/Admin/Currency.php',
+        'App\\Models\\Admin\\DelivaryCharge' => __DIR__ . '/../..' . '/app/Models/Admin/DelivaryCharge.php',
+        'App\\Models\\Admin\\HomeAd' => __DIR__ . '/../..' . '/app/Models/Admin/HomeAd.php',
+        'App\\Models\\Admin\\Location' => __DIR__ . '/../..' . '/app/Models/Admin/Location.php',
+        'App\\Models\\Admin\\Nutrition' => __DIR__ . '/../..' . '/app/Models/Admin/Nutrition.php',
+        'App\\Models\\Admin\\OptionTitle' => __DIR__ . '/../..' . '/app/Models/Admin/OptionTitle.php',
+        'App\\Models\\Admin\\Product' => __DIR__ . '/../..' . '/app/Models/Admin/Product.php',
+        'App\\Models\\Admin\\ProductImage' => __DIR__ . '/../..' . '/app/Models/Admin/ProductImage.php',
+        'App\\Models\\Admin\\ProductOption' => __DIR__ . '/../..' . '/app/Models/Admin/ProductOption.php',
+        'App\\Models\\Admin\\ProductOptionTopping' => __DIR__ . '/../..' . '/app/Models/Admin/ProductOptionTopping.php',
+        'App\\Models\\Admin\\ProductSize' => __DIR__ . '/../..' . '/app/Models/Admin/ProductSize.php',
+        'App\\Models\\Admin\\ProductTag' => __DIR__ . '/../..' . '/app/Models/Admin/ProductTag.php',
+        'App\\Models\\Admin\\ProductToping' => __DIR__ . '/../..' . '/app/Models/Admin/ProductToping.php',
+        'App\\Models\\Admin\\Schedule' => __DIR__ . '/../..' . '/app/Models/Admin/Schedule.php',
+        'App\\Models\\Admin\\Size' => __DIR__ . '/../..' . '/app/Models/Admin/Size.php',
+        'App\\Models\\Admin\\Slider' => __DIR__ . '/../..' . '/app/Models/Admin/Slider.php',
+        'App\\Models\\Admin\\Toping' => __DIR__ . '/../..' . '/app/Models/Admin/Toping.php',
+        'App\\Models\\Notification' => __DIR__ . '/../..' . '/app/Models/Notification.php',
+        'App\\Models\\Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
+        'App\\Models\\OrderItem' => __DIR__ . '/../..' . '/app/Models/OrderItem.php',
+        'App\\Models\\PaymentHistory' => __DIR__ . '/../..' . '/app/Models/PaymentHistory.php',
+        'App\\Models\\SizeVsTopingPrice' => __DIR__ . '/../..' . '/app/Models/SizeVsTopingPrice.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -681,7 +756,14 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
         'Cron\\MinutesField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
+        'Database\\Seeders\\AssignroleSeeder' => __DIR__ . '/../..' . '/database/seeders/AssignroleSeeder.php',
+        'Database\\Seeders\\CategoriesSeeder' => __DIR__ . '/../..' . '/database/seeders/CategoriesSeeder.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\PermissionSeeder' => __DIR__ . '/../..' . '/database/seeders/PermissionSeeder.php',
+        'Database\\Seeders\\ProductsSeeder' => __DIR__ . '/../..' . '/database/seeders/ProductsSeeder.php',
+        'Database\\Seeders\\RoleSeeder' => __DIR__ . '/../..' . '/database/seeders/RoleSeeder.php',
+        'Database\\Seeders\\SizeSeeder' => __DIR__ . '/../..' . '/database/seeders/SizeSeeder.php',
+        'Database\\Seeders\\SyncPermissionSeeder' => __DIR__ . '/../..' . '/database/seeders/SyncPermissionSeeder.php',
         'Database\\Seeders\\UserSeeder' => __DIR__ . '/../..' . '/database/seeders/UserSeeder.php',
         'DateError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateError.php',
         'DateException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateException.php',
@@ -4462,6 +4544,63 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
         'PHPUnit\\Util\\Xml' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml/Xml.php',
         'PHPUnit\\Util\\Xml\\Loader' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml/Loader.php',
         'PHPUnit\\Util\\Xml\\XmlException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Exception/XmlException.php',
+        'Paytrail\\SDK\\Client' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Client.php',
+        'Paytrail\\SDK\\Exception\\ClientException' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Exception/ClientException.php',
+        'Paytrail\\SDK\\Exception\\HmacException' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Exception/HmacException.php',
+        'Paytrail\\SDK\\Exception\\RequestException' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Exception/RequestException.php',
+        'Paytrail\\SDK\\Exception\\ValidationException' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Exception/ValidationException.php',
+        'Paytrail\\SDK\\Interfaces\\AddressInterface' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Interfaces/AddressInterface.php',
+        'Paytrail\\SDK\\Interfaces\\CallbackUrlInterface' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Interfaces/CallbackUrlInterface.php',
+        'Paytrail\\SDK\\Interfaces\\CommissionInterface' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Interfaces/CommissionInterface.php',
+        'Paytrail\\SDK\\Interfaces\\CustomerInterface' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Interfaces/CustomerInterface.php',
+        'Paytrail\\SDK\\Interfaces\\ItemInterface' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Interfaces/ItemInterface.php',
+        'Paytrail\\SDK\\Interfaces\\PaymentRequestInterface' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Interfaces/PaymentRequestInterface.php',
+        'Paytrail\\SDK\\Interfaces\\ResponseInterface' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Interfaces/ResponseInterface.php',
+        'Paytrail\\SDK\\Interfaces\\TokenPaymentRequestInterface' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Interfaces/TokenPaymentRequestInterface.php',
+        'Paytrail\\SDK\\Model\\Address' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Model/Address.php',
+        'Paytrail\\SDK\\Model\\CallbackUrl' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Model/CallbackUrl.php',
+        'Paytrail\\SDK\\Model\\Commission' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Model/Commission.php',
+        'Paytrail\\SDK\\Model\\Customer' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Model/Customer.php',
+        'Paytrail\\SDK\\Model\\Item' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Model/Item.php',
+        'Paytrail\\SDK\\Model\\PaymentMethodGroup' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Model/PaymentMethodGroup.php',
+        'Paytrail\\SDK\\Model\\Provider' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Model/Provider.php',
+        'Paytrail\\SDK\\Model\\RefundItem' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Model/RefundItem.php',
+        'Paytrail\\SDK\\Model\\Token\\Card' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Model/Token/Card.php',
+        'Paytrail\\SDK\\Model\\Token\\Customer' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Model/Token/Customer.php',
+        'Paytrail\\SDK\\PaytrailClient' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/PaytrailClient.php',
+        'Paytrail\\SDK\\Request\\AbstractPaymentRequest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Request/AbstractPaymentRequest.php',
+        'Paytrail\\SDK\\Request\\AddCardFormRequest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Request/AddCardFormRequest.php',
+        'Paytrail\\SDK\\Request\\CitPaymentRequest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Request/CitPaymentRequest.php',
+        'Paytrail\\SDK\\Request\\EmailRefundRequest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Request/EmailRefundRequest.php',
+        'Paytrail\\SDK\\Request\\GetTokenRequest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Request/GetTokenRequest.php',
+        'Paytrail\\SDK\\Request\\MitPaymentRequest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Request/MitPaymentRequest.php',
+        'Paytrail\\SDK\\Request\\PaymentRequest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Request/PaymentRequest.php',
+        'Paytrail\\SDK\\Request\\PaymentStatusRequest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Request/PaymentStatusRequest.php',
+        'Paytrail\\SDK\\Request\\RefundRequest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Request/RefundRequest.php',
+        'Paytrail\\SDK\\Request\\ReportBySettlementRequest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Request/ReportBySettlementRequest.php',
+        'Paytrail\\SDK\\Request\\ReportRequest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Request/ReportRequest.php',
+        'Paytrail\\SDK\\Request\\RevertPaymentAuthHoldRequest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Request/RevertPaymentAuthHoldRequest.php',
+        'Paytrail\\SDK\\Request\\SettlementRequest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Request/SettlementRequest.php',
+        'Paytrail\\SDK\\Request\\ShopInShopPaymentRequest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Request/ShopInShopPaymentRequest.php',
+        'Paytrail\\SDK\\Response\\AddCardPaymentResponse' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Response/AddCardPaymentResponse.php',
+        'Paytrail\\SDK\\Response\\CitPaymentResponse' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Response/CitPaymentResponse.php',
+        'Paytrail\\SDK\\Response\\CurlResponse' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Response/CurlResponse.php',
+        'Paytrail\\SDK\\Response\\EmailRefundResponse' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Response/EmailRefundResponse.php',
+        'Paytrail\\SDK\\Response\\GetTokenResponse' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Response/GetTokenResponse.php',
+        'Paytrail\\SDK\\Response\\InvoiceActivationResponse' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Response/InvoiceActivationResponse.php',
+        'Paytrail\\SDK\\Response\\MitPaymentResponse' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Response/MitPaymentResponse.php',
+        'Paytrail\\SDK\\Response\\PaymentResponse' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Response/PaymentResponse.php',
+        'Paytrail\\SDK\\Response\\PaymentStatusResponse' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Response/PaymentStatusResponse.php',
+        'Paytrail\\SDK\\Response\\RefundResponse' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Response/RefundResponse.php',
+        'Paytrail\\SDK\\Response\\ReportRequestResponse' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Response/ReportRequestResponse.php',
+        'Paytrail\\SDK\\Response\\RevertPaymentAuthHoldResponse' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Response/RevertPaymentAuthHoldResponse.php',
+        'Paytrail\\SDK\\Response\\SettlementResponse' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Response/SettlementResponse.php',
+        'Paytrail\\SDK\\Util\\CurlClient' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Util/CurlClient.php',
+        'Paytrail\\SDK\\Util\\JsonSerializable' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Util/JsonSerializable.php',
+        'Paytrail\\SDK\\Util\\ObjectPropertyConverter' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Util/ObjectPropertyConverter.php',
+        'Paytrail\\SDK\\Util\\PropertyBinder' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Util/PropertyBinder.php',
+        'Paytrail\\SDK\\Util\\RequestClient' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Util/RequestClient.php',
+        'Paytrail\\SDK\\Util\\Signature' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/src/Util/Signature.php',
         'PharIo\\Manifest\\Application' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Application.php',
         'PharIo\\Manifest\\ApplicationName' => __DIR__ . '/..' . '/phar-io/manifest/src/values/ApplicationName.php',
         'PharIo\\Manifest\\Author' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Author.php',
@@ -5025,6 +5164,13 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
         'Psy\\VersionUpdater\\IntervalChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/IntervalChecker.php',
         'Psy\\VersionUpdater\\NoopChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/NoopChecker.php',
         'Psy\\VersionUpdater\\SelfUpdate' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/SelfUpdate.php',
+        'Pusher\\ApiErrorException' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/ApiErrorException.php',
+        'Pusher\\Pusher' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/Pusher.php',
+        'Pusher\\PusherCrypto' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/PusherCrypto.php',
+        'Pusher\\PusherException' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/PusherException.php',
+        'Pusher\\PusherInstance' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/PusherInstance.php',
+        'Pusher\\PusherInterface' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/PusherInterface.php',
+        'Pusher\\Webhook' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/Webhook.php',
         'Ramsey\\Collection\\AbstractArray' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractArray.php',
         'Ramsey\\Collection\\AbstractCollection' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractCollection.php',
         'Ramsey\\Collection\\AbstractSet' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractSet.php',
@@ -5556,6 +5702,35 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
         'Spatie\\LaravelIgnition\\Support\\StringComparator' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Support/StringComparator.php',
         'Spatie\\LaravelIgnition\\Views\\BladeSourceMapCompiler' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Views/BladeSourceMapCompiler.php',
         'Spatie\\LaravelIgnition\\Views\\ViewExceptionMapper' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Views/ViewExceptionMapper.php',
+        'Spatie\\Permission\\Commands\\CacheReset' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Commands/CacheReset.php',
+        'Spatie\\Permission\\Commands\\CreatePermission' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Commands/CreatePermission.php',
+        'Spatie\\Permission\\Commands\\CreateRole' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Commands/CreateRole.php',
+        'Spatie\\Permission\\Commands\\Show' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Commands/Show.php',
+        'Spatie\\Permission\\Commands\\UpgradeForTeams' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Commands/UpgradeForTeams.php',
+        'Spatie\\Permission\\Contracts\\Permission' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Contracts/Permission.php',
+        'Spatie\\Permission\\Contracts\\Role' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Contracts/Role.php',
+        'Spatie\\Permission\\Contracts\\Wildcard' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Contracts/Wildcard.php',
+        'Spatie\\Permission\\Exceptions\\GuardDoesNotMatch' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/GuardDoesNotMatch.php',
+        'Spatie\\Permission\\Exceptions\\PermissionAlreadyExists' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/PermissionAlreadyExists.php',
+        'Spatie\\Permission\\Exceptions\\PermissionDoesNotExist' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/PermissionDoesNotExist.php',
+        'Spatie\\Permission\\Exceptions\\RoleAlreadyExists' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/RoleAlreadyExists.php',
+        'Spatie\\Permission\\Exceptions\\RoleDoesNotExist' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/RoleDoesNotExist.php',
+        'Spatie\\Permission\\Exceptions\\UnauthorizedException' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/UnauthorizedException.php',
+        'Spatie\\Permission\\Exceptions\\WildcardPermissionInvalidArgument' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/WildcardPermissionInvalidArgument.php',
+        'Spatie\\Permission\\Exceptions\\WildcardPermissionNotImplementsContract' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/WildcardPermissionNotImplementsContract.php',
+        'Spatie\\Permission\\Exceptions\\WildcardPermissionNotProperlyFormatted' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/WildcardPermissionNotProperlyFormatted.php',
+        'Spatie\\Permission\\Guard' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Guard.php',
+        'Spatie\\Permission\\Middleware\\PermissionMiddleware' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Middleware/PermissionMiddleware.php',
+        'Spatie\\Permission\\Middleware\\RoleMiddleware' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Middleware/RoleMiddleware.php',
+        'Spatie\\Permission\\Middleware\\RoleOrPermissionMiddleware' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Middleware/RoleOrPermissionMiddleware.php',
+        'Spatie\\Permission\\Models\\Permission' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Models/Permission.php',
+        'Spatie\\Permission\\Models\\Role' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Models/Role.php',
+        'Spatie\\Permission\\PermissionRegistrar' => __DIR__ . '/..' . '/spatie/laravel-permission/src/PermissionRegistrar.php',
+        'Spatie\\Permission\\PermissionServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-permission/src/PermissionServiceProvider.php',
+        'Spatie\\Permission\\Traits\\HasPermissions' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Traits/HasPermissions.php',
+        'Spatie\\Permission\\Traits\\HasRoles' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Traits/HasRoles.php',
+        'Spatie\\Permission\\Traits\\RefreshesPermissionCache' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Traits/RefreshesPermissionCache.php',
+        'Spatie\\Permission\\WildcardPermission' => __DIR__ . '/..' . '/spatie/laravel-permission/src/WildcardPermission.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\Attribute\\AsCommand' => __DIR__ . '/..' . '/symfony/console/Attribute/AsCommand.php',
@@ -5688,11 +5863,13 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
         'Symfony\\Component\\CssSelector\\Node\\ElementNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/ElementNode.php',
         'Symfony\\Component\\CssSelector\\Node\\FunctionNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/FunctionNode.php',
         'Symfony\\Component\\CssSelector\\Node\\HashNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/HashNode.php',
+        'Symfony\\Component\\CssSelector\\Node\\MatchingNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/MatchingNode.php',
         'Symfony\\Component\\CssSelector\\Node\\NegationNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/NegationNode.php',
         'Symfony\\Component\\CssSelector\\Node\\NodeInterface' => __DIR__ . '/..' . '/symfony/css-selector/Node/NodeInterface.php',
         'Symfony\\Component\\CssSelector\\Node\\PseudoNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/PseudoNode.php',
         'Symfony\\Component\\CssSelector\\Node\\SelectorNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/SelectorNode.php',
         'Symfony\\Component\\CssSelector\\Node\\Specificity' => __DIR__ . '/..' . '/symfony/css-selector/Node/Specificity.php',
+        'Symfony\\Component\\CssSelector\\Node\\SpecificityAdjustmentNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/SpecificityAdjustmentNode.php',
         'Symfony\\Component\\CssSelector\\Parser\\Handler\\CommentHandler' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Handler/CommentHandler.php',
         'Symfony\\Component\\CssSelector\\Parser\\Handler\\HandlerInterface' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Handler/HandlerInterface.php',
         'Symfony\\Component\\CssSelector\\Parser\\Handler\\HashHandler' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Handler/HashHandler.php',
@@ -6548,8 +6725,28 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
         'Termwind\\ValueObjects\\Node' => __DIR__ . '/..' . '/nunomaduro/termwind/src/ValueObjects/Node.php',
         'Termwind\\ValueObjects\\Style' => __DIR__ . '/..' . '/nunomaduro/termwind/src/ValueObjects/Style.php',
         'Termwind\\ValueObjects\\Styles' => __DIR__ . '/..' . '/nunomaduro/termwind/src/ValueObjects/Styles.php',
+        'Tests\\ClientTest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests/ClientTest.php',
         'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
         'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
+        'Tests\\Model\\AbstractPaymentRequestTest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests/Model/AbstractPaymentRequestTest.php',
+        'Tests\\Model\\AddressTest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests/Model/AddressTest.php',
+        'Tests\\Model\\CallbackUrlTest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests/Model/CallbackUrlTest.php',
+        'Tests\\Model\\CommissionTest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests/Model/CommissionTest.php',
+        'Tests\\Model\\CustomerTest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests/Model/CustomerTest.php',
+        'Tests\\Model\\ItemTest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests/Model/ItemTest.php',
+        'Tests\\Model\\ProviderTest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests/Model/ProviderTest.php',
+        'Tests\\Model\\RefundItemTest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests/Model/RefundItemTest.php',
+        'Tests\\Model\\Token\\CardTest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests/Model/Token/CardTest.php',
+        'Tests\\Model\\Token\\CustomerTest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests/Model/Token/CustomerTest.php',
+        'Tests\\PaymentRequestTestCase' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests/PaymentRequestTestCase.php',
+        'Tests\\Request\\AddCardFormRequestTest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests/Request/AddCardFormRequestTest.php',
+        'Tests\\Request\\CitPaymentRequestTest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests/Request/CitPaymentRequestTest.php',
+        'Tests\\Request\\EmailRefundRequestTest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests/Request/EmailRefundRequestTest.php',
+        'Tests\\Request\\GetTokenRequestTest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests/Request/GetTokenRequestTest.php',
+        'Tests\\Request\\MitPaymentRequestTest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests/Request/MitPaymentRequestTest.php',
+        'Tests\\Request\\PaymentRequestTest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests/Request/PaymentRequestTest.php',
+        'Tests\\Request\\PaymentStatusRequestTest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests/Request/PaymentStatusRequestTest.php',
+        'Tests\\Request\\ShopInShopPaymentRequestTest' => __DIR__ . '/..' . '/paytrail/paytrail-php-sdk/tests/Request/ShopInShopPaymentRequestTest.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Tests\\Unit\\ExampleTest' => __DIR__ . '/../..' . '/tests/Unit/ExampleTest.php',
         'TheSeer\\Tokenizer\\Exception' => __DIR__ . '/..' . '/theseer/tokenizer/src/Exception.php',
@@ -6598,9 +6795,9 @@ class ComposerStaticInita5e587af66df05d6a57013c70a6458f4
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInita5e587af66df05d6a57013c70a6458f4::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInita5e587af66df05d6a57013c70a6458f4::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInita5e587af66df05d6a57013c70a6458f4::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitce08922112a16e1381ee776920d75578::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitce08922112a16e1381ee776920d75578::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitce08922112a16e1381ee776920d75578::$classMap;
 
         }, null, ClassLoader::class);
     }

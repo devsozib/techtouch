@@ -9,8 +9,8 @@ class FrontendController extends Controller
 {
     public function index()
     {
-        // $news = News::join('categories','categories.id','=','news.category_id')->select('news.*','categories.name')->where('news.status','1')->orderBy('news.id','desc')->paginate(6);
-        return view('frontend.pages.index');
+        $news = [];
+        return view('frontend.pages.index', compact('news'));
     }
 
     public function about()
