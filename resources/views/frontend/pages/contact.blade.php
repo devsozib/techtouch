@@ -2,7 +2,7 @@
 @section('content')
     <!-- Bread-Crumb style two -->
     <!-- rts breadcrumba area start -->
-    <div class="rts-bread-crumb-area ptb--150 ptb_sm--100 bg-breadcrumb bg_image">
+    {{-- <div class="rts-bread-crumb-area ptb--150 ptb_sm--100 bg-breadcrumb bg_image">
       <div class="container">
           <div class="row">
               <div class="col-lg-12">
@@ -18,7 +18,7 @@
               </div>
           </div>
       </div>
-  </div>
+  </div> --}}
   <!-- rts breadcrumba area end -->
   <!-- Bread-Crumb style two End -->
 
@@ -29,18 +29,13 @@
               <!-- single contact area -->
               <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
                   <div class="single-contact-one-inner">
-                      <div class="thumbnail">
-                          <img src="{{ asset('frontend') }}/assets/images/contact/01.jpg" alt="">
-                      </div>
+                      
                       <div class="content">
                           <div class="icone">
                               <img src="{{ asset('frontend') }}/assets/images/contact/shape/01.svg" alt="">
                           </div>
                           <div class="info">
-                              <span>Call Us 24/7</span>
-                              <a href="tel:+18475555555">
-                                  <h5>+584 (25) 21453</h5>
-                              </a>
+                              <span>DHAKA: 4/C, GODHULI TOWER, SHORNALI GARDEN, MIRPUR-13, DHAKA-1216, BANGLADESH.</span>                              
                           </div>
                       </div>
                   </div>
@@ -49,9 +44,6 @@
               <!-- single contact area -->
               <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
                   <div class="single-contact-one-inner">
-                      <div class="thumbnail">
-                          <img src="{{ asset('frontend') }}/assets/images/contact/02.jpg" alt="">
-                      </div>
                       <div class="content">
                           <div class="icone">
                               <img src="{{ asset('frontend') }}/assets/images/contact/shape/02.svg" alt="">
@@ -69,9 +61,6 @@
               <!-- single contact area -->
               <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
                   <div class="single-contact-one-inner">
-                      <div class="thumbnail">
-                          <img src="{{ asset('frontend') }}/assets/images/contact/03.jpg" alt="">
-                      </div>
                       <div class="content">
                           <div class="icone">
                               <img src="{{ asset('frontend') }}/assets/images/contact/shape/03.svg" alt="">

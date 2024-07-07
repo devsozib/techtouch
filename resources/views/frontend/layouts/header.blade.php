@@ -117,16 +117,16 @@
                         <div class="top">
                             <div class="start-top">
                                 <div class="icon"><i class="fa-sharp fa-solid fa-bolt"></i></div>
-                                <p>We will go through all the stages of construction</p>
+                                <p>Works with commitment </p>
                             </div>
                             <div class="end-top">
                                 <div class="single-info">
                                     <div class="icon"><i class="fa-thin fa-location-dot"></i> </div>
-                                    <p>203 Madison Ave, New York, USA</p>
+                                    <p>671/1, Kalitola, Sadar Dinajpur, Dinajpur-5200, Bangladesh.</p>
                                 </div>
                                 <div class="single-info">
                                     <div class="icon"><i class="fa-regular fa-envelope"></i></div>
-                                    <a href="mailto:name@email.com">info@example.com</a>
+                                    <a href="mailto:info@techtouch-bd.com">info@techtouch-bd.com</a>
                                 </div>
                             </div>
                         </div>

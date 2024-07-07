@@ -218,85 +218,60 @@
   </div>
   <!-- rts service area end -->
 
-  <!-- what we offer start -->
-  <div class="rts-offer-provide-section rts-section-gap">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-12">
-                  <div class="title-mid-wrapper-home-two" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
-                      <span class="pre">Our Services</span>
-                      <h2 class="title">What We Offer</h2>
-                  </div>
-              </div>
-          </div>
-          <div class="row mt--15 g-24">
-              <div class="col-lg-4">
-                  <!-- single offer area sart -->
-                  <div class="rts-single-offer">
-                      <a href="service-details.html" class="thumbnail">
-                          <img src="{{ asset('frontend') }}/assets/images/service/07.jpg" alt="service">
-                      </a>
-                      <div class="content-wrapper">
-                          <a href="service-details.html">
-                              <h5 class="title">
-                                  General construction
-                              </h5>
-                          </a>
-                          <p class="disc">
-                              Dui lobortis scelerisque magna curabitur duis purus platea massa accumsan
-                          </p>
-                          <a href="service-details.html" class="rts-btn btn-transparent-service">View Services<i class="fa-light fa-arrow-right"></i></a>
-                      </div>
-                  </div>
-                  <!-- single offer area end -->
-              </div>
-              <div class="col-lg-4">
-                  <!-- single offer area sart -->
-                  <div class="rts-single-offer">
-                      <a href="service-details.html" class="thumbnail">
-                          <img src="{{ asset('frontend') }}/assets/images/service/08.jpg" alt="service">
-                      </a>
-                      <div class="content-wrapper">
-                          <a href="service-details.html">
-                              <h5 class="title">
-                                  Property maintenance
-                              </h5>
-                          </a>
-                          <p class="disc">
-                              Dui lobortis scelerisque magna curabitur duis purus platea massa accumsan
-                          </p>
-                          <a href="service-details.html" class="rts-btn btn-transparent-service">View Services<i class="fa-light fa-arrow-right"></i></a>
-                      </div>
-                  </div>
-                  <!-- single offer area end -->
-              </div>
-              <div class="col-lg-4">
-                  <!-- single offer area sart -->
-                  <div class="rts-single-offer">
-                      <a href="service-details.html" class="thumbnail">
-                          <img src="{{ asset('frontend') }}/assets/images/service/07.jpg" alt="service">
-                      </a>
-                      <div class="content-wrapper">
-                          <a href="service-details.html">
-                              <h5 class="title">
-                                  Virtual design & build
-                              </h5>
-                          </a>
-                          <p class="disc">
-                              Dui lobortis scelerisque magna curabitur duis purus platea massa accumsan
-                          </p>
-                          <a href="service-details.html" class="rts-btn btn-transparent-service">View Services<i class="fa-light fa-arrow-right"></i></a>
-                      </div>
-                  </div>
-                  <!-- single offer area end -->
-              </div>
-          </div>
-      </div>
-  </div>
-  <!-- what we offer end -->
+    <!-- our service area start -->
+    <div class="rts-service-area-three rts-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-three-center">
+                        <div class="bg-title">
+                            What We Do
+                        </div>
+                        <span class="pre-title" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
+                            Tech Touch-BD
+                        </span>
+                        <h3 class="title" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
+                            Our thoughts for developing <br>
+                            your stylish life Level.
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="rts-offer-provide-section ">
+            <div class="container">
+                <div class="row g-24">
+                    @foreach ($services as $service)
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                            <!-- single offer area sart -->
+                            <div class="rts-single-offer">
+                                <a href="service-details.html" class="thumbnail">
+                                    <img style="border-radius: 8px" src="{{ asset('frontend/assets/images/category/'.$service->image) }}" alt="service">
+                                </a>
+                                <div class="content-wrapper">
+                                    <a href="service-details.html">
+                                        <h5 class="title">
+                                            {{ $service->name }}
+                                        </h5>
+                                    </a>
+                                    <p class="disc">
+                                        Dui lobortis scelerisque magna curabitur duis purus platea massa accumsan
+                                    </p>
+                                    <a href="service-details.html" class="rts-btn btn-transparent-service">View Service<i class="fa-light fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <!-- single offer area end -->
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            </div>        
+        </div>
+        </div>
+    </div>
+    
 
   <!-- rts fun facts area starts -->
-  <div class="rts-about-fun-facts rts-section-gap bg_about-f">
+  <div class="rts-about-fun-facts bg_about-f">
       <div class="container">
           <div class="row">
               <div class="col-lg-12">
@@ -307,7 +282,7 @@
                               <div class="icon">
                                   <img src="{{ asset('frontend') }}/assets/images/fun-facts/icon/06.svg" alt="fun-facts">
                               </div>
-                              <h2 class="title plus"><span class="counter">25</span></h2>
+                              <h2 class="title plus"><span class="counter">5</span></h2>
                           </div>
                           <p class="disc">
                               Years of Experience. Urban design draws together the many standers of place-making
@@ -320,7 +295,7 @@
                               <div class="icon">
                                   <img src="{{ asset('frontend') }}/assets/images/fun-facts/icon/08.svg" alt="fun-facts">
                               </div>
-                              <h2 class="title percent"><span class="counter">80</span></h2>
+                              <h2 class="title percent"><span class="counter">60</span></h2>
                           </div>
                           <p class="disc">
                               Projects completed Successfully. Urban design draws together the many standers of place-making
@@ -333,7 +308,7 @@
                               <div class="icon">
                                   <img src="{{ asset('frontend') }}/assets/images/fun-facts/icon/09.svg" alt="fun-facts">
                               </div>
-                              <h2 class="title plus"><span class="counter">100</span></h2>
+                              <h2 class="title plus"><span class="counter">150</span></h2>
                           </div>
                           <p class="disc">
                               Team members for 24/7 Support. Urban design draws together the many standers of place-making
@@ -346,7 +321,7 @@
                               <div class="icon">
                                   <img src="{{ asset('frontend') }}/assets/images/fun-facts/icon/07.svg" alt="fun-facts">
                               </div>
-                              <h2 class="title plus"><span class="counter">38</span></h2>
+                              <h2 class="title plus"><span class="counter">2</span></h2>
                           </div>
                           <p class="disc">
                               Countries, We Worked. Urban design draws together the many standers of place-making
@@ -361,7 +336,7 @@
   <!-- rts fun facts area end -->
 
   <!-- rts testimonials area start -->
-  <div class="rts-testimonials-area rts-section-gap">
+  <div class="rts-testimonials-area">
       <div class="container">
           <div class="row">
               <div class="col-lg-12">
