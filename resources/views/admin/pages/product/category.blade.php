@@ -33,7 +33,7 @@
                     <div class="d-flex flex-row-reverse bd-highlight">
                         <button type="button" class="btn btn-sm btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#myModal">Add Category</button>
                         <div id="myModal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                            <form action="{{route('categories.store')}}" method="post">
+                            <form action="{{route('categories.store')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -49,6 +49,19 @@
                                             <div>
                                                 <label for="basiInput" class="form-label">Order By</label>
                                                 <input type="text" class="form-control" id="order_by" name="order_by" placeholder="Order By" required>
+                                            </div>
+                                            <div>
+                                                <label for="slider" class="form-label">Image(Dimensions should be 370x260 pixels.)</label>
+                                                <input type="file" class="form-control @error('image') is-invalid @enderror" id="selectImage" name="image" required>                                   
+                                                <img id="preview" src="#" alt="your image"
+                                                class="mt-3" style="display:none; width:200px" />
+                                                @error('image')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <div>
+                                                <label for="description">description</label>
+                                                <textarea name="description" class="form-control"  id="" cols="30" rows="10" placeholder="Write description"></textarea>
                                             </div>
                                             <div>
                                                 <label for="basiInput" class="form-label">Status</label>
@@ -81,6 +94,7 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">Id</th>
+                                        <th scope="col">Image</th>
                                         <th scope="col">Category</th>
                                         <th scope="col">Order By</th>
                                         <th scope="col">Status</th>
@@ -91,6 +105,7 @@
                                     @foreach($categories as $category)
                                     <tr>
                                         <th scope="row">{{$loop->index+1}}</th>
+                                        <td><img style="width:100px; border-radius:5px" src="{{ asset('frontend/assets/images/category/'.$category->image) }}" alt=""></td>                                       
                                         <td>{{$category->name}}</td>
                                         <td>{{$category->order_by}}</td>
                                         <td>{{$category->status == 1 ? "Active" : "Deactive"}}</td>
@@ -124,7 +139,7 @@
                                                 </div><!-- /.modal-dialog -->
                                             </div><!-- /.modal -->
                                                 <div id="ctegory{{$category->id}}" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                                            <form action="{{ route('categories.update', $category->id) }}" method="POST">
+                                            <form action="{{ route('categories.update', $category->id) }}" method="POST" enctype="multipart/form-data">
                                                     @method('PUT')
                                                     @csrf
                                                     <div class="modal-dialog">
@@ -143,6 +158,27 @@
                                                                     <input type="text" class="form-control" id="order_by" value="{{$category->order_by}}" name="order_by" placeholder="Order By" required>
                                                                 </div>
                                                                 <div>
+                                                                    <label for="editSliderImage" class="form-label">Image(Dimensions should be 370x260 pixels.)</label>
+                                                                    <input type="file" class="form-control" id="editSliderImage" name="uimage">
+                                                                    @if ($category->image)
+                                                                        <div id="image_sec">
+                                                                            <div class="form-group">
+                                                                                <img style="width:200px; border-radius:10px; margin-to:6px"
+                                                                                    id="image-preview"
+                                                                                    src="{{ asset('frontend/assets/images/category/'.$category->image) }}"
+                                                                                    alt="Preview">
+                                                                            </div>
+                                                                        </div>
+                                                                    @endif                                                                    
+                                                                    @error('uimage')
+                                                                        <div class="invalid">{{ $message }}</div>
+                                                                    @enderror
+                                                                </div> 
+                                                                <div>
+                                                                    <label for="description">description</label>
+                                                                    <textarea name="description" class="form-control"  id="" cols="30" rows="10" placeholder="Write description">{{ $category->description }}</textarea>
+                                                                </div> 
+                                                                <div>
                                                                     <label for="basiInput" class="form-label">Status</label>
                                                                     <select name="status" id="" class="form-control">
                                                                         @foreach (getStatus() as $key => $status)
@@ -160,6 +196,19 @@
                                                         </div>
                                                     </div>
                                                 </form>
+                                                @if (!empty(Session::get('error_code')) && Session::get('error_code') == $category->id)
+                                                <script>
+                                                    document.addEventListener('DOMContentLoaded', function() {
+                                                        var modalId = 'edit-modal{{ $category->id }}';
+                                                        var modalElement = document.getElementById(modalId);
+                                                
+                                                        if (modalElement) {
+                                                            var modal = new bootstrap.Modal(modalElement);
+                                                            modal.show();
+                                                        }
+                                                    });
+                                                </script>
+                                            @endif
                                             </div>
 
 
@@ -175,4 +224,32 @@
 
         </div>
     </div>
+    <script type="text/javascript">
+        selectImage.onchange = evt => {
+            preview = document.getElementById('preview');
+            preview.style.display = 'block';
+            const [file] = selectImage.files
+            if (file) {
+                preview.src = URL.createObjectURL(file)
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var fileInput = document.getElementById('editSliderImage');
+            var imageSection = document.getElementById('image_sec');
+            var imagePreview = document.getElementById('image-preview');
+
+            fileInput.addEventListener('change', function() {
+                var file = this.files[0];
+                if (file) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        imageSection.classList.remove('d-none');
+                        imagePreview.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    </script>
 @endsection

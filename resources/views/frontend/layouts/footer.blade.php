@@ -1,82 +1,97 @@
-<div class="rts-footer-area-start fooetr-bg-3">
-  <div class="container">
-      <div class="row">
-          <div class="col-lg-6 col-md-12">
-              <div class="left-footer-wrapper-3 pt--120 pb--80">
-                  <h3 class="title" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
-                      Let's Build Something <br>
-                      Great Together!
-                  </h3>
-                  <div class="button-group-footer" data-sal="slide-up" data-sal-delay="350" data-sal-duration="800">
-                      <a href="#" class="rts-btn btn-primary">Get started</a>
-                      <a href="contact.html" class="rts-btn btn-seconday">Contact Us</a>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-6 col-md-12">
-              <div class="right-footer-wrapper-3 pt--120 pb--80 pl--120 pr--120 pl_md--0 pt_md--30 pl_sm--0 pt_sm--30">
-                  <div class="single-information">
-                      <h5 class="title" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
-                          Address
-                      </h5>
-                      <a href="#" class="address" data-sal="slide-up" data-sal-delay="350" data-sal-duration="800" style="display: block;">
-                          Kingstone --- <br>
-                          258 denial street office <br>
-                          Berlin Germany
-                      </a>
-                      <div class="rts-social-wrapper-three">
-                          <ul>
-                              <li data-sal="slide-up" data-sal-delay="100" data-sal-duration="800"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                              <li data-sal="slide-up" data-sal-delay="200" data-sal-duration="800"><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                              <li data-sal="slide-up" data-sal-delay="300" data-sal-duration="800"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                              <li data-sal="slide-up" data-sal-delay="400" data-sal-duration="800"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                          </ul>
-                      </div>
-                  </div>
-                  <div class="single-information">
-                      <h5 class="title" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
-                          Say Hello
-                      </h5>
-                      <a href="mailto:name@email.com" class="mail" data-sal="slide-up" data-sal-delay="350" data-sal-duration="800" style="display: block;">
-                          hello@design.com
-                      </a>
-                      <a href="tel:+18475555555" class="number" data-sal="slide-up" data-sal-delay="550" data-sal-duration="800" style="display: block;">
-                          +258 368 3158
-                      </a>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-lg-12">
-              <div class="copyright-area-three">
-                  <div class="menu-area-copyright">
-                      <ul>
-                          <li>
-                              <a href="index.html">Home</a>
-                          </li>
-                          <li>
-                              <a href="project.html">Project</a>
-                          </li>
-                          <li>
-                              <a href="blog.html">Blog</a>
-                          </li>
-                          <li>
-                              <a href="shop.html">Shop</a>
-                          </li>
-                          <li>
-                              <a href="contact.html">Contact</a>
-                          </li>
-                      </ul>
-                  </div>
-                  <div class="condition">
-                      <ul>
-                          <li><a href="#">Terms and Conditions</a></li>
-                          <li><a href="#">Privacy Policy</a></li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+<div class="rts-footer-two rts-section-gap2Top" style="background: #171717">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- ,main footer area start -->
+                <div class="main-footer-wrapper-two">
+                    <div class="single-footer-wized-two logo-area sal-animate" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
+                        <a href="assets/images/logo/02.png" class="logo">
+                            <img width="80px"  src="{{ asset('frontend') }}/assets/images/logo/techtouchlogo.png" alt="logo">
+                        </a>
+                        <p class="disc-f">
+                            Tech Touch
+                            Automatiom & Engineering
+                            Works with commitment.
+                        </p>                      
+                        <div class="rts-social-wrapper-three">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="single-footer-wized-two pages sal-animate" data-sal="slide-up" data-sal-delay="250" data-sal-duration="800">
+                        <div class="footer-header-two pages">
+                            <h6 class="title">Useful Links</h6>
+                            <div class="pages">
+                                <ul>
+                                    <li><a href="{{ route('about') }}"><i class="fa-solid fa-arrow-right"></i> About Us</a></li>
+                                    <li><a href="{{ route('projects') }}"><i class="fa-solid fa-arrow-right"></i> Our Projects</a></li>
+                                    <li><a href="{{ route('services') }}"><i class="fa-solid fa-arrow-right"></i>Our Services</a></li>
+                                    <li><a href="{{ route('shop') }}"><i class="fa-solid fa-arrow-right"></i>Shop</a></li>
+                                    <li><a href="{{ route('contact') }}"><i class="fa-solid fa-arrow-right"></i> Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-footer-wized-two user-number sal-animate" data-sal="slide-up" data-sal-delay="350" data-sal-duration="800">
+                        <div class="user-number-wrapper mt--10">
+                            <!-- single number -->
+                            <div class="single-number">
+                                <h6 class="title">Phone Number</h6>
+                                <div class="number">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <a href="tel:+880 1711-271234">+880 1711-271234</a>
+                                </div>
+                            </div>
+                            <!-- single number end -->
+                            <!-- single number -->
+                            <div class="single-number">
+                                <h6 class="title">Email address</h6>
+                                <div class="number">
+                                    <i class="fa-light fa-envelope"></i>
+                                    <a href="mailto:info@techtouch-bd.com">info@techtouch-bd.com</a>
+                                </div>
+                            </div>
+                            <!-- single number end -->
+                            <!-- single number -->
+                            <div class="single-number">
+                                <h6 class="title">Office Location</h6>
+                                <div class="number">
+                                    <i class="fa-light fa-location-dot"></i>
+                                    <a class="mt-dec" href="https://www.google.com/maps?ll=25.638148,88.639657&z=21&t=m&hl=en-US&gl=US&mapclient=embed&cid=6047515495461479673"> 671/1, Kalitola, Sadar Dinajpur, Dinajpur-5200, Bangladesh.</a><br>
+                                </div>                                
+                                <a href="{{ route('contact') }}"><small>See others office address</small></a>
+                            </div>
+                            <!-- single number end -->
+                        </div>
+                    </div>
+                    <div class="single-footer-wized-two newsletter sal-animate" data-sal="slide-up" data-sal-delay="550" data-sal-duration="800">
+                        <div class="footer-header-two newsletter">
+                            <h6 class="title">QR Code</h6>
+                            <img width="200px" style="border-radius: 7px" src="{{ asset('frontend') }}/assets/images/scanner.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- ,main footer area end -->
+            </div>
+        </div>
+    </div>
+    <!-- copy right area start -->
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="copyright-footer-two">
+                        <p class="disc">
+                            © 2023 Elevate. All images are for demo purposes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- copyright area end -->
 </div>

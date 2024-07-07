@@ -16487,7 +16487,7 @@ header.header-one .header-top-wrapper .right ul li.last::after {
 }
 
 .heder-two .header-two-container .header-main-wrapper .logo-area a {
-  padding: 20px 80px 20px 0;
+  padding: 0px 80px 0px 0;
   display: block;
 }
 
@@ -17012,7 +17012,7 @@ header.header-one .header-top-wrapper .right ul li.last::after {
 
 .header-four.header--sticky.sticky {
   --tw-backdrop-blur: blur(32px);
-  background: hsla(0, 0%, 85%, .2) !important;
+  background: hsl(0, 0%, 0%) !important;
 }
 
 .heder-two.header-five.header--sticky {
@@ -27983,6 +27983,7 @@ body.index-nine .single-case-wrapper {
 }
 
 .single-team-three .thumbnail {
+  text-align: center;
   display: block;
   overflow: hidden;
   width: 97%;
@@ -28038,9 +28039,8 @@ body.index-nine .single-case-wrapper {
 .single-team-three::after {
   position: absolute;
   content: "";
-  top: 30px;
-  left: 30px;
-  height: 100%;
+  top: -25px;
+  height: 105%;
   width: 97%;
   border: 1px solid #E1E1E1;
   z-index: -1;
@@ -28054,8 +28054,8 @@ body.index-nine .single-case-wrapper {
 }
 
 .single-team-three .content-area {
-  margin-left: 60px;
-  margin-top: 30px;
+  margin-left: 0px;
+  margin-top: 0px;
 }
 
 @media only screen and (max-width: 575px) {
@@ -28065,25 +28065,24 @@ body.index-nine .single-case-wrapper {
 }
 
 .single-team-three .content-area span.designation {
-  background: #1d82c6;
   padding: 9px 34px 7px 21px;
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
   font-family: var(--font-primary);
-  color: #FFFFFF;
+  color: #000;
 }
 
 .single-team-three .content-area .name {
-  background: #1d82c6;
   padding: 11px 21px 11px 21px;
   max-width: max-content;
-  color: #fff;
+  color: #000;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 700;
   line-height: 30px;
   transition: 0.3s;
+  font-size: 15px;
 }
 
 .single-team-three .content-area .name:hover {

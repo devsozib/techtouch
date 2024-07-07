@@ -1,12 +1,12 @@
 <head>
     <meta charset="utf-8" />
-    <title>Pizza Pitsa | Dashboard</title>
+    <title>Tech Touch-BD | Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
+    <meta content="Tech Touch-BD | Dashboard" name="description" />
+    <meta content="Tech Touch-BD" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset('frontend')}}/assets/images/logo/logomark.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend') }}/assets/images/fav.png">
 
     <!-- jsvectormap css -->
     <link href="{{asset('backend')}}/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />

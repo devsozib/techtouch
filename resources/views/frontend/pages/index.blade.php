@@ -19,130 +19,12 @@
       </div>
   </div>
   <!-- mobile menu area start -->
-  <div class="mobile-menu d-block d-xl-none">
-      <nav class="nav-main mainmenu-nav mt--30">
-          <ul class="mainmenu" id="mobile-menu-active">
-              <li class="has-droupdown">
-                  <a href="#" class="main">Home</a>
-                  <ul class="submenu">
-                      <a href="#" class="tag">Multipage</a>
-                      <li><a class="mobile-menu-link" href="index.html">Main Construction</a></li>
-                      <li><a class="mobile-menu-link" href="index-two.html">Construction Home</a></li>
-                      <li><a class="mobile-menu-link" href="index-three.html">Renovation Home</a></li>
-                      <li><a class="mobile-menu-link" href="index-four.html">Construction Home</a></li>
-                      <li><a class="mobile-menu-link" href="index-five.html">Construction Home</a></li>
-                      <li><a class="mobile-menu-link" href="index-six.html">Renovation Home</a></li>
-                      <li><a class="mobile-menu-link" href="index-seven.html">Engineering Home</a></li>
-                      <li><a class="mobile-menu-link" href="index-eight.html">Handyman Home</a></li>
-                      <li><a class="mobile-menu-link" href="index-nine.html">Industrial Home</a></li>
-                      <li><a class="mobile-menu-link" href="index-ten.html">Solar Home</a></li>
-                      <li><a class="mobile-menu-link" href="index-Eleven-2.html">Intorior Design</a></li>
-                  </ul>
-                  <ul class="submenu">
-                      <a href="#" class="tag">Onepage</a>
-                      <li><a class="mobile-menu-link" href="onepage-one.html">Main Construction Onepage</a></li>
-                      <li><a class="mobile-menu-link" href="onepage-two.html">Construction Onepage</a></li>
-                      <li><a class="mobile-menu-link" href="onepage-three.html">Renovation Onepage</a></li>
-                      <li><a class="mobile-menu-link" href="onepage-four.html">Construction Onepage</a></li>
-                      <li><a class="mobile-menu-link" href="onepage-five.html">Construction Onepage</a></li>
-                      <li><a class="mobile-menu-link" href="onepage-six.html">Renovation Onepage</a></li>
-                      <li><a class="mobile-menu-link" href="onepage-eight.html">Handyman Onepage</a></li>
-                      <li><a class="mobile-menu-link" href="onepage-seven.html">Engineering Onepage</a></li>
-                      <li><a class="mobile-menu-link" href="onepage-nine.html">Industrial Onepage</a></li>
-                      <li><a class="mobile-menu-link" href="onepage-ten.html">Solar Home</a></li>
-                      <li><a class="mobile-menu-link" href="onepage-eleven.html">Intorior Design</a></li>
-                  </ul>
-              </li>
-              <li class="has-droupdown">
-                  <a href="#" class="main">Pages</a>
-                  <ul class="submenu">
-                      <li class="has-droupdown third-lvl">
-                          <a class="main" href="#">Who We Are</a>
-                          <ul class="submenu-third-lvl">
-                              <li><a href="about.html"></a>About Us</li>
-                              <li><a href="vision.html"></a>Vision</li>
-                              <li><a href="careers.html"></a>Careers</li>
-                              <li><a href="safety.html"></a>Safety</li>
-                              <li><a href="sustainability.html"></a>Sustainability</li>
-                          </ul>
-                      </li>
-                      <li><a class="mobile-menu-link" href="company-story.html">Our History</a></li>
-                      <li><a class="mobile-menu-link" href="team.html">Team</a></li>
-                      <li><a class="mobile-menu-link" href="team-details.html">Team Details</a></li>
-                      <li><a class="mobile-menu-link" href="appoinment.html">Appoinment</a></li>
-                      <li><a class="mobile-menu-link" href="404.html">Error 404</a></li>
-                      <li class="has-droupdown third-lvl">
-                          <a class="main" href="#">Shop</a>
-                          <ul class="submenu-third-lvl">
-                              <li><a href="shop.html"></a>Shop</li>
-                              <li><a href="single-product.html"></a>Single Product</li>
-                              <li><a href="cart.html"></a>Cart</li>
-                              <li><a href="checkout.html"></a>Checkout</li>
-                              <li><a href="account.html"></a>Account</li>
-                          </ul>
-                      </li>
-                  </ul>
-              </li>
-              <li class="has-droupdown">
-                  <a href="#" class="main">Services</a>
-                  <ul class="submenu">
-                      <li><a class="mobile-menu-link" href="service.html">Service</a></li>
-                      <li><a class="mobile-menu-link" href="service-details.html">Service Details</a></li>
-                  </ul>
-              </li>
-              <li class="has-droupdown">
-                  <a href="#" class="main">Portfolio</a>
-                  <ul class="submenu">
-                      <li><a class="mobile-menu-link" href="project.html">Project</a></li>
-                      <li><a class="mobile-menu-link" href="project-details.html">Project Details</a></li>
-                  </ul>
-              </li>
-              <li class="has-droupdown">
-                  <a href="#" class="main">Blog</a>
-                  <ul class="submenu">
-                      <li><a class="mobile-menu-link" href="blog-list.html">Blog List</a></li>
-                      <li><a class="mobile-menu-link" href="blog-grid.html">Blog Grid</a></li>
-                      <li><a class="mobile-menu-link" href="blog-details.html">Blog Details</a></li>
-                  </ul>
-              </li>
-              <li>
-                  <a href="contactus.html" class="main">Contact Us</a>
-              </li>
-          </ul>
-      </nav>
-
-      <div class="social-wrapper-one">
-          <ul>
-              <li>
-                  <a href="#">
-                      <i class="fa-brands fa-facebook-f"></i>
-                  </a>
-              </li>
-              <li>
-                  <a href="#">
-                      <i class="fa-brands fa-twitter"></i>
-                  </a>
-              </li>
-              <li>
-                  <a href="#">
-                      <i class="fa-brands fa-youtube"></i>
-                  </a>
-              </li>
-              <li>
-                  <a href="#">
-                      <i class="fa-brands fa-linkedin-in"></i>
-                  </a>
-              </li>
-          </ul>
-      </div>
-  </div>
+  @include('frontend.layouts.mobileMenu')
   <!-- mobile menu area end -->
 </div>
 <!-- header style two End -->
-
 <!-- rts banner area -->
 <div class="rts-banner-three-area rts-section-gap">
-
   <div class="container pt--150 pb--90">
       <div class="row">
           <div class="banner-three-wrapper">
@@ -179,8 +61,8 @@
       <div class="row align-items-start">
           <div class="col-lg-5">
               <div class="about-image-thumbnail-3">
-                  <img class="image-1" data-sal="slide-up" data-sal-delay="100" data-sal-duration="800" src="{{ asset('frontend') }}/assets/images/about/02.jpg" alt="about-image">
-                  <img class="image-2" data-sal="slide-up" data-sal-delay="300" data-sal-duration="800" src="{{ asset('frontend') }}/assets/images/about/03.jpg" alt="about-image">
+                  <img class="image-2" data-sal="slide-up" data-sal-delay="300" data-sal-duration="800" src="{{ asset('frontend') }}/assets/images/about.jpeg" alt="about-image">
+                  {{-- <img class="image-2" data-sal="slide-up" data-sal-delay="300" data-sal-duration="800" src="{{ asset('frontend') }}/assets/images/about.jpeg" alt="about-image"> --}}
               </div>
           </div>
           <div class="col-lg-7 pl--60 p-md-0">
@@ -190,12 +72,13 @@
                           Company
                       </div>
                       <span class="pre-title" data-sal="slide-up" data-sal-delay="100" data-sal-duration="800" style="display: block;">
-                          Renovation Company
+                        TECH TOUCH
+                        AUTOMATION & ENGINEERING
                       </span>
                       <h3 class="title" data-sal="slide-up" data-sal-delay="100" data-sal-duration="800">
-                          Our thoughts for developing <br>
-                          your stylish life Level.
+                        WORKS WITH COMMITMENT.
                       </h3>
+                      <p>We are Tech Touch Automation & Engineering , We started our journey from 2020 by trading business in the power sector and also growing up a company in the Construction and Consultancy sector. Specialized in marketing & sales, designing, installation, commissioning, and maintenance of Sub-Station, Generator, Fire Detection, and Protection System, and Security management System with trained and experienced people both from home and aboard and what you ask within, anytime, anywhere.</p>
                   </div>
                   <div class="rts-tab-three-start" data-sal="slide-up" data-sal-delay="400" data-sal-duration="800">
                       <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -291,7 +174,7 @@
 </div>
 <!-- rts about area end -->
 
-<!-- rts experience area start -->
+{{-- <!-- rts experience area start -->
 <div class="rts-experience-area rts-section-gap3 bg-experience">
   <div class="container">
       <div class="row">
@@ -299,7 +182,7 @@
               <div class="experience-main-wrapper">
                   <div class="left">
                       <h3 class="title" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
-                          Trusted Renovation Company
+                          Trusted Tech Touch-BD
                       </h3>
                       <p class="disc" data-sal="slide-up" data-sal-delay="350" data-sal-duration="800">
                           Imperdiet integer varius mauris neque rhoncus per, duis tortor fermentum viverra <br>
@@ -315,7 +198,7 @@
       </div>
   </div>
 </div>
-<!-- rts experience area end -->
+<!-- rts experience area end --> --}}
 
 <!-- our service area start -->
 <div class="rts-service-area-three rts-section-gap3">
@@ -327,7 +210,7 @@
                       What We Do
                   </div>
                   <span class="pre-title" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
-                      Renovation Company
+                      Tech Touch-BD
                   </span>
                   <h3 class="title" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
                       Our thoughts for developing <br>
@@ -336,110 +219,35 @@
               </div>
           </div>
       </div>
-      <div class="row g-5 mt--20">
-          <div class="col-lg-4 col-md-6">
-              <!-- single service area start-->
-              <div class="rts-single-service-three" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
-                  <a href="service-details.html" class="thumbnail-area">
-                      <img src="{{ asset('frontend') }}/assets/images/service/01.jpg" alt="Service-area">
-                  </a>
-                  <div class="content-area">
-                      <a href="service-details.html">
-                          <h5 class="title">Home Renovation</h5>
-                      </a>
-                      <p class="disc">Crsus cras faest diam natoe
-                          elementum mattis lectus</p>
-                      <a href="service-details.html" class="read-more-btn">Learn More <i class="fa-regular fa-arrow-right"></i></a>
-                  </div>
-              </div>
-              <!-- single service area end-->
-          </div>
-          <div class="col-lg-4 col-md-6">
-              <!-- single service area start-->
-              <div class="rts-single-service-three" data-sal="slide-up" data-sal-delay="350" data-sal-duration="800">
-                  <a href="service-details.html" class="thumbnail-area">
-                      <img src="{{ asset('frontend') }}/assets/images/service/02.jpg" alt="Service-area">
-                  </a>
-                  <div class="content-area">
-                      <a href="service-details.html">
-                          <h5 class="title">Interior Paint</h5>
-                      </a>
-                      <p class="disc">Crsus cras faest diam natoe
-                          elementum mattis lectus</p>
-                      <a href="service-details.html" class="read-more-btn">Learn More <i class="fa-regular fa-arrow-right"></i></a>
-                  </div>
-              </div>
-              <!-- single service area end-->
-          </div>
-          <div class="col-lg-4 col-md-6">
-              <!-- single service area start-->
-              <div class="rts-single-service-three" data-sal="slide-up" data-sal-delay="550" data-sal-duration="800">
-                  <a href="service-details.html" class="thumbnail-area">
-                      <img src="{{ asset('frontend') }}/assets/images/service/03.jpg" alt="Service-area">
-                  </a>
-                  <div class="content-area">
-                      <a href="service-details.html">
-                          <h5 class="title">Kitchen Remodel</h5>
-                      </a>
-                      <p class="disc">Crsus cras faest diam natoe
-                          elementum mattis lectus</p>
-                      <a href="service-details.html" class="read-more-btn">Learn More <i class="fa-regular fa-arrow-right"></i></a>
-                  </div>
-              </div>
-              <!-- single service area end-->
-          </div>
-          <div class="col-lg-4 col-md-6">
-              <!-- single service area start-->
-              <div class="rts-single-service-three" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
-                  <a href="service-details.html" class="thumbnail-area">
-                      <img src="{{ asset('frontend') }}/assets/images/service/04.jpg" alt="Service-area">
-                  </a>
-                  <div class="content-area">
-                      <a href="service-details.html">
-                          <h5 class="title">Bathroom Design</h5>
-                      </a>
-                      <p class="disc">Crsus cras faest diam natoe
-                          elementum mattis lectus</p>
-                      <a href="service-details.html" class="read-more-btn">Learn More <i class="fa-regular fa-arrow-right"></i></a>
-                  </div>
-              </div>
-              <!-- single service area end-->
-          </div>
-          <div class="col-lg-4 col-md-6">
-              <!-- single service area start-->
-              <div class="rts-single-service-three" data-sal="slide-up" data-sal-delay="350" data-sal-duration="800">
-                  <a href="service-details.html" class="thumbnail-area">
-                      <img src="{{ asset('frontend') }}/assets/images/service/05.jpg" alt="Service-area">
-                  </a>
-                  <div class="content-area">
-                      <a href="service-details.html">
-                          <h5 class="title">Apartment Work</h5>
-                      </a>
-                      <p class="disc">Crsus cras faest diam natoe
-                          elementum mattis lectus</p>
-                      <a href="service-details.html" class="read-more-btn">Learn More <i class="fa-regular fa-arrow-right"></i></a>
-                  </div>
-              </div>
-              <!-- single service area end-->
-          </div>
-          <div class="col-lg-4 col-md-6">
-              <!-- single service area start-->
-              <div class="rts-single-service-three" data-sal="slide-up" data-sal-delay="550" data-sal-duration="800">
-                  <a href="service-details.html" class="thumbnail-area">
-                      <img src="{{ asset('frontend') }}/assets/images/service/06.jpg" alt="Service-area">
-                  </a>
-                  <div class="content-area">
-                      <a href="service-details.html">
-                          <h5 class="title">Roofing Service</h5>
-                      </a>
-                      <p class="disc">Crsus cras faest diam natoe
-                          elementum mattis lectus</p>
-                      <a href="service-details.html" class="read-more-btn">Learn More <i class="fa-regular fa-arrow-right"></i></a>
-                  </div>
-              </div>
-              <!-- single service area end-->
-          </div>
-      </div>
+      <div class="rts-offer-provide-section rts-section-gap">
+        <div class="container">
+            <div class="row g-24">
+                @foreach ($services as $service)
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                        <!-- single offer area sart -->
+                        <div class="rts-single-offer">
+                            <a href="service-details.html" class="thumbnail">
+                                <img style="border-radius: 8px" src="{{ asset('frontend/assets/images/category/'.$service->image) }}" alt="service">
+                            </a>
+                            <div class="content-wrapper">
+                                <a href="service-details.html">
+                                    <h5 class="title">
+                                        {{ $service->name }}
+                                    </h5>
+                                </a>
+                                <p class="disc">
+                                    Dui lobortis scelerisque magna curabitur duis purus platea massa accumsan
+                                </p>
+                                <a href="service-details.html" class="rts-btn btn-transparent-service">View Service<i class="fa-light fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- single offer area end -->
+                    </div>
+                @endforeach
+            </div>
+        </div>
+      </div>        
+    </div>
   </div>
 </div>
 <!-- our service area end -->
@@ -452,7 +260,7 @@
               <div class="faq-main-wrapper-three">
                   <div class="row align-items-center">
                       <div class="col-lg-6 pr--50 first-child">
-                          <span class="pre-title">Renovation Company</span>
+                          <span class="pre-title">Tech Touch-BD Company</span>
                           <h3 class="title-main">Why People Choice Us?</h3>
                           <div class="accordion-three" id="accordionExample">
                               <div class="accordion-item">
@@ -526,25 +334,19 @@
   <div class="container pt--100">
       <div class="row">
           <div class="col-lg-12">
-              <div class="title-three-center">
-                  <div class="bg-title">
-                      Meet Leaders
-                  </div>
-                  <span class="pre-title" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
-                      Experts Members
-                  </span>
+              <div class="title-three-center">                
                   <h3 class="title" data-sal="slide-up" data-sal-delay="350" data-sal-duration="800">
-                      Meet the leaders of our <br> dynamic company
+                      Meet the management of our <br> dynamic company
                   </h3>
               </div>
           </div>
       </div>
       <div class="row mt--50">
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-3 col-md-6">
               <!-- single team one start -->
               <div class="single-team-three">
                   <div class="thumbnail">
-                      <img src="{{ asset('frontend') }}/assets/images/team/03.jpg" alt="team_area-start">
+                      <img src="{{ asset('frontend') }}/assets/images/chairman.png" alt="team_area-start">
                       <div class="social-team-wrapper">
                           <ul>
                               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
@@ -556,20 +358,20 @@
                   </div>
                   <div class="content-area">
                       <span class="designation">
-                          CEO
+                          CHAIRMAN
                       </span>
                       <a href="team-details.html">
-                          <h6 class="name">DANIEL SMITH</h6>
+                          <h6 class="name">ENGR. MD. CHAND ALI</h6>
                       </a>
                   </div>
               </div>
               <!-- single team one start -->
           </div>
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-3 col-md-6">
               <!-- single team one start -->
               <div class="single-team-three">
                   <div class="thumbnail">
-                      <img src="{{ asset('frontend') }}/assets/images/team/04.jpg" alt="team_area-start">
+                      <img style="width: 92%" src="{{ asset('frontend') }}/assets/images/md.png" alt="team_area-start">
                       <div class="social-team-wrapper">
                           <ul>
                               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
@@ -581,20 +383,20 @@
                   </div>
                   <div class="content-area">
                       <span class="designation">
-                          PROJECT MANAGER
+                        FOUNDER & MANAGING DIRECTOR.
                       </span>
                       <a href="team-details.html">
-                          <h6 class="name">Justice SMITH</h6>
+                          <h6 class="name">ENGR. MD. ASADUZZAMAN SAKIB</h6>
                       </a>
                   </div>
               </div>
               <!-- single team one start -->
           </div>
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-3 col-md-6">
               <!-- single team one start -->
               <div class="single-team-three">
                   <div class="thumbnail">
-                      <img src="{{ asset('frontend') }}/assets/images/team/05.jpg" alt="team_area-start">
+                      <img style="width: 72%" src="{{ asset('frontend') }}/assets/images/director.jpeg" alt="team_area-start">
                       <div class="social-team-wrapper">
                           <ul>
                               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
@@ -606,15 +408,51 @@
                   </div>
                   <div class="content-area">
                       <span class="designation">
-                          ARCHITECT
+                          DIRECTOR & ADVISOR
                       </span>
                       <a href="team-details.html">
-                          <h6 class="name">MArk SMITH</h6>
+                          <h6 class="name">ENGR. MD. HASANUZZAMAN SUMON</h6>
                       </a>
                   </div>
               </div>
               <!-- single team one start -->
           </div>
+          <div class="col-lg-3 col-md-6">
+            <!-- single team one start -->
+            <div class="single-team-three">
+                <div class="thumbnail">
+                    <img src="{{ asset('frontend') }}/assets/images/business-developer.jpeg" alt="team_area-start">
+                    <div class="social-team-wrapper">
+                        <ul>
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content-area">
+                    <span class="designation">
+                        BUSINESS DEVELOPER
+                    </span>
+                    <a href="team-details.html">
+                        <h6 class="name">AHSAN HABIB ABIR</h6>
+                    </a>
+                </div>
+            </div>
+            <!-- single team one start -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+
+        </div>
+        <div class="col-3 m-auto">
+            <img style="border-radius: 10px" src="{{ asset('frontend') }}/assets/images/arshiya-alishba.png" alt="team_area-start">
+        </div>
+        <div class="col-3">
+           
+        </div>
       </div>
   </div>
 </div>
@@ -634,7 +472,7 @@
                                   <img src="{{ asset('frontend') }}/assets/images/fun-facts/icon/02.svg" alt="funfacts">
                               </div>
                               <h2 class="title plus">
-                                  <span class="counter">25</span>
+                                  <span class="counter">5</span>
                               </h2>
                           </div>
                           <p class="disc">
@@ -648,8 +486,8 @@
                               <div class="logo">
                                   <img src="{{ asset('frontend') }}/assets/images/fun-facts/icon/08.svg" alt="funfacts">
                               </div>
-                              <h2 class="title parcent">
-                                  <span class="counter">80</span>
+                              <h2 class="title plus">
+                                  <span class="counter">60</span>
                               </h2>
                           </div>
                           <p class="disc">
@@ -664,7 +502,7 @@
                                   <img src="{{ asset('frontend') }}/assets/images/fun-facts/icon/09.svg" alt="funfacts">
                               </div>
                               <h2 class="title plus">
-                                  <span class="counter">100</span>
+                                  <span class="counter">150</span>
                               </h2>
                           </div>
                           <p class="disc">
@@ -679,7 +517,7 @@
                                   <img src="{{ asset('frontend') }}/assets/images/fun-facts/icon/07.svg" alt="funfacts">
                               </div>
                               <h2 class="title plus">
-                                  <span class="counter">38</span>
+                                  <span class="counter">2</span>
                               </h2>
                           </div>
                           <p class="disc">
@@ -692,7 +530,7 @@
           </div>
       </div>
   </div>
-  <div class="rts-case-study-area rts-section-gapTop">
+  {{-- <div class="rts-case-study-area rts-section-gapTop">
       <div class="container">
           <div class="row">
               <div class="col-lg-12">
@@ -785,7 +623,7 @@
           </div>
 
       </div>
-  </div>
+  </div> --}}
 </div>
 <!-- rts rtsa funfacts and case studys end -->
 
@@ -799,7 +637,7 @@
                       Process
                   </div>
                   <span class="pre-title">
-                      Renovation Company
+                      Tech Touch-BD
                   </span>
                   <h3 class="title">
                       Working Easy Process
@@ -896,7 +734,7 @@
 </div>
 <!-- rts award area end -->
 
-<!-- meet leaders area start -->
+{{-- <!-- meet leaders area start -->
 <div class="rts-leaders-area-three rts-section-gap3">
   <div class="container">
       <div class="grid-lines-wrapper">
@@ -983,7 +821,7 @@
       </div>
   </div>
 </div>
-<!-- meet leaders area end -->
+<!-- meet leaders area end --> --}}
 
 <!-- rts testimonials area start -->
 <div class="rts-testimonials-area rts-section-gap3Bottom">

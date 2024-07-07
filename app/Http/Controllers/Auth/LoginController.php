@@ -21,11 +21,12 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $this->validateLogin($request);
+        // return $request;
+        // $this->validateLogin($request);
 
-        $request->validate([
-            'g-recaptcha-response' => 'required|captcha'
-        ]);
+        // $request->validate([
+        //     'g-recaptcha-response' => 'required|captcha'
+        // ]);
 
         if (
             method_exists($this, 'hasTooManyLoginAttempts') &&

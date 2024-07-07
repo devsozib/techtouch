@@ -83,8 +83,8 @@
                                 <ul class="submenu-third-lvl">
                                     <li><a href="shop.html"></a>Shop</li>
                                     <li><a href="single-product.html"></a>Single Product</li>
-                                    <li><a href="cart.html"></a>Cart</li>
-                                    <li><a href="checkout.html"></a>Checkout</li>
+                                    <li><a href="{{route('cart')}}"></a>Cart</li>
+                                    <li><a href="{{route('checkout')}}"></a>Checkout</li>
                                     <li><a href="account.html"></a>Account</li>
                                 </ul>
                             </li>
@@ -256,8 +256,8 @@
             <span class="spend-shipping"><i class="fal fa-truck"></i> SPENT <span class="amount">$199.00</span> MORE
             FOR FREE SHIPPING</span>
             <span class="total-price">TOTAL: <span class="price">$556</span></span>
-            <a href="checkout.html" class="checkout-btn cart-btn">PROCEED TO CHECKOUT</a>
-            <a href="cart.html" class="view-btn cart-btn">VIEW CART</a>
+            <a href="{{route('checkout')}}" class="checkout-btn cart-btn">PROCEED TO CHECKOUT</a>
+            <a href="{{route('cart')}}" class="view-btn cart-btn">VIEW CART</a>
         </div>
     </div>
     <!-- cart area edn -->

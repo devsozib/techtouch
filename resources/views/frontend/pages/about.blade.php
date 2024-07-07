@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 @section('content')
-    <!-- Bread-Crumb style two -->
+    {{-- <!-- Bread-Crumb style two -->
     <!-- rts breadcrumba area start -->
     <div class="rts-bread-crumb-area ptb--150 ptb_sm--100 bg-breadcrumb bg_image">
       <div class="container">
@@ -20,89 +20,124 @@
       </div>
   </div>
   <!-- rts breadcrumba area end -->
-  <!-- Bread-Crumb style two End -->
+  <!-- Bread-Crumb style two End --> --}}
 
-  <!-- rts about area start -->
-  <div class="rts-about-area-about rts-section-gap">
-      <div class="container pb--45 plr_sm--15">
-          <div class="row">
-              <div class="col-lg-5">
-                  <div class="thumbnail-area-about">
-                      <img src="assets/images/about/04.jpg" alt="about-area">
-                      <img src="assets/images/about/05.jpg" alt="about-sm" class="small">
-                      <a class="rts-btn btn-primary" href="#">Elevate Profile</a>
-                  </div>
-              </div>
-              <div class="col-lg-7 about-a-p-cont">
-                  <div class="about-inner-wrapper-inner">
-                      <div class="title-three-left">
-                          <span class="pre-title" data-sal="slide-up" data-sal-delay="100" data-sal-duration="800" style="display: block;">
-                              Renovation Company
-                          </span>
-                          <h3 class="title" data-sal="slide-up" data-sal-delay="100" data-sal-duration="800">
-                              Our thoughts for developing <br>
-                              your stylish life Level.
-                          </h3>
-                      </div>
-                      <div class="main-content-area-about-p">
-                          <p class="disc">
-                              Varius dis malesuada nisi ligulavel senectus habitant aliquam, augue natoque sem nascetur quis himenaeos volutpat facilisis orco morbi mattis sagittis atu commodo pharetra fermentum. Primis risus diam himenaeos viverra rat habitant
-                          </p>
-                          <div class="service-wrapper">
-                              <div class="left">
-                                  <!-- ingle support -->
-                                  <div class="single-service">
-                                      <i class="fa-regular fa-circle-check"></i>
-                                      <p>Best Quality Support</p>
-                                  </div>
-                                  <!-- ingle support -->
-                                  <!-- ingle support -->
-                                  <div class="single-service">
-                                      <i class="fa-regular fa-circle-check"></i>
-                                      <p>100% Quality Design</p>
-                                  </div>
-                                  <!-- ingle support -->
-                              </div>
-
-                              <div class="right">
-                                  <!-- ingle support -->
-                                  <div class="single-service">
-                                      <i class="fa-regular fa-circle-check"></i>
-                                      <p>Professional Expertise</p>
-                                  </div>
-                                  <!-- ingle support -->
-                                  <!-- ingle support -->
-                                  <div class="single-service">
-                                      <i class="fa-regular fa-circle-check"></i>
-                                      <p>100% Quality Design</p>
-                                  </div>
-                                  <!-- ingle support -->
-                              </div>
-                          </div>
-
-                          <div class="authore-artea-wrapper">
-                              <!-- authore area start -->
-                              <div class="main-authore-wrapper">
-                                  <div class="author">
-                                      <img src="assets/images/about/06.jpg" alt="">
-                                  </div>
-                                  <div class="info">
-                                      <h6 class="title">Daniel H. Smith</h6>
-                                      <span class="desig">Founder & Ceo</span>
-                                  </div>
-                              </div>
-                              <!-- authore area end -->
-                              <a href="contact.html" class="rts-btn btn-primary">Get More Info</a>
-                          </div>
-
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="bg-text">
-              <h2 class="title">About Company</h2>
-          </div>
-      </div>
+<!-- rts about area start -->
+<div class="rts-about-area rts-section-gap3" id="about">
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col-lg-5">
+                <div class="about-image-thumbnail-3">
+                    <img class="image-2" data-sal="slide-up" data-sal-delay="300" data-sal-duration="800" src="{{ asset('frontend') }}/assets/images/about.jpeg" alt="about-image">
+                    {{-- <img class="image-2" data-sal="slide-up" data-sal-delay="300" data-sal-duration="800" src="{{ asset('frontend') }}/assets/images/about.jpeg" alt="about-image"> --}}
+                </div>
+            </div>
+            <div class="col-lg-7 pl--60 p-md-0">
+                <div class="about-three-wrapper">
+                    <div class="title-three-left">
+                        <div class="bg-title">
+                            Company
+                        </div>
+                        <span class="pre-title" data-sal="slide-up" data-sal-delay="100" data-sal-duration="800" style="display: block;">
+                          TECH TOUCH
+                          AUTOMATION & ENGINEERING
+                        </span>
+                        <h3 class="title" data-sal="slide-up" data-sal-delay="100" data-sal-duration="800">
+                          WORKS WITH COMMITMENT.
+                        </h3>
+                        <p>We are Tech Touch Automation & Engineering , We started our journey from 2020 by trading business in the power sector and also growing up a company in the Construction and Consultancy sector. Specialized in marketing & sales, designing, installation, commissioning, and maintenance of Sub-Station, Generator, Fire Detection, and Protection System, and Security management System with trained and experienced people both from home and aboard and what you ask within, anytime, anywhere.</p>
+                    </div>
+                    <div class="rts-tab-three-start" data-sal="slide-up" data-sal-delay="400" data-sal-duration="800">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Skills</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Experience</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Destination</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <!-- ingle content tab -->
+                            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                <div class="single-tab-content-three">
+                                    <p class="disc">
+                                        Uniquely repurpose client-centered imperatives without distinctive products <br> leverage existing fully researched.
+                                    </p>
+                                    <div class="list-wrapper">
+                                        <div class="single">
+                                            <ul>
+                                                <li>Great Quality Service</li>
+                                                <li>Professional Work Skills</li>
+                                            </ul>
+                                        </div>
+                                        <div class="single">
+                                            <ul>
+                                                <li>Great Quality Service</li>
+                                                <li>Professional Work Skills</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="rts-btn btn-seconday">Learn More</a>
+                                </div>
+                            </div>
+                            <!-- ingle content tab end -->
+                            <!-- ingle content tab -->
+                            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                                <div class="single-tab-content-three">
+                                    <p class="disc">
+                                        Uniquely repurpose client-centered imperatives without distinctive products <br> leverage existing fully researched.
+                                    </p>
+                                    <div class="list-wrapper">
+                                        <div class="single">
+                                            <ul>
+                                                <li>Great Quality Service</li>
+                                                <li>Professional Work Skills</li>
+                                            </ul>
+                                        </div>
+                                        <div class="single">
+                                            <ul>
+                                                <li>Great Quality Service</li>
+                                                <li>Professional Work Skills</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="rts-btn btn-seconday">Learn More</a>
+                                </div>
+                            </div>
+                            <!-- ingle content tab end -->
+                            <!-- ingle content tab -->
+                            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                <div class="single-tab-content-three">
+                                    <p class="disc">
+                                        Uniquely repurpose client-centered imperatives without distinctive products <br> leverage existing fully researched.
+                                    </p>
+                                    <div class="list-wrapper">
+                                        <div class="single">
+                                            <ul>
+                                                <li>Great Quality Service</li>
+                                                <li>Professional Work Skills</li>
+                                            </ul>
+                                        </div>
+                                        <div class="single">
+                                            <ul>
+                                                <li>Great Quality Service</li>
+                                                <li>Professional Work Skills</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="rts-btn btn-seconday">Learn More</a>
+                                </div>
+                            </div>
+                            <!-- ingle content tab end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
   </div>
   <!-- rts about area end -->
 
@@ -110,20 +145,13 @@
   <div class="service-abot-area rts-section-gap service-about-bg bg_image">
       <div class="container-210">
           <div class="row align-items-center">
-              <div class="col-xl-6 col-lg-12  plr-sm">
+              <div class="col-xl-6 col-lg-6 col-md-6">
                   <div class="thumbnail-service-about">
-                      <img src="assets/images/service/13.jpg" alt="service-image">
-                      <div class="vedio-icone">
-                          <a id="play-video" class="video-play-button" href="#">
-                              <span></span>
-                          </a>
-                          <div id="video-overlay" class="video-overlay">
-                              <a class="video-overlay-close">×</a>
-                          </div>
-                      </div>
+                      {{-- <img src="{{ asset('frontend') }}/assets/images/service/13.jpg" alt="service-image"> --}}
+                      <video width="100%"  src="https://techtouch-bd.com/wp-content/uploads/2022/05/WhatsApp-Video-2022-05-25-at-9.58.43-AM.mp4" autoplay="" muted="muted" controlslist="nodownload"></video>
                   </div>
               </div>
-              <div class="col-xl-6 col-lg-12 pading-controler">
+              <div class="col-xl-6 col-lg-6 col-md-6 pading-controler">
                   <div class="service-about-wrapper">
                       <div class="title-three-left">
                           <span class="pre-title" data-sal="slide-up" data-sal-delay="100" data-sal-duration="800" style="display: block;">
@@ -137,7 +165,7 @@
                           <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                               <div class="single-service-sm">
                                   <div class="icon">
-                                      <img src="assets/images/service/icon/01.svg" alt="">
+                                      <img src="{{ asset('frontend') }}/assets/images/service/icon/01.svg" alt="">
                                   </div>
                                   <p>Expert Teams</p>
                               </div>
@@ -145,7 +173,7 @@
                           <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                               <div class="single-service-sm">
                                   <div class="icon">
-                                      <img src="assets/images/service/icon/02.svg" alt="">
+                                      <img src="{{ asset('frontend') }}/assets/images/service/icon/02.svg" alt="">
                                   </div>
                                   <p>Timely Delivery</p>
                               </div>
@@ -153,7 +181,7 @@
                           <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                               <div class="single-service-sm">
                                   <div class="icon">
-                                      <img src="assets/images/service/icon/03.svg" alt="">
+                                      <img src="{{ asset('frontend') }}/assets/images/service/icon/03.svg" alt="">
                                   </div>
                                   <p>24/7 Support</p>
                               </div>
@@ -161,7 +189,7 @@
                           <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                               <div class="single-service-sm">
                                   <div class="icon">
-                                      <img src="assets/images/service/icon/04.svg" alt="">
+                                      <img src="{{ asset('frontend') }}/assets/images/service/icon/04.svg" alt="">
                                   </div>
                                   <p>Best Equipment</p>
                               </div>
@@ -169,7 +197,7 @@
                           <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                               <div class="single-service-sm">
                                   <div class="icon">
-                                      <img src="assets/images/service/icon/05.svg" alt="">
+                                      <img src="{{ asset('frontend') }}/assets/images/service/icon/05.svg" alt="">
                                   </div>
                                   <p>100% Guranty</p>
                               </div>
@@ -177,7 +205,7 @@
                           <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                               <div class="single-service-sm">
                                   <div class="icon">
-                                      <img src="assets/images/service/icon/06.svg" alt="">
+                                      <img src="{{ asset('frontend') }}/assets/images/service/icon/06.svg" alt="">
                                   </div>
                                   <p>Timely Delivery</p>
                               </div>
@@ -206,7 +234,7 @@
                   <!-- single offer area sart -->
                   <div class="rts-single-offer">
                       <a href="service-details.html" class="thumbnail">
-                          <img src="assets/images/service/07.jpg" alt="service">
+                          <img src="{{ asset('frontend') }}/assets/images/service/07.jpg" alt="service">
                       </a>
                       <div class="content-wrapper">
                           <a href="service-details.html">
@@ -226,7 +254,7 @@
                   <!-- single offer area sart -->
                   <div class="rts-single-offer">
                       <a href="service-details.html" class="thumbnail">
-                          <img src="assets/images/service/08.jpg" alt="service">
+                          <img src="{{ asset('frontend') }}/assets/images/service/08.jpg" alt="service">
                       </a>
                       <div class="content-wrapper">
                           <a href="service-details.html">
@@ -246,7 +274,7 @@
                   <!-- single offer area sart -->
                   <div class="rts-single-offer">
                       <a href="service-details.html" class="thumbnail">
-                          <img src="assets/images/service/07.jpg" alt="service">
+                          <img src="{{ asset('frontend') }}/assets/images/service/07.jpg" alt="service">
                       </a>
                       <div class="content-wrapper">
                           <a href="service-details.html">
@@ -277,7 +305,7 @@
                       <div class="single-funfacts-about">
                           <div class="top">
                               <div class="icon">
-                                  <img src="assets/images/fun-facts/icon/06.svg" alt="fun-facts">
+                                  <img src="{{ asset('frontend') }}/assets/images/fun-facts/icon/06.svg" alt="fun-facts">
                               </div>
                               <h2 class="title plus"><span class="counter">25</span></h2>
                           </div>
@@ -290,7 +318,7 @@
                       <div class="single-funfacts-about">
                           <div class="top">
                               <div class="icon">
-                                  <img src="assets/images/fun-facts/icon/08.svg" alt="fun-facts">
+                                  <img src="{{ asset('frontend') }}/assets/images/fun-facts/icon/08.svg" alt="fun-facts">
                               </div>
                               <h2 class="title percent"><span class="counter">80</span></h2>
                           </div>
@@ -303,7 +331,7 @@
                       <div class="single-funfacts-about">
                           <div class="top">
                               <div class="icon">
-                                  <img src="assets/images/fun-facts/icon/09.svg" alt="fun-facts">
+                                  <img src="{{ asset('frontend') }}/assets/images/fun-facts/icon/09.svg" alt="fun-facts">
                               </div>
                               <h2 class="title plus"><span class="counter">100</span></h2>
                           </div>
@@ -316,7 +344,7 @@
                       <div class="single-funfacts-about">
                           <div class="top">
                               <div class="icon">
-                                  <img src="assets/images/fun-facts/icon/07.svg" alt="fun-facts">
+                                  <img src="{{ asset('frontend') }}/assets/images/fun-facts/icon/07.svg" alt="fun-facts">
                               </div>
                               <h2 class="title plus"><span class="counter">38</span></h2>
                           </div>
@@ -350,7 +378,7 @@
                                           1,500 CLIENTS
                                           </h4>
                                           <div class="thumbnail">
-                                              <img src="assets/images/testimonials/01.png" alt="testimonials">
+                                              <img src="{{ asset('frontend') }}/assets/images/testimonials/01.png" alt="testimonials">
                                           </div>
                                       </div>
                                       <div class="testimonials-right">
@@ -371,7 +399,7 @@
                                           1,500 CLIENTS
                                           </h4>
                                           <div class="thumbnail">
-                                              <img src="assets/images/testimonials/01.png" alt="testimonials">
+                                              <img src="{{ asset('frontend') }}/assets/images/testimonials/01.png" alt="testimonials">
                                           </div>
                                       </div>
                                       <div class="testimonials-right">
@@ -392,7 +420,7 @@
                                           1,500 CLIENTS
                                           </h4>
                                           <div class="thumbnail">
-                                              <img src="assets/images/testimonials/01.png" alt="testimonials">
+                                              <img src="{{ asset('frontend') }}/assets/images/testimonials/01.png" alt="testimonials">
                                           </div>
                                       </div>
                                       <div class="testimonials-right">
@@ -435,7 +463,7 @@
                   <div class="blog-single-two-wrapper">
                       <div class="image-area">
                           <a href="blog-details.html" class="thumbnail">
-                              <img src="assets/images/blog/04.jpg" alt="blog-image">
+                              <img src="{{ asset('frontend') }}/assets/images/blog/04.jpg" alt="blog-image">
                           </a>
                           <div class="date-area">
                               <div class="date">
@@ -467,7 +495,7 @@
                   <div class="blog-single-two-wrapper">
                       <div class="image-area">
                           <a href="blog-details.html" class="thumbnail">
-                              <img src="assets/images/blog/05.jpg" alt="blog-image">
+                              <img src="{{ asset('frontend') }}/assets/images/blog/05.jpg" alt="blog-image">
                           </a>
                           <div class="date-area">
                               <div class="date">
@@ -499,7 +527,7 @@
                   <div class="blog-single-two-wrapper">
                       <div class="image-area">
                           <a href="blog-details.html" class="thumbnail">
-                              <img src="assets/images/blog/06.jpg" alt="blog-image">
+                              <img src="{{ asset('frontend') }}/assets/images/blog/06.jpg" alt="blog-image">
                           </a>
                           <div class="date-area">
                               <div class="date">

@@ -42,13 +42,13 @@ use App\Http\Controllers\Admin\ProductMnagementController;
 
 Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
-Route::get('/our-history', [FrontendController::class, 'ourHistory'])->name('ourHistory');
-Route::get('/gallery', [FrontendController::class, 'gallery'])->name('gallery');
-Route::get('/shubho-shongo', [FrontendController::class, 'shubhoShongo'])->name('shubho_shongo');
-Route::get('/what-we-do', [FrontendController::class, 'whatWeDo'])->name('what_we_do');
+Route::get('/services', [FrontendController::class, 'ourServices'])->name('services');
+Route::get('/projects', [FrontendController::class, 'projects'])->name('projects');
+Route::get('/shop', [FrontendController::class, 'shop'])->name('shop');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
-Route::get('/news-single/{id}', [FrontendController::class, 'newsSingle'])->name('news_single');
-Route::get('/single-history', [FrontendController::class, 'singleHistory'])->name('single_history');
+Route::get('/product/{id}', [FrontendController::class, 'productDetails'])->name('productDetails');
+Route::get('/cart', [FrontendController::class, 'cart'])->name('cart');
+Route::get('/checkout', [FrontendController::class, 'checkout'])->name('checkout');
 
 
 

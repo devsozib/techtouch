@@ -4,10 +4,10 @@
         <!-- Dark Logo-->
         <a href="{{ route('dashboard') }}" class="logo logo-dark mt-4">
             <span class="logo-sm text-white">
-                <h4>Pocket</h4>
+                <h4>Tech Touch</h4>
             </span>
             <span class="logo-lg">
-                <h4>Pocket</h4>
+                <h4>Tech Touch</h4>
             </span>
         </a>
         <!-- Light Logo-->
@@ -17,7 +17,7 @@
               
             </span>
             <span class="logo-lg">
-                <img width="150px" src="https://pizzapitsa.fi/frontend/assets/images/logo/2%20pizza%20logo-02.png" alt="">
+                <img width="50px" src="{{ asset('frontend') }}/assets/images/logo/techtouchlogo.png" alt="">
                
             </span>
         </a>
