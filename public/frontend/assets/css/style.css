@@ -25148,6 +25148,7 @@ body.index-nine .single-case-wrapper {
 .rts-single-offer .content-wrapper .title {
   margin-bottom: 10px;
   transition: all 0.4s;
+  font-size: 22px;
 }
 
 .rts-single-offer .content-wrapper .title:hover {

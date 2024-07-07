@@ -16,12 +16,14 @@ class FrontendController extends Controller
 
     public function about()
     {
-        return view('frontend.pages.about');
+        $services = Category::get();
+        return view('frontend.pages.about',compact('services'));
     }
 
     public function ourServices()
     {
-        return view('frontend.pages.service');
+        $services = Category::get();
+        return view('frontend.pages.service',compact('services'));
     }
 
     public function projects()

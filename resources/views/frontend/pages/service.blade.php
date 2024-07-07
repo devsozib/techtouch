@@ -1,159 +1,61 @@
 @extends('frontend.layouts.app')
 @section('content')
-    <!-- Bread-Crumb style two -->
-    <!-- rts breadcrumba area start -->
-    <div class="rts-bread-crumb-area ptb--150 ptb_sm--100 bg-breadcrumb bg_image">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-12">
-                  <!-- bread crumb inner wrapper -->
-                  <div class="breadcrumb-inner text-center">
-                      <h1 class="title">Our Services</h1>
-                      <div class="meta">
-                          <a href="#" class="prev">Home /</a>
-                          <a href="#" class="next">Our Services</a>
-                      </div>
-                  </div>
-                  <!-- bread crumb inner wrapper end -->
-              </div>
-          </div>
-      </div>
-  </div>
-  <!-- rts breadcrumba area end -->
-  <!-- Bread-Crumb style two End -->
 
-  <!-- what we offer start -->
-  <div class="rts-offer-provide-section rts-section-gap">
-      <div class="container">
-          <div class="row g-24">
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                  <!-- single offer area sart -->
-                  <div class="rts-single-offer">
-                      <a href="service-details.html" class="thumbnail">
-                          <img src="{{ asset('frontend') }}/assets/images/service/07.jpg" alt="service">
-                      </a>
-                      <div class="content-wrapper">
-                          <a href="service-details.html">
-                              <h5 class="title">
-                                  General construction
-                              </h5>
-                          </a>
-                          <p class="disc">
-                              Dui lobortis scelerisque magna curabitur duis purus platea massa accumsan
-                          </p>
-                          <a href="service-details.html" class="rts-btn btn-transparent-service">View Service<i class="fa-light fa-arrow-right"></i></a>
+<!-- our service area start -->
+<div class="rts-service-area-three" style="padding-top:100px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title-three-center">
+                    <div class="bg-title">
+                        What We Do
+                    </div>
+                    <span class="pre-title" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
+                        Tech Touch-BD
+                    </span>
+                    <h3 class="title" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
+                        Our thoughts for developing <br>
+                        your stylish life Level.
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="rts-offer-provide-section rts-section-gap">
+          <div class="container">
+              <div class="row g-24">
+                  @foreach ($services as $service)
+                      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                          <!-- single offer area sart -->
+                          <div class="rts-single-offer">
+                              <a href="service-details.html" class="thumbnail">
+                                  <img style="border-radius: 8px" src="{{ asset('frontend/assets/images/category/'.$service->image) }}" alt="service">
+                              </a>
+                              <div class="content-wrapper">
+                                  <a href="service-details.html">
+                                      <h5 class="title">
+                                          {{ $service->name }}
+                                      </h5>
+                                  </a>
+                                  <p class="disc">
+                                      Dui lobortis scelerisque magna curabitur duis purus platea massa accumsan
+                                  </p>
+                                  <a href="service-details.html" class="rts-btn btn-transparent-service">View Service<i class="fa-light fa-arrow-right"></i></a>
+                              </div>
+                          </div>
+                          <!-- single offer area end -->
                       </div>
-                  </div>
-                  <!-- single offer area end -->
-              </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                  <!-- single offer area sart -->
-                  <div class="rts-single-offer">
-                      <a href="service-details.html" class="thumbnail">
-                          <img src="{{ asset('frontend') }}/assets/images/service/08.jpg" alt="service">
-                      </a>
-                      <div class="content-wrapper">
-                          <a href="service-details.html">
-                              <h5 class="title">
-                                  Property maintenance
-                              </h5>
-                          </a>
-                          <p class="disc">
-                              Dui lobortis scelerisque magna curabitur duis purus platea massa accumsan
-                          </p>
-                          <a href="service-details.html" class="rts-btn btn-transparent-service">View Service<i class="fa-light fa-arrow-right"></i></a>
-                      </div>
-                  </div>
-                  <!-- single offer area end -->
-              </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                  <!-- single offer area sart -->
-                  <div class="rts-single-offer">
-                      <a href="service-details.html" class="thumbnail">
-                          <img src="{{ asset('frontend') }}/assets/images/service/07.jpg" alt="service">
-                      </a>
-                      <div class="content-wrapper">
-                          <a href="service-details.html">
-                              <h5 class="title">
-                                  Virtual design & build
-                              </h5>
-                          </a>
-                          <p class="disc">
-                              Dui lobortis scelerisque magna curabitur duis purus platea massa accumsan
-                          </p>
-                          <a href="service-details.html" class="rts-btn btn-transparent-service">View Service<i class="fa-light fa-arrow-right"></i></a>
-                      </div>
-                  </div>
-                  <!-- single offer area end -->
-              </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                  <!-- single offer area sart -->
-                  <div class="rts-single-offer">
-                      <a href="service-details.html" class="thumbnail">
-                          <img src="{{ asset('frontend') }}/assets/images/service/08.jpg" alt="service">
-                      </a>
-                      <div class="content-wrapper">
-                          <a href="service-details.html">
-                              <h5 class="title">
-                                  Electrical System
-                              </h5>
-                          </a>
-                          <p class="disc">
-                              Dui lobortis scelerisque magna curabitur duis purus platea massa accumsan
-                          </p>
-                          <a href="service-details.html" class="rts-btn btn-transparent-service">View Service<i class="fa-light fa-arrow-right"></i></a>
-                      </div>
-                  </div>
-                  <!-- single offer area end -->
-              </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                  <!-- single offer area sart -->
-                  <div class="rts-single-offer">
-                      <a href="service-details.html" class="thumbnail">
-                          <img src="{{ asset('frontend') }}/assets/images/service/09.jpg" alt="service">
-                      </a>
-                      <div class="content-wrapper">
-                          <a href="service-details.html">
-                              <h5 class="title">
-                                  General Contracting
-                              </h5>
-                          </a>
-                          <p class="disc">
-                              Dui lobortis scelerisque magna curabitur duis purus platea massa accumsan
-                          </p>
-                          <a href="service-details.html" class="rts-btn btn-transparent-service">View Service<i class="fa-light fa-arrow-right"></i></a>
-                      </div>
-                  </div>
-                  <!-- single offer area end -->
-              </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                  <!-- single offer area sart -->
-                  <div class="rts-single-offer">
-                      <a href="service-details.html" class="thumbnail">
-                          <img src="{{ asset('frontend') }}/assets/images/service/07.jpg" alt="service">
-                      </a>
-                      <div class="content-wrapper">
-                          <a href="service-details.html">
-                              <h5 class="title">
-                                  Plumbling Services
-                              </h5>
-                          </a>
-                          <p class="disc">
-                              Dui lobortis scelerisque magna curabitur duis purus platea massa accumsan
-                          </p>
-                          <a href="service-details.html" class="rts-btn btn-transparent-service">View Service<i class="fa-light fa-arrow-right"></i></a>
-                      </div>
-                  </div>
-                  <!-- single offer area end -->
+                  @endforeach
               </div>
           </div>
+        </div>        
       </div>
+    </div>
   </div>
-  <!-- what we offer end -->
+  <!-- our service area end -->
 
 
   <!-- service accordion area start -->
-  <div class="rts-accordion-area service rts-section-gapBottom">
+  <div class="rts-accordion-area service">
       <div class="accordion-service-bg bg_image ptb--120 ptb_md--80 ptb_sm--60">
           <div class="container">
               <div class="row">

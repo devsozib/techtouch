@@ -202,7 +202,7 @@
 
 <!-- our service area start -->
 <div class="rts-service-area-three rts-section-gap3">
-  <div class="container pb--120">
+  <div class="container">
       <div class="row">
           <div class="col-lg-12">
               <div class="title-three-center">
