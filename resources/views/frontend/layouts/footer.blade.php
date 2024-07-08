@@ -58,12 +58,12 @@
                             <!-- single number end -->
                             <!-- single number -->
                             <div class="single-number">
-                                <h6 class="title">Office Location</h6>
+                                <h6 class="title">Head Office</h6>
                                 <div class="number">
                                     <i class="fa-light fa-location-dot"></i>
                                     <a class="mt-dec" href="https://www.google.com/maps?ll=25.638148,88.639657&z=21&t=m&hl=en-US&gl=US&mapclient=embed&cid=6047515495461479673"> 671/1, Kalitola, Sadar Dinajpur, Dinajpur-5200, Bangladesh.</a><br>
                                 </div>                                
-                                <a href="{{ route('contact') }}"><small>See others office address</small></a>
+                                <a href="{{ route('contact') }}#contact"><small>See others office address</small></a>
                             </div>
                             <!-- single number end -->
                         </div>
@@ -86,7 +86,7 @@
                 <div class="col-lg-12">
                     <div class="copyright-footer-two">
                         <p class="disc">
-                            © 2023 Elevate. All images are for demo purposes.
+                            © {{ date('Y') }} Tech Touch Automation & Enginnering is all rights reserved .
                         </p>
                     </div>
                 </div>
