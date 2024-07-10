@@ -21,6 +21,7 @@ use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\Admin\TopingsController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\CurrencyController;
 use App\Http\Controllers\Admin\NutritionController;
 use App\Http\Controllers\Admin\PermissionController;
@@ -56,6 +57,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
     Route::group(['middleware' => ['permission:product-management']], function () {
         Route::resource('categories', CategoryController::class);
+        Route::resource('sub-categories', SubCategoryController::class);
         Route::resource('products', ProductContoller::class);
         Route::resource('sizes', SizeController::class);
         Route::resource('nutritions', NutritionController::class);

@@ -86,6 +86,9 @@
                                     <a href="{{ route('categories.index') }}" class="nav-link">Categories</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a href="{{ route('sub-categories.index') }}" class="nav-link">Sub Categories</a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="{{ route('sizes.index') }}" class="nav-link">Size</a>
                                 </li>
                                 <li class="nav-item d-none">

@@ -8,6 +8,8 @@ use App\Models\Admin\ProductImage;
 use App\Models\Admin\ProductOptionTopping;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+use App\Models\Admin\SubCategory;
+use App\Models\Admin\Category;
 
 function getProductImage($id)
 {
@@ -168,4 +170,23 @@ function checkRole()
 {
   $user = Auth::user();
   return $user->getRoleNames()['0'];
+}
+
+function return_library($object, $key_col, $value_col)
+{
+    $data = array();
+    foreach ($object as $item)
+        $data[$item->$key_col] = $item->$value_col;
+    return $data;
+}
+
+function lib_category()
+{
+    return return_library(Category::where('status', '1')->get(), 'id', 'name');
+}
+
+function getArrayData($datas, $key)
+{
+    $result = isset($datas[$key]) ? $datas[$key] : '';
+    return $result;
 }
