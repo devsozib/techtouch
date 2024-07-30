@@ -80,8 +80,11 @@
                                     <div class="cart cart-icon">
                                         <i class="fa-regular fa-cart-shopping"></i>
                                     </div>
+                                    <div class="cart cart-icon">
+                                        <a href="" style="color: #fff" class="rts-btn btn-seconday btn-transparent">Login</a>
+                                    </div>
                                 </div>
-                                <a href="{{ route('index') }}" class="rts-btn btn-seconday btn-transparent">Get a Quote <i class="fa-solid fa-arrow-up-right"></i></a>
+                                <a href="{{ route('contact') }}" class="rts-btn btn-seconday btn-transparent">Get a Quote <i class="fa-solid fa-arrow-up-right"></i></a>
                             </div>
                         </div>
                         <!-- bottom header end -->
@@ -174,8 +177,11 @@
                                     <div class="cart cart-icon">
                                         <i class="fa-regular fa-cart-shopping"></i>
                                     </div>
+                                    <div class="cart cart-icon">
+                                        <a href="" class="rts-btn btn-seconday btn-transparent">Login</a>
+                                    </div>
                                 </div>
-                                <a href="{{ route('index') }}" class="rts-btn btn-seconday btn-transparent">Get a Quote <i class="fa-solid fa-arrow-up-right"></i></a>
+                                <a href="{{ route('contact') }}" class="rts-btn btn-seconday btn-transparent">Get a Quote <i class="fa-solid fa-arrow-up-right"></i></a>
                             </div>
                         </div>
                         <!-- bottom header end -->

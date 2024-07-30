@@ -555,9 +555,9 @@
           },
         });
       });
-      $(document).ready(function(){
+      $(document).ready(function () {
         var swiper = new Swiper(".mySwiper-bannner-12", {
-          loop:true,
+          loop: true,
           speed: 1500,
           effect: "fade",
           navigation: {
@@ -618,8 +618,8 @@
     // text flip
     textChanger: function () {
       var blockLetters = new TimelineMax({
-          paused: true
-        }),
+        paused: true
+      }),
         albumLetters = new TimelineMax({
           paused: false
         }),
@@ -632,7 +632,7 @@
         letter = $(".letter"),
         letterTiming = 0.6,
         spaceTiming = 0.8,
-        stringsArray = ["Function", "Developer", "Rooms", "Intorior", "Design"],
+        stringsArray = ["ELEVATOR", "GENERATOR & SUBSTATION", "ENGINEERING CONSULTANCY", "ACCESS CONTROL SYSTEM & IPBAX", "FIRE PROTECTION SYSTEM", "CCTV SURVEILLANCE"],
         currentString = 0;
 
 
@@ -725,7 +725,7 @@
         function cancelDragging(content) {
           //remove event listeners
           if (content.intervalId) {
-            (!window.requestAnimationFrame) ? clearInterval(content.intervalId): window.cancelAnimationFrame(content.intervalId);
+            (!window.requestAnimationFrame) ? clearInterval(content.intervalId) : window.cancelAnimationFrame(content.intervalId);
             content.intervalId = false;
           }
           content.element.removeEventListener('mousemove', handleEvent.bind(content));
@@ -773,7 +773,7 @@
             var s = Math.sign(dx - content.delta[0]);
 
             if (Math.abs(dx - content.delta[0]) > 30) {
-              (s < 0) ? emitSwipeEvents(content, 'swipeLeft', [dx, dy]): emitSwipeEvents(content, 'swipeRight', [dx, dy]);
+              (s < 0) ? emitSwipeEvents(content, 'swipeLeft', [dx, dy]) : emitSwipeEvents(content, 'swipeRight', [dx, dy]);
             }
 
             content.delta[0] = false;
@@ -783,7 +783,7 @@
             var y = Math.sign(dy - content.delta[1]);
 
             if (Math.abs(dy - content.delta[1]) > 30) {
-              (y < 0) ? emitSwipeEvents(content, 'swipeUp', [dx, dy]): emitSwipeEvents(content, 'swipeDown', [dx, dy]);
+              (y < 0) ? emitSwipeEvents(content, 'swipeUp', [dx, dy]) : emitSwipeEvents(content, 'swipeDown', [dx, dy]);
             }
 
             content.delta[1] = false;
@@ -797,9 +797,9 @@
           if (!content.dragging) return;
           // emit dragging event with coordinates
           (!window.requestAnimationFrame) ?
-          content.intervalId = setTimeout(function () {
-            emitDrag.bind(content, event);
-          }, 250): content.intervalId = window.requestAnimationFrame(emitDrag.bind(content, event));
+            content.intervalId = setTimeout(function () {
+              emitDrag.bind(content, event);
+            }, 250) : content.intervalId = window.requestAnimationFrame(emitDrag.bind(content, event));
         };
 
         function emitDrag(event) {
@@ -836,7 +836,7 @@
       }());
 
       // Utility function
-      function Util() {};
+      function Util() { };
 
       /*
         class manipulation functions
@@ -1142,8 +1142,8 @@
 
           timeline.line.style.transform = 'translateX(' + timeline.translate + 'px)';
           // update the navigation items status (toggle inactive class)
-          (timeline.translate == 0) ? Util.addClass(timeline.navigation[0], 'h--timeline-navigation--inactive'): Util.removeClass(timeline.navigation[0], 'h--timeline-navigation--inactive');
-          (timeline.translate == containerWidth - timeline.lineLength) ? Util.addClass(timeline.navigation[1], 'h--timeline-navigation--inactive'): Util.removeClass(timeline.navigation[1], 'h--timeline-navigation--inactive');
+          (timeline.translate == 0) ? Util.addClass(timeline.navigation[0], 'h--timeline-navigation--inactive') : Util.removeClass(timeline.navigation[0], 'h--timeline-navigation--inactive');
+          (timeline.translate == containerWidth - timeline.lineLength) ? Util.addClass(timeline.navigation[1], 'h--timeline-navigation--inactive') : Util.removeClass(timeline.navigation[1], 'h--timeline-navigation--inactive');
         };
 
         function deaktivateNavigationButtons(timeline) {
@@ -1168,7 +1168,7 @@
 
         function updateOlderEvents(timeline) { // update older events style
           for (var i = 0; i < timeline.date.length; i++) {
-            (i < timeline.newDateIndex) ? Util.addClass(timeline.date[i], 'h--timeline-date--older-event'): Util.removeClass(timeline.date[i], 'h--timeline-date--older-event');
+            (i < timeline.newDateIndex) ? Util.addClass(timeline.date[i], 'h--timeline-date--older-event') : Util.removeClass(timeline.date[i], 'h--timeline-date--older-event');
           }
         };
 
@@ -1366,7 +1366,7 @@
     },
     // vesio activation
     vedioActivation: function (e) {
-      $(document).ready(function(){
+      $(document).ready(function () {
         $('.popup-youtube, .popup-video').magnificPopup({
           type: 'iframe',
           mainClass: 'mfp-fade',
@@ -1569,9 +1569,9 @@
 
   rtsJs.m();
   $('.gallery-image').magnificPopup({
-		type: 'image',
-		gallery: {
-			enabled: true
-		}
-	});
+    type: 'image',
+    gallery: {
+      enabled: true
+    }
+  });
 })(jQuery, window)

@@ -45,10 +45,10 @@
                         <h3 class="title" data-sal="slide-up" data-sal-delay="100" data-sal-duration="800">
                           WORKS WITH COMMITMENT.
                         </h3>
-                        <p>We are Tech Touch Automation & Engineering , We started our journey from 2020 by trading business in the power sector and also growing up a company in the Construction and Consultancy sector. Specialized in marketing & sales, designing, installation, commissioning, and maintenance of Sub-Station, Generator, Fire Detection, and Protection System, and Security management System with trained and experienced people both from home and aboard and what you ask within, anytime, anywhere.</p>
+                        <p>Discover excellence in automation and engineering with Tech Touch Automation & Engineering. As the premier provider in Dinajpur town, we are proud to offer a comprehensive range of services including elevator installations, generator maintenance, CCTV surveillance systems, fire protection solutions, access control systems, and engineering consultancy. What sets us apart is our unwavering commitment to customer satisfaction. With our experienced service team available 24/7, 365 days a year, we ensure that your needs are met promptly and efficiently. At Tech Touch, we prioritize quality, innovation, and personalized service to exceed your expectations every time. Trust the experts at Tech Touch Automation & Engineering for all your automation and engineering needs.</p>
                     </div>
                     <div class="rts-tab-three-start" data-sal="slide-up" data-sal-delay="400" data-sal-duration="800">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        {{-- <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Skills</button>
                             </li>
@@ -132,7 +132,7 @@
                                 </div>
                             </div>
                             <!-- ingle content tab end -->
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

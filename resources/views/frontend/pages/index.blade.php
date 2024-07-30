@@ -27,20 +27,14 @@
 <div class="rts-banner-three-area rts-section-gap">
   <div class="container pt--150 pb--90">
       <div class="row">
-          <div class="banner-three-wrapper">
-              <span class="pre-title">Hospitality & Leisure</span>
+          <div class="banner-three-wrapper">              
               <h1 class="title">
                   Where fluid <br>
-                  form describes <br>
+                  form define <br>
                   <span class="strock" id="fullText">
-                      Function
+                    ELEVATOR
                   </span>
               </h1>
-              <span class="bottom">
-                  Sports Faciites <br>
-                  Building, University of Cyprus <br>
-                  <span>/2015</span>
-              </span>
               <!-- to bottom icon -->
               <div class="rts-to-bottom-start">
                   <a href="#about"><img src="{{ asset('frontend') }}/assets/images/banner/shape/03.png" alt="shape image"></a>
@@ -50,7 +44,7 @@
       </div>
   </div>
   <div class="banner-image-area">
-      <img src="{{ asset('frontend') }}/assets/images/banner/01.png" alt="banner-image">
+      <img src="{{ asset('frontend') }}/assets/images/banner/06.jpg" alt="banner-image">
   </div>
 </div>
 <!-- rts banner area end -->
@@ -78,10 +72,11 @@
                       <h3 class="title" data-sal="slide-up" data-sal-delay="100" data-sal-duration="800">
                         WORKS WITH COMMITMENT.
                       </h3>
-                      <p>We are Tech Touch Automation & Engineering , We started our journey from 2020 by trading business in the power sector and also growing up a company in the Construction and Consultancy sector. Specialized in marketing & sales, designing, installation, commissioning, and maintenance of Sub-Station, Generator, Fire Detection, and Protection System, and Security management System with trained and experienced people both from home and aboard and what you ask within, anytime, anywhere.</p>
+                        <p>Discover excellence in automation and engineering with Tech Touch Automation & Engineering. As the premier provider in Dinajpur town, we are proud to offer a comprehensive range of services including elevator installations, generator maintenance, CCTV surveillance systems, fire protection solutions, access control systems, and engineering consultancy. What sets us apart is our unwavering commitment to customer satisfaction. With our experienced service team available 24/7, 365 days a year, we ensure that your needs are met promptly and efficiently. At Tech Touch, we prioritize quality, innovation, and personalized service to exceed your expectations every time. Trust the experts at Tech Touch Automation & Engineering for all your automation and engineering needs.</p>
+                        <p></p>
                   </div>
                   <div class="rts-tab-three-start" data-sal="slide-up" data-sal-delay="400" data-sal-duration="800">
-                      <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      {{-- <ul class="nav nav-tabs" id="myTab" role="tablist">
                           <li class="nav-item" role="presentation">
                               <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Skills</button>
                           </li>
@@ -165,7 +160,8 @@
                               </div>
                           </div>
                           <!-- ingle content tab end -->
-                      </div>
+                      </div> --}}
+                      <a href="{{ route('about') }}" class="rts-btn btn-seconday">Learn More</a>
                   </div>
               </div>
           </div>
@@ -342,7 +338,7 @@
           </div>
       </div>
       <div class="row mt--50">
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-4 col-md-6">
               <!-- single team one start -->
               <div class="single-team-three">
                   <div class="thumbnail">
@@ -367,11 +363,11 @@
               </div>
               <!-- single team one start -->
           </div>
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-4 col-md-6">
               <!-- single team one start -->
               <div class="single-team-three">
                   <div class="thumbnail">
-                      <img style="width: 92%" src="{{ asset('frontend') }}/assets/images/md.png" alt="team_area-start">
+                      <img style="width: 75%" src="{{ asset('frontend') }}/assets/images/ENGR. MD. ASADUZZAMAN SAKIB.jpg" alt="team_area-start">
                       <div class="social-team-wrapper">
                           <ul>
                               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
@@ -392,7 +388,7 @@
               </div>
               <!-- single team one start -->
           </div>
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-4 col-md-6">
               <!-- single team one start -->
               <div class="single-team-three">
                   <div class="thumbnail">
@@ -417,7 +413,7 @@
               </div>
               <!-- single team one start -->
           </div>
-          <div class="col-lg-3 col-md-6">
+          {{-- <div class="col-lg-3 col-md-6">
             <!-- single team one start -->
             <div class="single-team-three">
                 <div class="thumbnail">
@@ -441,14 +437,17 @@
                 </div>
             </div>
             <!-- single team one start -->
-        </div>
+        </div> --}}
       </div>
       <div class="row">
         <div class="col-3">
 
         </div>
         <div class="col-3 m-auto">
-            <img style="border-radius: 10px" src="{{ asset('frontend') }}/assets/images/arshiya-alishba.png" alt="team_area-start">
+            <img style="border-radius: 10px" src="{{ asset('frontend') }}/assets/images/Arshiya Binte Sakib.jpg" alt="team_area-start">            
+            <a href="team-details.html">
+                <h4 class="name text-center">Arshiya Binte Sakib</h4>
+            </a>
         </div>
         <div class="col-3">
            
