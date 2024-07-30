@@ -19,6 +19,7 @@ use App\Models\Admin\ProductToping;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\ProductOptionTopping;
 use Carbon\Carbon;
+use App\Models\Admin\SubCategory;
 
 class ProductContoller extends Controller
 {
@@ -39,7 +40,13 @@ class ProductContoller extends Controller
         $categories = Category::where('status', '1')->get();
         $optionTitles = OptionTitle::where('status', '1')->get();
         $toppings = Toping::where('status', '1')->get();
-        return view('admin.pages.product.create', compact('categories', 'optionTitles', 'toppings'));
+        $subCategories = SubCategory::where('status', '1')->get();
+        $tmp = [];
+        foreach($subCategories as $subCategory){
+            $tmp[$subCategory->category_id][] = $subCategory;
+        }
+        $subCategories = $tmp;
+        return view('admin.pages.product.create', compact('categories', 'optionTitles', 'toppings','subCategories'));
     }
 
     /**

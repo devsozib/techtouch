@@ -190,3 +190,11 @@ function getArrayData($datas, $key)
     $result = isset($datas[$key]) ? $datas[$key] : '';
     return $result;
 }
+
+function _print($data, $exit = 0)
+{
+    echo "<pre>";
+    print_r($data);
+    echo "</pre>";
+    if (!$exit) exit;
+}
