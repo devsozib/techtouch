@@ -90,7 +90,7 @@
                                         <label for="description" class="form-label">Description</label>
                                         <textarea class="form-control" id="editor" name="description" placeholder="Enter product description" rows="3">{{ old('description')}}</textarea>
                                     <div>    
-                                    <div class="row">
+                                    <div class="row d-none">
                                         <h4>Product Option</h4><br><br>
                                         
                                         <div id="optionItemContainer">
@@ -131,7 +131,7 @@
                                             <button type="button" class="btn btn-sm btn-primary" onclick="addNewItemOption()">Add new</button>
                                         </div>
                                     </div>
-                                    <div class="row mt-3">
+                                    <div class="row mt-3 d-none">
                                         <h4>Product Tags</h4><br><br>
                                         <div style="max-width: 500px;">
                                             <div class="row">

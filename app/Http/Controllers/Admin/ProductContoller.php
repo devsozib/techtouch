@@ -28,7 +28,9 @@ class ProductContoller extends Controller
      */
     public function index()
     {
-        $products = Product::join('categories', 'categories.id', '=', 'products.category_id')->select('products.*', 'categories.name as category')->orderBy('products.id', 'desc')->get();
+        $products = Product::join('categories', 'categories.id', '=', 'products.category_id')
+        ->leftjoin('sub_categories', 'sub_categories.id', '=', 'products.sub_category_id')
+        ->select('products.*', 'categories.name as category', 'sub_categories.name as sub_category')->orderBy('products.id', 'desc')->get();
         return view('admin.pages.product.index', compact('products'));
     }
 
@@ -62,6 +64,7 @@ class ProductContoller extends Controller
             'status' => 'required|in:0,1',
             // Add any other validation rules as needed
         ]);
+        // return $request->sub_category;
 
         $imageName = "";
         if ($request->hasFile('images')) {
@@ -74,6 +77,7 @@ class ProductContoller extends Controller
         $product = new Product([
             'name' => $request->input('name'),
             'category_id' => $request->category,
+            'sub_category_id' => $request->sub_category,
             'description' => $request->input('description'),
             'image' => $imageName,
             'status' => $request->input('status'),
@@ -188,7 +192,15 @@ class ProductContoller extends Controller
         $productTags = ProductTag::where('pro_id', $id)->get();
         $optionTitles = OptionTitle::where('status', '1')->get();
         $productOptions = ProductOption::join('option_titles', 'option_titles.id', '=', 'product_options.title_id')->select('product_options.*', 'option_titles.name')->where('product_options.product_id', $id)->get();
-        return view('admin.pages.product.edit', compact('categories', 'product', 'productSizes', 'productTopings', 'topings', 'id', 'sizes', 'productTags', 'productOptions', 'optionTitles'));
+
+        $subCategories = SubCategory::where('status', '1')->get();
+        $tmp = [];
+        foreach($subCategories as $subCategory){
+            $tmp[$subCategory->category_id][] = $subCategory;
+        }
+        $subCategories = $tmp;
+
+        return view('admin.pages.product.edit', compact('categories', 'product', 'productSizes', 'productTopings', 'topings', 'id', 'sizes', 'productTags', 'productOptions', 'optionTitles','subCategories'));
     }
 
     /**
@@ -219,6 +231,7 @@ class ProductContoller extends Controller
         $product->update([
             'name' => $request->input('name'),
             'category_id' => $request->category,
+            'sub_category_id' => $request->sub_category,
             'description' => $request->input('description'),
             'image' => $imageName,
             'status' => $request->input('status'),
