@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin\News;
 use Illuminate\Http\Request;
 use App\Models\Admin\Category;
+use App\Models\Admin\Product;
 
 class FrontendController extends Controller
 {
@@ -34,7 +35,8 @@ class FrontendController extends Controller
     public function shop()
     {
         // $news = News::join('categories', 'categories.id', '=', 'news.category_id')->select('news.*', 'categories.name')->where('news.status', '1')->orderBy('news.id', 'desc')->paginate(6);
-        return view('frontend.pages.shop');
+        $products = Product::where('status','1')->paginate(5);
+        return view('frontend.pages.shop', compact('products'));
     }
 
     
