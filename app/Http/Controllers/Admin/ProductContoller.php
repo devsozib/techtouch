@@ -60,7 +60,7 @@ class ProductContoller extends Controller
         $request->validate([
             'name' => 'required|string',
             // 'description' => 'string',
-            // 'price' => 'required|numeric',
+            'price' => 'required|numeric',
             'status' => 'required|in:0,1',
             // Add any other validation rules as needed
         ]);
@@ -80,6 +80,7 @@ class ProductContoller extends Controller
             'sub_category_id' => $request->sub_category,
             'description' => $request->input('description'),
             'image' => $imageName,
+            'price' => $request->price,
             'status' => $request->input('status'),
             'created_by' => auth()->user()->id,
         ]);
@@ -213,6 +214,7 @@ class ProductContoller extends Controller
         $request->validate([
             'name' => 'required|string',
             'status' => 'required|in:0,1',
+            'price' => 'required|numeric',
             // Add any other validation rules as needed
         ]);
 
@@ -234,6 +236,7 @@ class ProductContoller extends Controller
             'sub_category_id' => $request->sub_category,
             'description' => $request->input('description'),
             'image' => $imageName,
+            'price' => $request->price,
             'status' => $request->input('status'),
             'updated_by' => auth()->user()->id,
         ]);

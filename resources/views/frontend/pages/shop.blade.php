@@ -54,12 +54,12 @@
                             <div class="blog-single-two-wrapper shop">
                                 <div class="image-area">
                                     <a href="" class="thumbnail">
-                                        <img src="{{ asset('frontend/product_image/'.$product->image) }}" alt="blog-image">
+                                        <img src="{{ asset('frontend/product_images/'.$product->image) }}" alt="blog-image">
                                     </a>
                                 </div>
                                 <div class="inner">
-                                    <span class="pre-tag d-none">
-                                        $21.00
+                                    <span class="pre-tag ">
+                                    {{$product->price}}
                                     </span>
                                     <a href="">
                                         <h5 class="title"> {{$product->name}}</h5>

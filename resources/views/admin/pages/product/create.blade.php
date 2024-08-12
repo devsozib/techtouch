@@ -74,12 +74,16 @@
                                         <label for="price" class="form-label">Price</label>
                                         <input type="text" class="form-control" id="price" name="price" placeholder="Enter product price" >
                                     </div> -->
-                                    <div class="col-xxl-3 col-md-6 mb-3">
+                                    <div class="col-xxl-3 col-md-4 mb-3">
+                                        <label for="image" class="form-label" class="form-label">Price</label>
+                                        <input type="number"  class="form-control" name="price" step="2">
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4 mb-3">
                                         <label for="image" class="form-label">Image(366x366)</label>
                                         <input type="file" class="form-control" id="image" name="images" onchange="previewImages(event)">
                                         <div class="mt-2" id="image-preview-container"></div>
                                     </div>
-                                    <div class="col-xxl-3 col-md-6 mb-3">
+                                    <div class="col-xxl-3 col-md-4 mb-3">
                                         <label for="status" class="form-label">Status</label>
                                         <select class="form-select mb-3" name="status">
                                             <option selected="" value="1">Actve</option>
