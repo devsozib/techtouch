@@ -11,10 +11,12 @@ use App\Mail\PlaceOrderMail;
 use App\Models\Admin\Toping;
 use App\Models\Notification;
 use Illuminate\Http\Request;
+use App\Models\Admin\Product;
 use App\Models\Admin\ProductTag;
 use App\Mail\sendStatusChangeMail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 use App\Mail\sendPaymentStatusChangeMail;
 
 class OrderController extends Controller
@@ -412,5 +414,19 @@ class OrderController extends Controller
         $order->delivery_boy = $value;
         $order->update();
         return response()->json('Success');
+    }
+
+    public function addToCart(Request $request, $id) {
+        $product = Product::find($id);
+    
+        if ($product) {
+            $cart = Session::get('cart', []);
+            $cart[$id]['product'] = $product;
+            $cart[$id]['qty'] = ($cart[$id]['qty'] ?? 0) + 1;
+    
+            Session::put('cart', $cart);
+        }
+    
+        return redirect()->back();
     }
 }

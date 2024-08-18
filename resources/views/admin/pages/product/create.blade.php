@@ -76,7 +76,7 @@
                                     </div> -->
                                     <div class="col-xxl-3 col-md-4 mb-3">
                                         <label for="image" class="form-label" class="form-label">Price</label>
-                                        <input type="number"  class="form-control" name="price" step="2">
+                                        <input type="number"  class="form-control" name="price" step="0.01">
                                     </div>
                                     <div class="col-xxl-3 col-md-4 mb-3">
                                         <label for="image" class="form-label">Image(366x366)</label>

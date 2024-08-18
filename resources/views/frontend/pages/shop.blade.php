@@ -64,7 +64,7 @@
                                     <a href="">
                                         <h5 class="title"> {{$product->name}}</h5>
                                     </a>
-                                    <a href="cart.html" class="btn-read-more-blog">Add To Cart <i class="fa-regular fa-cart-shopping"></i></a>
+                                    <a href="{{route('add_to_cart', $product->id)}}" class="btn-read-more-blog">Add To Cart <i class="fa-regular fa-cart-shopping"></i></a>
                                 </div>
                             </div>
                             <!-- single blog two end -->

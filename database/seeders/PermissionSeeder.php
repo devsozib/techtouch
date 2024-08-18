@@ -15,6 +15,26 @@ class PermissionSeeder extends Seeder
         Permission::create([
             'name' => 'Administration',
             'guard_name' => 'web',
-        ]); 
+        ]);
+        
+        Permission::create([
+            'name' => 'product-management',
+            'guard_name' => 'web',
+        ]);
+
+        Permission::create([
+            'name' => 'order-management',
+            'guard_name' => 'web',
+        ]);
+
+        Permission::create([
+            'name' => 'settings',
+            'guard_name' => 'web',
+        ]);
+
+        Permission::create([
+            'name' => 'content-management',
+            'guard_name' => 'web',
+        ]);
     }
 }

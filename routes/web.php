@@ -99,7 +99,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     });
 });
 
-Route::group(['middleware' => ['permission:user-management']], function () {
+Route::group(['middleware' => ['permission:Administration']], function () {
     Route::resource('users', UserController::class);
     Route::resource('role', RoleController::class);
     Route::resource('permission', PermissionController::class);
@@ -152,3 +152,5 @@ Route::get('order-info', [OrderController::class, 'getCustomerOrderInfo']);
 Route::post('update-notification', [NotificationController::class, 'update'])->name('update-notification');
 Route::post('/paytrail/create-payment', [PaytrailController::class, 'createPayment']);
 Route::post('/contact-us-submit', [CustomerController::class, 'submitContact']);
+
+Route::get('/add-to-cart/{id}', [OrderController::class, 'addToCart'])->name('add_to_cart');
