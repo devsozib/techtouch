@@ -171,8 +171,8 @@
         </div>
         <div class="product-area">
 
-            @foreach (cartItems() as $item)
-                <div class="product-item">
+            @foreach (cartItems() as $key => $item)
+                <div id="item{{$key}}" class="product-item">
                     <div class="product-detail">
                         <div class="product-thumb"><img src="{{asset('frontend/product_images/'.$item['product']->image)}}" alt="product-thumb"></div>
                         <div class="item-wrapper">
@@ -189,13 +189,13 @@
                     </div>
                     <div class="cart-edit">
                         <div class="quantity-edit">
-                            <button class="button"><i class="fal fa-minus minus"></i></button>
-                            <input type="text" class="input" value="{{$item['qty']}}">
-                            <button class="button plus">+<i class="fal fa-plus plus"></i></button>
+                            <button onclick="qtyMinus({{$key}})" class=""><i class="fal fa-minus minusm"></i></button>
+                            <input id="qty{{$key}}" onchange="qtyUpdate({{$key}})" type="text" class="input" value="{{$item['qty']}}">
+                            <button onclick="qtyPlus({{$key}})" class=""><i class="fal fa-plus plusp"></i></button>
                         </div>
                         <div class="item-wrapper d-flex mr--5 align-items-center">
                             <a href="#" class="product-edit"><i class="fal fa-edit"></i></a>
-                            <a href="#" class="delete-cart"><i class="fal fa-times"></i></a>
+                            <a href="javascript:void()" onclick="removeItem({{$key}})" class="delete-cart"><i class="fal fa-times"></i></a>
                         </div>
                     </div>
                 </div>
@@ -232,7 +232,7 @@
         <div class="cart-bottom-area">
             <span class="spend-shipping"><i class="fal fa-truck"></i> SPENT <span class="amount">$199.00</span> MORE
             FOR FREE SHIPPING</span>
-            <span class="total-price">TOTAL: <span class="price">{{getTotalcartValue()}}৳</span></span>
+            <span class="total-price">TOTAL: <span class="price" id="cartTotal">{{getTotalcartValue()}}৳</span></span>
             <a href="{{route('checkout')}}" class="checkout-btn cart-btn">PROCEED TO CHECKOUT</a>
             <a href="{{route('cart')}}" class="view-btn cart-btn">VIEW CART</a>
         </div>
@@ -267,6 +267,37 @@
     </div>
     <!-- pre loader end -->
     @include('frontend.layouts.script')
+
+    <script>
+        function qtyMinus(id){
+            var val = document.getElementById('qty'+id).value;
+            document.getElementById('qty'+id).value = parseInt(val)-1;
+            qtyUpdate(id)
+        }
+        function qtyUpdate(id){
+            var val = document.getElementById('qty'+id).value;
+            if(val<1)val = 1;
+            document.getElementById('qty'+id).value = val;
+            var token =  '{{ csrf_token() }}';
+            $.post('{{route('update_cart_qty')}}', {_token:token,id:id,qty:val}, function(data){
+                document.getElementById('cartTotal').innerHTML = `${data}৳`;
+                console.log(data);
+            })
+        }
+        function qtyPlus(id){
+            var val = document.getElementById('qty'+id).value;
+            document.getElementById('qty'+id).value = parseInt(val)+1;
+            qtyUpdate(id)
+        }
+
+        function removeItem(id){
+            var token =  '{{ csrf_token() }}';
+            $.post('{{route('remove_cart_item')}}', {_token:token,id:id}, function(data){
+                document.getElementById('cartTotal').innerHTML = `${data}৳`;
+                document.getElementById('item'+id).remove();
+            })
+        }
+    </script>
 
 </body>
 

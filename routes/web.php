@@ -154,3 +154,6 @@ Route::post('/paytrail/create-payment', [PaytrailController::class, 'createPayme
 Route::post('/contact-us-submit', [CustomerController::class, 'submitContact']);
 
 Route::get('/add-to-cart/{id}', [OrderController::class, 'addToCart'])->name('add_to_cart');
+Route::post('/update-cart-qty', [OrderController::class, 'updateCartQty'])->name('update_cart_qty');
+Route::post('/remove-cart-item', [OrderController::class, 'removeCartItem'])->name('remove_cart_item');
+

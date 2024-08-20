@@ -429,4 +429,22 @@ class OrderController extends Controller
     
         return redirect()->back();
     }
+
+    public function updateCartQty(Request $request){
+        // return $request->all();
+        $id = $request->id;
+        $qty = $request->qty;
+        $cart = Session::get('cart', []);
+        if(isset($cart[$id])) $cart[$id]['qty'] = $qty;
+        Session::put('cart', $cart);
+        return getTotalcartValue();
+    }
+
+    function removeCartItem(Request $request){
+        $id = $request->id;
+        $cart = Session::get('cart', []);
+        if(isset($cart[$id])) unset($cart[$id]);
+        Session::put('cart', $cart);
+        return getTotalcartValue();
+    }
 }

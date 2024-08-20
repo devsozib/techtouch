@@ -20,6 +20,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin\ProductOptionTopping;
 use Carbon\Carbon;
 use App\Models\Admin\SubCategory;
+use Illuminate\Support\Facades\File;
 
 class ProductContoller extends Controller
 {
@@ -221,7 +222,10 @@ class ProductContoller extends Controller
         $imageName = "";
         if ($image = $request->file('images')) {
             if ($product->image != NULL) {
-                unlink(public_path('frontend/product_images/' . $product->image));
+                $imagePath = public_path('frontend/product_images/' . $product->image);
+                if (File::exists($imagePath)) {
+                    unlink($imagePath);
+                }
             }
             $destinationPath = public_path('frontend/product_images/');
             $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();

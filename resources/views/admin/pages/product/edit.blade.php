@@ -75,7 +75,7 @@
                                     </div> -->    
                                     <div class="col-xxl-3 col-md-4 mb-3">
                                         <label for="image" class="form-label" class="form-label">Price</label>
-                                        <input type="number"  class="form-control" name="price" value="{{$product->price}}" step="2">
+                                        <input type="number"  class="form-control" name="price" value="{{$product->price}}" step="0.01">
                                     </div>                                                               
                                     <div class="col-xxl-4 col-md-4 mb-3">
                                         <label for="status" class="form-label">Status</label>
