@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->bigInteger('category_id');
+            $table->bigInteger('sub_category_id')->nullable();
             $table->text('description')->nullable();         
             $table->string('image')->nullable();
+            $table->double('price');
             $table->enum('status', ['1', '0'])->default('1');
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();

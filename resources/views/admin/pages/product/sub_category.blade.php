@@ -100,7 +100,7 @@
                                     @foreach($subCategories as $subCategory)
                                     <tr>
                                         <th scope="row">{{$loop->index+1}}</th>                                      
-                                        <td>{{getArrayData(lib_category(), $subCategory->id)}}</td>
+                                        <td>{{getArrayData(lib_category(), $subCategory->category_id)}}</td>
                                         <td>{{$subCategory->name}}</td>
                                         <td>{{$subCategory->status == 1 ? "Active" : "Deactive"}}</td>
                                         <td>

@@ -1,5 +1,10 @@
 @extends('frontend.layouts.app')
 @section('content')
+<style>
+    svg.w-5 {
+        width: 20px;
+    }
+</style>
    <!-- Bread-Crumb style two -->
     <!-- rts breadcrumba area start -->
     <div class="rts-bread-crumb-area ptb--150 ptb_sm--100 bg-breadcrumb bg_image">
@@ -43,139 +48,42 @@
                         </div>
                     </div>
                     <div class="row g-24">
+                        @foreach($products as $product)
                         <div class="col-lg-3 col-md-3 col-sm-6 col-12">
                             <!-- single blog two -->
                             <div class="blog-single-two-wrapper shop">
                                 <div class="image-area">
-                                    <a href="{{route('productDetails',1)}}" class="thumbnail">
-                                        <img src="{{ asset('frontend') }}/assets/images/shop/shop-01.jpg" alt="blog-image">
+                                    <a href="" class="thumbnail">
+                                        <img src="{{ asset('frontend/product_images/'.$product->image) }}" alt="blog-image">
                                     </a>
                                 </div>
                                 <div class="inner">
-                                    <span class="pre-tag">
-                                        $21.00
+                                    <span class="pre-tag ">
+                                    {{$product->price}}
                                     </span>
-                                    <a href="{{route('productDetails',1)}}">
-                                        <h5 class="title"> Modernize Shovel</h5>
+                                    <a href="">
+                                        <h5 class="title"> {{$product->name}}</h5>
                                     </a>
-                                    <a href="cart.html" class="btn-read-more-blog">Add To Cart <i class="fa-regular fa-cart-shopping"></i></a>
+                                    <a href="{{route('add_to_cart', $product->id)}}" class="btn-read-more-blog">Add To Cart <i class="fa-regular fa-cart-shopping"></i></a>
                                 </div>
                             </div>
                             <!-- single blog two end -->
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                            <!-- single blog two -->
-                            <div class="blog-single-two-wrapper shop">
-                                <div class="image-area">
-                                    <a href="{{route('productDetails',1)}}" class="thumbnail">
-                                        <img src="{{ asset('frontend') }}/assets/images/shop/shop-02.jpg" alt="blog-image">
-                                    </a>
-                                </div>
-                                <div class="inner">
-                                    <span class="pre-tag">
-                                        $25.00
-                                    </span>
-                                    <a href="{{route('productDetails',1)}}">
-                                        <h5 class="title">Framming Hammer & Axe</h5>
-                                    </a>
-                                    <a href="cart.html" class="btn-read-more-blog">Add To Cart <i class="fa-regular fa-cart-shopping"></i></a>
-                                </div>
-                            </div>
-                            <!-- single blog two end -->
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                            <!-- single blog two -->
-                            <div class="blog-single-two-wrapper shop">
-                                <div class="image-area">
-                                    <a href="{{route('productDetails',1)}}" class="thumbnail">
-                                        <img src="{{ asset('frontend') }}/assets/images/shop/shop-03.jpg" alt="blog-image">
-                                    </a>
-                                </div>
-                                <div class="inner">
-                                    <span class="pre-tag">
-                                        $29.00
-                                    </span>
-                                    <a href="{{route('productDetails',1)}}">
-                                        <h5 class="title"> Safety Helmet</h5>
-                                    </a>
-                                    <a href="cart.html" class="btn-read-more-blog">Add To Cart <i class="fa-regular fa-cart-shopping"></i></a>
-                                </div>
-                            </div>
-                            <!-- single blog two end -->
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                            <!-- single blog two -->
-                            <div class="blog-single-two-wrapper shop">
-                                <div class="image-area">
-                                    <a href="{{route('productDetails',1)}}" class="thumbnail">
-                                        <img src="{{ asset('frontend') }}/assets/images/shop/shop-04.jpg" alt="blog-image">
-                                    </a>
-                                </div>
-                                <div class="inner">
-                                    <span class="pre-tag">
-                                        $40.00
-                                    </span>
-                                    <a href="{{route('productDetails',1)}}">
-                                        <h5 class="title">Core Cutter Machine</h5>
-                                    </a>
-                                    <a href="cart.html" class="btn-read-more-blog">Add To Cart <i class="fa-regular fa-cart-shopping"></i></a>
-                                </div>
-                            </div>
-                            <!-- single blog two end -->
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                            <!-- single blog two -->
-                            <div class="blog-single-two-wrapper shop">
-                                <div class="image-area">
-                                    <a href="{{route('productDetails',1)}}" class="thumbnail">
-                                        <img src="{{ asset('frontend') }}/assets/images/shop/shop-05.jpg" alt="blog-image">
-                                    </a>
-                                </div>
-                                <div class="inner">
-                                    <span class="pre-tag">
-                                        $27.00
-                                    </span>
-                                    <a href="{{route('productDetails',1)}}">
-                                        <h5 class="title">Trowel</h5>
-                                    </a>
-                                    <a href="cart.html" class="btn-read-more-blog">Add To Cart <i class="fa-regular fa-cart-shopping"></i></a>
-                                </div>
-                            </div>
-                            <!-- single blog two end -->
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                            <!-- single blog two -->
-                            <div class="blog-single-two-wrapper shop">
-                                <div class="image-area">
-                                    <a href="{{route('productDetails',1)}}" class="thumbnail">
-                                        <img src="{{ asset('frontend') }}/assets/images/shop/shop-06.jpg" alt="blog-image">
-                                    </a>
-                                </div>
-                                <div class="inner">
-                                    <span class="pre-tag">
-                                        $9.00
-                                    </span>
-                                    <a href="{{route('productDetails',1)}}">
-                                        <h5 class="title">Sledge Hammer</h5>
-                                    </a>
-                                    <a href="cart.html" class="btn-read-more-blog">Add To Cart <i class="fa-regular fa-cart-shopping"></i></a>
-                                </div>
-                            </div>
-                            <!-- single blog two end -->
-                        </div>
+                        @endforeach
                     </div>
                 </div>                
             </div>
             <div class="row mt--30">
                 <div class="col-lg-12">
                     <div class="rts-elevate-pagination">
-                        <ul>
+                        <ul class="d-none">
                             <li><button class="active">01</button></li>
                             <li><button>02</button></li>
                             <li><button>03</button></li>
                             <li><button>04</button></li>
                             <li><button><i class="fa-solid fa-chevrons-right"></i></button></li>
                         </ul>
+                        {{ $products->links() }}
                     </div>
                 </div>
             </div>

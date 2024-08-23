@@ -19,6 +19,8 @@ use App\Models\Admin\ProductToping;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\ProductOptionTopping;
 use Carbon\Carbon;
+use App\Models\Admin\SubCategory;
+use Illuminate\Support\Facades\File;
 
 class ProductContoller extends Controller
 {
@@ -27,7 +29,9 @@ class ProductContoller extends Controller
      */
     public function index()
     {
-        $products = Product::join('categories', 'categories.id', '=', 'products.category_id')->select('products.*', 'categories.name as category')->orderBy('products.id', 'desc')->get();
+        $products = Product::join('categories', 'categories.id', '=', 'products.category_id')
+        ->leftjoin('sub_categories', 'sub_categories.id', '=', 'products.sub_category_id')
+        ->select('products.*', 'categories.name as category', 'sub_categories.name as sub_category')->orderBy('products.id', 'desc')->get();
         return view('admin.pages.product.index', compact('products'));
     }
 
@@ -39,7 +43,13 @@ class ProductContoller extends Controller
         $categories = Category::where('status', '1')->get();
         $optionTitles = OptionTitle::where('status', '1')->get();
         $toppings = Toping::where('status', '1')->get();
-        return view('admin.pages.product.create', compact('categories', 'optionTitles', 'toppings'));
+        $subCategories = SubCategory::where('status', '1')->get();
+        $tmp = [];
+        foreach($subCategories as $subCategory){
+            $tmp[$subCategory->category_id][] = $subCategory;
+        }
+        $subCategories = $tmp;
+        return view('admin.pages.product.create', compact('categories', 'optionTitles', 'toppings','subCategories'));
     }
 
     /**
@@ -51,10 +61,11 @@ class ProductContoller extends Controller
         $request->validate([
             'name' => 'required|string',
             // 'description' => 'string',
-            // 'price' => 'required|numeric',
+            'price' => 'required|numeric',
             'status' => 'required|in:0,1',
             // Add any other validation rules as needed
         ]);
+        // return $request->sub_category;
 
         $imageName = "";
         if ($request->hasFile('images')) {
@@ -67,8 +78,10 @@ class ProductContoller extends Controller
         $product = new Product([
             'name' => $request->input('name'),
             'category_id' => $request->category,
+            'sub_category_id' => $request->sub_category,
             'description' => $request->input('description'),
             'image' => $imageName,
+            'price' => $request->price,
             'status' => $request->input('status'),
             'created_by' => auth()->user()->id,
         ]);
@@ -181,7 +194,15 @@ class ProductContoller extends Controller
         $productTags = ProductTag::where('pro_id', $id)->get();
         $optionTitles = OptionTitle::where('status', '1')->get();
         $productOptions = ProductOption::join('option_titles', 'option_titles.id', '=', 'product_options.title_id')->select('product_options.*', 'option_titles.name')->where('product_options.product_id', $id)->get();
-        return view('admin.pages.product.edit', compact('categories', 'product', 'productSizes', 'productTopings', 'topings', 'id', 'sizes', 'productTags', 'productOptions', 'optionTitles'));
+
+        $subCategories = SubCategory::where('status', '1')->get();
+        $tmp = [];
+        foreach($subCategories as $subCategory){
+            $tmp[$subCategory->category_id][] = $subCategory;
+        }
+        $subCategories = $tmp;
+
+        return view('admin.pages.product.edit', compact('categories', 'product', 'productSizes', 'productTopings', 'topings', 'id', 'sizes', 'productTags', 'productOptions', 'optionTitles','subCategories'));
     }
 
     /**
@@ -194,13 +215,17 @@ class ProductContoller extends Controller
         $request->validate([
             'name' => 'required|string',
             'status' => 'required|in:0,1',
+            'price' => 'required|numeric',
             // Add any other validation rules as needed
         ]);
 
         $imageName = "";
         if ($image = $request->file('images')) {
             if ($product->image != NULL) {
-                unlink(public_path('frontend/product_images/' . $product->image));
+                $imagePath = public_path('frontend/product_images/' . $product->image);
+                if (File::exists($imagePath)) {
+                    unlink($imagePath);
+                }
             }
             $destinationPath = public_path('frontend/product_images/');
             $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
@@ -212,8 +237,10 @@ class ProductContoller extends Controller
         $product->update([
             'name' => $request->input('name'),
             'category_id' => $request->category,
+            'sub_category_id' => $request->sub_category,
             'description' => $request->input('description'),
             'image' => $imageName,
+            'price' => $request->price,
             'status' => $request->input('status'),
             'updated_by' => auth()->user()->id,
         ]);

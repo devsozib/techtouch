@@ -46,34 +46,45 @@
                                 @csrf
                                 @method('PATCH')
                                 <div class="row">
-                                    <div class="col-xxl-4 col-md-6 mb-3">
+                                    <div class="col-xxl-4 col-md-4 mb-3">
                                         <label for="name" class="form-label">Product Name</label>
                                         <input type="text" class="form-control" id="name" value="{{ $product->name }}" name="name" placeholder="Enter product name" required>
                                     </div>   
-                                    <div class="col-xxl-3 col-md-6 mb-3">
+                                    <div class="col-xxl-3 col-md-4 mb-3">
                                         <label for="name" class="form-label">Category</label>
-                                        <select class="form-select mb-3" name="category">
+                                        <select onchange="changedCategory(this.value);" class="form-select mb-3" name="category">
                                             @foreach ($categories as $item)                                               
                                                 <option {{ $product->category_id == $item->id ?'selected':'' }} value="{{ $item->id }}">{{ $item->name }}</option>   
                                             @endforeach                                                                                                                                                                           
                                         </select>
-                                    </div>                                   
+                                    </div> 
+                                    <div class="col-xxl-3 col-md-4 mb-3">
+                                        <label for="name" class="form-label">Sub Category</label>
+                                        <select id="sub_category" class="form-select mb-3" name="sub_category">
+                                            <option value="">--Select Category--</option>
+                                            @foreach ($subCategories as $catId => $items)
+                                                @foreach($items as $item)
+                                                    <option class="{{ (old('category') == $catId || $product->category_id == $catId) ? '' : 'd-none'}} subcategories categoryWise{{$catId}}" {{ old('sub_category') == $item->id ? 'selected':''}} value="{{ $item->id }}" {{$product->sub_category_id==$item->id ? 'selected' : ''}}>{{ $item->name }}</option>
+                                                @endforeach
+                                            @endforeach
+                                        </select>
+                                    </div>                                  
                                     <!-- <div class="col-xxl-3 col-md-6 mb-3">
                                         <label for="price" class="form-label">Price</label>
                                         <input type="text" class="form-control" id="price" name="price" placeholder="Enter product price" value="{{ $product->price  }}" required>
-                                    </div> -->                                                                   
-                                    <div class="col-xxl-4 col-md-6 mb-3">
+                                    </div> -->    
+                                    <div class="col-xxl-3 col-md-4 mb-3">
+                                        <label for="image" class="form-label" class="form-label">Price</label>
+                                        <input type="number"  class="form-control" name="price" value="{{$product->price}}" step="0.01">
+                                    </div>                                                               
+                                    <div class="col-xxl-4 col-md-4 mb-3">
                                         <label for="status" class="form-label">Status</label>
                                         <select class="form-select mb-3" name="status">
                                             <option  {{ $product->status=='1'?'selected':''  }} selected="" value="1">Actve</option>                                            
                                             <option  {{ $product->status=='0'?'selected':''  }} value="0">InActve</option>                                            
                                         </select>
                                     </div> 
-                                    <div class="col-xxl-12 col-md-12 mb-3">
-                                        <label for="description" class="form-label">Description</label>
-                                        <textarea class="form-control" id="editor" name="description" placeholder="Enter product description" rows="3">{!! $product->description !!}</textarea>
-                                    </div>                                                                                                      
-                                    <div class="col-xxl-3 col-md-6 mb-3 d-inline">
+                                    <div class="col-xxl-3 col-md-4 mb-3 d-inline">
                                         <label for="image" class="form-label">Image(366x366)</label>
                                         <input type="file" class="form-control" id="image" name="images" onchange="previewImages(event)">
                                         <div class="mt-2 d-inline" id="image-preview-container">                                       
@@ -85,7 +96,12 @@
                                         </div>
                                             
                                     </div> 
-                                    <div class="row">
+                                    <div class="col-xxl-12 col-md-12 mb-3">
+                                        <label for="description" class="form-label">Description</label>
+                                        <textarea class="form-control" id="editor" name="description" placeholder="Enter product description" rows="3">{!! $product->description !!}</textarea>
+                                    </div>                                                                                                      
+                                    
+                                    <div class="row d-none">
                                         <h4>Product Option</h4><br><br>
                                         <div id="optionItemContainer">
                                             <!-- Existing option item -->
@@ -130,7 +146,7 @@
                                             <button type="button" class="btn btn-sm btn-primary" onclick="addNewItemOption()">Add new</button>
                                         </div>
                                     </div>
-                                    <div class="row mt-2">
+                                    <div class="row mt-2 d-none">
                                         <h4>Product Tags</h4><br><br>
                                         <div style="max-width: 500px;">
                                                 <div class="row">
@@ -165,7 +181,7 @@
                                 <button type="submit" class="btn btn-primary float-end">Submit</button>
                             </form>
 
-                            <div class="mt-5">
+                            <div class="mt-5 d-none">
                                 <div class="row mt-5">
                                     <div class="col">
                                         <div class="d-flex flex-row-reverse bd-highlight">
@@ -423,7 +439,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row d-none">
                                     <div class="col">
                                         <div class="d-flex flex-row-reverse bd-highlight">
                                             <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Assign Product Topings</button>
@@ -719,6 +735,21 @@ function removeOptionItem(id) {
 $(document).ready(function() {
     $('.select2').select2();
 });
+
+
+function changedCategory(id){
+    var eles = document.getElementsByClassName('subcategories');
+    for(var i=0; i<eles.length; i++){
+        if(eles[i].classList.contains('categoryWise'+id)){
+            eles[i].classList.remove('d-none');
+        }else{
+            eles[i].classList.add('d-none');
+        }
+    }
+    document.getElementById('sub_category').value = "";
+}
+
+
 </script>
 
 @endsection

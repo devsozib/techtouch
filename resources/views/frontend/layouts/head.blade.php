@@ -19,4 +19,5 @@
   <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/vendor/bootstrap.min.css">
   <!-- main css -->
   <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/style.css">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>

@@ -2,14 +2,15 @@
 
 use App\Models\User;
 use App\Models\Notification;
-use App\Models\Admin\Product;
-use App\Models\Admin\Currency;
-use App\Models\Admin\ProductImage;
-use App\Models\Admin\ProductOptionTopping;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
-use App\Models\Admin\SubCategory;
+use App\Models\Admin\Product;
 use App\Models\Admin\Category;
+use App\Models\Admin\Currency;
+use App\Models\Admin\SubCategory;
+use App\Models\Admin\ProductImage;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
+use App\Models\Admin\ProductOptionTopping;
 
 function getProductImage($id)
 {
@@ -189,4 +190,29 @@ function getArrayData($datas, $key)
 {
     $result = isset($datas[$key]) ? $datas[$key] : '';
     return $result;
+}
+
+function _print($data, $exit = 0)
+{
+    echo "<pre>";
+    print_r($data);
+    echo "</pre>";
+    if (!$exit) exit;
+}
+
+function cartCount(){
+  $cart = Session::get('cart', []);
+  return count($cart);
+}
+function cartItems(){
+  return Session::get('cart', []);
+}
+
+function getTotalcartValue(){
+  $cart = Session::get('cart', []);
+  $total = 0;
+  foreach ($cart as $item){
+    $total += ($item['qty'] * $item['product']->price);
+  }
+  return $total;
 }

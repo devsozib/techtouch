@@ -46,16 +46,27 @@
                             <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
-                                    <div class="col-xxl-3 col-md-6 mb-3">
+                                    <div class="col-xxl-3 col-md-4 mb-3">
                                         <label for="name" class="form-label">Product Name</label>
                                         <input type="text" class="form-control" value="{{ old('name') }}" id="name" name="name" placeholder="Enter product name" >
                                     </div>
-                                    <div class="col-xxl-3 col-md-6 mb-3">
+                                    <div class="col-xxl-3 col-md-4 mb-3">
                                         <label for="name" class="form-label">Category</label>
-                                        <select class="form-select mb-3" name="category">
+                                        <select onchange="changedCategory(this.value);" class="form-select mb-3" name="category">
                                             <option selected>--Select Category--</option>
                                             @foreach ($categories as $item)
                                                 <option {{ old('category') == $item->id ? 'selected':''}} value="{{ $item->id }}">{{ $item->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4 mb-3">
+                                        <label for="name" class="form-label">Sub Category</label>
+                                        <select id="sub_category" class="form-select mb-3" name="sub_category">
+                                            <option value="" selected>--Select Category--</option>
+                                            @foreach ($subCategories as $catId => $items)
+                                                @foreach($items as $item)
+                                                    <option class="{{ old('category') == $catId ? '' : 'd-none'}} subcategories categoryWise{{$catId}}" {{ old('sub_category') == $item->id ? 'selected':''}} value="{{ $item->id }}">{{ $item->name }}</option>
+                                                @endforeach
                                             @endforeach
                                         </select>
                                     </div>
@@ -63,12 +74,16 @@
                                         <label for="price" class="form-label">Price</label>
                                         <input type="text" class="form-control" id="price" name="price" placeholder="Enter product price" >
                                     </div> -->
-                                    <div class="col-xxl-3 col-md-6 mb-3">
+                                    <div class="col-xxl-3 col-md-4 mb-3">
+                                        <label for="image" class="form-label" class="form-label">Price</label>
+                                        <input type="number"  class="form-control" name="price" step="0.01">
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4 mb-3">
                                         <label for="image" class="form-label">Image(366x366)</label>
                                         <input type="file" class="form-control" id="image" name="images" onchange="previewImages(event)">
                                         <div class="mt-2" id="image-preview-container"></div>
                                     </div>
-                                    <div class="col-xxl-3 col-md-6 mb-3">
+                                    <div class="col-xxl-3 col-md-4 mb-3">
                                         <label for="status" class="form-label">Status</label>
                                         <select class="form-select mb-3" name="status">
                                             <option selected="" value="1">Actve</option>
@@ -79,7 +94,7 @@
                                         <label for="description" class="form-label">Description</label>
                                         <textarea class="form-control" id="editor" name="description" placeholder="Enter product description" rows="3">{{ old('description')}}</textarea>
                                     <div>    
-                                    <div class="row">
+                                    <div class="row d-none">
                                         <h4>Product Option</h4><br><br>
                                         
                                         <div id="optionItemContainer">
@@ -120,7 +135,7 @@
                                             <button type="button" class="btn btn-sm btn-primary" onclick="addNewItemOption()">Add new</button>
                                         </div>
                                     </div>
-                                    <div class="row mt-3">
+                                    <div class="row mt-3 d-none">
                                         <h4>Product Tags</h4><br><br>
                                         <div style="max-width: 500px;">
                                             <div class="row">
@@ -275,7 +290,19 @@
     }
     $(document).ready(function() {
             $('.select2').select2();
-        });
+    });
+
+    function changedCategory(id){
+        var eles = document.getElementsByClassName('subcategories');
+        for(var i=0; i<eles.length; i++){
+            if(eles[i].classList.contains('categoryWise'+id)){
+                eles[i].classList.remove('d-none');
+            }else{
+                eles[i].classList.add('d-none');
+            }
+        }
+        document.getElementById('sub_category').value = "";
+    }
 </script>
 @endsection
 @endsection

@@ -36,6 +36,8 @@
                                     <th>Images</th>
                                     <th>Name</th>
                                     <th>Category</th>                                 
+                                    <th>Sub Category</th>                                 
+                                    <th>Price</th>                                 
                                     <th>status</th>
                                     <th>Action</th>
                                   </tr>
@@ -49,6 +51,8 @@
                                     </td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->category }}</td>                                 
+                                    <td>{{ $item->sub_category }}</td>                                 
+                                    <td>{{ $item->price }}</td>                                 
                                     <td class="{{ $item->status=='1'?'text-danger':'' }}">{{ $item->status=='1'?'Active':'Inactive' }}</td>
                                       <td>
                                         <a href="{{ route('products.edit',$item->id) }}"><button type="button" class="btn btn-sm btn-primary waves-effect waves-light"><i class="ri-ball-pen-line" style="color: #fff"></i> </button></a>

@@ -15,6 +15,8 @@ class SubCategoryController extends Controller
     public function index()
     {
         $subCategories = SubCategory::get();
+        // echo "<pre>";
+        // print_r( $subCategories->toArray());return;
         return view("admin.pages.product.sub_category", compact('subCategories'));
     }
 
