@@ -44,7 +44,7 @@
       </div>
   </div>
   <div class="banner-image-area">
-      <img src="{{ asset('frontend') }}/assets/images/banner/06.jpg" alt="banner-image">
+      <img src="{{ asset('frontend') }}/assets/images/banner/Dhaka_Skyline_at_Night.jpg" alt="banner-image">
   </div>
 </div>
 <!-- rts banner area end -->
