@@ -80,9 +80,22 @@
                                     <div class="cart cart-icon">
                                         <i class="fa-regular fa-cart-shopping"></i>
                                     </div>
-                                    <div class="cart cart-icon">
-                                        <a href="" style="color: #fff" class="rts-btn btn-seconday btn-transparent">Login</a>
-                                    </div>
+                                    @if(auth()->user())
+                                        <div class="cart cart-icon">
+                                            <form id="logout" method="post" action="{{route('customerLogout')}}">
+                                                @csrf
+                                                <a href="javascript:void(0)" onclick="logout.submit()" style="color: #fff" class="rts-btn btn-seconday btn-transparent">Logout</a>
+                                            </form>
+
+                                        </div>
+                                    @else
+                                        <div class="cart cart-icon">
+                                            <a href="{{route('customerLoginPage')}}" style="color: #fff" class="rts-btn btn-seconday btn-transparent">Login</a>
+                                        </div>
+                                        <div class="cart cart-icon">
+                                            <a href="{{route('customersignUpPage')}}" style="color: #fff" class="rts-btn btn-seconday btn-transparent">Registratin</a>
+                                        </div>
+                                    @endif
                                 </div>
                                 <a href="{{ route('contact') }}" class="rts-btn btn-seconday btn-transparent">Get a Quote <i class="fa-solid fa-arrow-up-right"></i></a>
                             </div>

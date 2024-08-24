@@ -15,6 +15,16 @@ use Illuminate\Support\Facades\Validator;
 
 class CustomerController extends Controller
 {
+
+    public function signUpPage(){
+        return view('frontend.pages.registration');
+    }
+
+    public function loginPage(){
+        return view('frontend.pages.login');
+    }
+
+
     protected function customerSignUp(Request $request)
     {
 
@@ -35,28 +45,30 @@ class CustomerController extends Controller
         }
 
         $data = $request->all();
+        $role = Role::where('name', 'Customer')->first();
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'phone' => $data['phone'],
             'password' => Hash::make($data['password']),
-            'role_id' => 2,
+            'role_id' => $role->id,
             'is_verified' => false,
             'verification_code' => rand(100000, 999999),
         ]);
 
-        $role = Role::where('name', 'Customer')->first();
         $user->assignRole($role);
 
-        Mail::to($user->email)->send(new VerificationMail($user->verification_code));
+        //Mail::to($user->email)->send(new VerificationMail($user->verification_code));
 
 
-        $response = [
-            'success' => true,
-            'message' => 'Successfully Registered',
-        ];
+        // $response = [
+        //     'success' => true,
+        //     'message' => 'Successfully Registered',
+        // ];
 
-        return response()->json($response);
+        // return response()->json($response);
+
+        return redirect()->route('customerLoginPage');
     }
 
     public function customerLogin(Request $request)
@@ -79,31 +91,14 @@ class CustomerController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {  // Authentication passed...
-            $user = auth()->user();
-            if ($user) {
-                if (!$user->is_verified) {
-                    Auth::logout();
-                    $response = [
-                        'success' => false,
-                        'isVerification' => true,
-                        'message' => 'Account is not verified',
-                    ];
-                    return response()->json($response);
-                }
-                $response = [
-                    'success' => true,
-                    'message' => 'Verified',
-                    'user' => $user,
-                ];
-                return response()->json($response);
-            }
+            return redirect()->route('index');
         }
-        $response = [
-            'success' => false,
-            'isVerification' => false,
-            'message' => 'Invalid credentials',
-        ];
-        return response()->json($response);
+        return redirect()->back();
+    }
+
+    public function customerLogout(Request $request){
+        Auth::logout();
+        return redirect()->route('index');
     }
 
     public function sendVerificationMail(Request $request)
