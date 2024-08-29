@@ -34,14 +34,15 @@
 								</p>
 							</div>
 		      	</div>
-						<form action="#" class="login-form">
+						<form method="post" action="{{route('customerLogin')}}" class="login-form">
+							@csrf
 		      		<div class="form-group">
 		      			<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-		      			<input type="text" class="form-control rounded-left" placeholder="Username" required>
+		      			<input type="text" class="form-control rounded-left" name="email" placeholder="Username" required>
 		      		</div>
 	            <div class="form-group">
 	            	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-	              <input type="password" class="form-control rounded-left" placeholder="Password" required>
+	              <input type="password" class="form-control rounded-left" name="password" placeholder="Password" required>
 	            </div>
 	            <div class="form-group d-flex align-items-center">
 	            	<div class="w-100">
@@ -56,7 +57,7 @@
 	            </div>
 	            <div class="form-group mt-4">
 								<div class="w-100 text-center">
-									<p class="mb-1">Don't have an account? <a href="#">Sign Up</a></p>
+									<p class="mb-1">Don't have an account? <a href="{{route('customersignUpPage')}}">Sign Up</a></p>
 									<p><a href="#">Forgot Password</a></p>
 								</div>
 	            </div>

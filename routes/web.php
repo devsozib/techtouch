@@ -140,8 +140,12 @@ Route::get('get-product-details', [ProductContoller::class, 'getProductDetails']
 Route::get('get-coupon', [CouponController::class, 'getCoupon']);
 Route::get('check-coupon', [CouponController::class, 'checkCoupon']);
 Route::get('get-currency', [CurrencyController::class, 'getCurrency'])->name('get.currency');
-Route::post('customer-signUp', [CustomerController::class, 'customerSignUp']);
-Route::post('customer-signIn', [CustomerController::class, 'customerLogin']);
+Route::get('customer-signUp', [CustomerController::class, 'signUpPage'])->name('customersignUpPage');;
+Route::get('customer-signIn', [CustomerController::class, 'loginPage'])->name('customerLoginPage');
+Route::post('customer-signUp', [CustomerController::class, 'customerSignUp'])->name('customersignUp');
+Route::post('customer-signIn', [CustomerController::class, 'customerLogin'])->name('customerLogin');
+Route::post('customer-logout', [CustomerController::class, 'customerLogout'])->name('customerLogout');
+
 Route::post('send-verification-mail', [CustomerController::class, 'sendVerificationMail']);
 Route::post('verify-account', [CustomerController::class, 'verifyAccount']);
 Route::post('verify-account-forgot-password', [CustomerController::class, 'verifyAccountForgotPassword']);
