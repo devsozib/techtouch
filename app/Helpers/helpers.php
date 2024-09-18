@@ -208,6 +208,10 @@ function cartItems(){
   return Session::get('cart', []);
 }
 
+function clearCart(){
+  return Session::put('cart', []);
+}
+
 function getTotalcartValue(){
   $cart = Session::get('cart', []);
   $total = 0;

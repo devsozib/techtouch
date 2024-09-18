@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('order_number')->unique();
             $table->bigInteger('customer_id');
-            $table->integer('type');
             $table->double('discount')->default(0);
             $table->double('total_amount')->default(0);
             $table->double('paid_amount')->default(0);
@@ -27,6 +26,10 @@ return new class extends Migration
             $table->integer('is_paid')->default(0);
             $table->integer('is_order_valid')->default(0);
             $table->string('transaction_id')->nullable();
+            $table->string('address')->nullable();
+            $table->string('city')->nullable();
+            $table->string('district')->nullable();
+            $table->string('post_code')->nullable();
             $table->timestamps();
             $table->comment('order_status: 1-Pending, 2-Processing, 3-Shipped, 4-Out for Delivery, 5-Delivered, 6-Canceled, 7-Refunded, 8-On Hold, 9-Backordered, 10-Returned');
         });
