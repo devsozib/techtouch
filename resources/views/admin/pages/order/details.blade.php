@@ -38,7 +38,7 @@
                     <option {{ $order->is_paid == '0'?'selected':'' }} value="0" selected=""> Unpaid </option>
                     <option {{ $order->is_paid == '1'?'selected':'' }} value="1"> Paid </option>
                   </select> 
-                  <input style="margin-left: 10px" name="sendMail" id="sendMail" type="checkbox">Send mail?
+                  <input style="margin-left: 10px" class="d-none" name="sendMail" id="sendMail" type="checkbox"><span class="d-none">Send mail?</span>
                   <button style="margin-left: 10px" class="btn btn-primary"  onclick="handlePaymentStatusSave('{{ $orderDetails->order_number }}')">Save</button>   
                 </div>                         
               </div>
@@ -71,7 +71,7 @@
                         <option {{ $value == $orderDetails->order_status ? 'selected' : '' }} value="{{ $value }}">{{ $text }}</option> 
                     @endforeach   
                 </select>
-                <input style="margin-left: 10px" name="sendMail" id="sendMail" type="checkbox">Send mail?
+                <input style="margin-left: 10px" class="d-none" name="sendMail" id="sendMail" type="checkbox"><span class="d-none">Send mail?</span>
                 <button style="margin-left: 10px" class="btn btn-primary"  onclick="handleSave('{{ $orderDetails->order_number }}')">Save</button>   
               </div>                  
             </div>          
@@ -356,7 +356,7 @@
     }
 
     function updateStatus(orderId, selectedValue,sendMail) {
-        var csrfToken = $('meta[name="csrf-token"]').attr('content');
+        var csrfToken = '{{csrf_token()}}';
 
         // Set CSRF token in the request headers
         $.ajaxSetup({
@@ -402,7 +402,7 @@
   }
 
   function updatePaymentStatus(orderId, selectedValue,sendMail) {
-        var csrfToken = $('meta[name="csrf-token"]').attr('content');
+        var csrfToken = '{{csrf_token()}}';
 
         // Set CSRF token in the request headers
         $.ajaxSetup({
@@ -431,7 +431,7 @@
         });     
     }
   function assignDeliverBoy(orderId, value) {
-      var csrfToken = $('meta[name="csrf-token"]').attr('content');
+      var csrfToken = '{{csrf_token()}}';
         
         // Set CSRF token in the request headers
         $.ajaxSetup({

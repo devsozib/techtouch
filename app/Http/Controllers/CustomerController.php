@@ -30,7 +30,7 @@ class CustomerController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => ['required', 'string', 'regex:/^[a-zA-Z\s]+$/'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255'],
             'phone' => 'required|regex:/^[0-9]+$/',
             'password' => ['required', 'string', 'min:6'],
         ]);
@@ -45,17 +45,33 @@ class CustomerController extends Controller
         }
 
         $data = $request->all();
+        $user = User::where('email', $data['email'])->first();
+        if($user && $user->is_guest=='0'){
+            $response = [
+                'success' => false,
+                'message' => 'The email already exist.',
+            ];
+            return response()->json($response);
+        }
+        else if($user && $user->is_guest=='1'){
+            $user->password = Hash::make($data['password']);
+            $user->verification_code = rand(100000, 999999);
+            $user->is_verified = false;
+            $user->is_guest='0';
+            $user->save();
+        }else{
+            $user = User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'phone' => $data['phone'],
+                'password' => Hash::make($data['password']),
+                'role_id' => 2,
+                'is_guest' => '0',
+                'is_verified' => false,
+                'verification_code' => rand(100000, 999999),
+            ]);
+        }
         $role = Role::where('name', 'Customer')->first();
-        $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'phone' => $data['phone'],
-            'password' => Hash::make($data['password']),
-            'role_id' => $role->id,
-            'is_verified' => false,
-            'verification_code' => rand(100000, 999999),
-        ]);
-
         $user->assignRole($role);
 
         //Mail::to($user->email)->send(new VerificationMail($user->verification_code));
@@ -84,6 +100,16 @@ class CustomerController extends Controller
                 'success' => false,
                 'isVerification' => false,
                 'message' => $errors,
+            ];
+            return response()->json($response);
+        }
+
+        $user = User::where('email', $request->email)->first();
+        if($user && $user->is_guest == '1'){
+            $response = [
+                'success' => false,
+                'isVerification' => false,
+                'message' => 'Invalid credentials',
             ];
             return response()->json($response);
         }

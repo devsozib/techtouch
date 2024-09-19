@@ -18,6 +18,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use App\Mail\sendPaymentStatusChangeMail;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -28,36 +32,46 @@ class OrderController extends Controller
         // return $request->all();
         // DB::beginTransaction();
 
-        $cart = json_decode($request->cart, true);
-        $FREE_OPTION = 1;
-        $paymentType = $request->paymentType;
+        // return $request->all();
 
-        $address_id = null;
-        if ($request->type == 1) {
-            $latitude = $request->latitude;
-            $longitude = $request->longitude;
-            $selectedAddress = $request->selectedAddress;
-            if (!($latitude && $longitude)) {
-                $response = [
-                    'success' => false,
-                    'message' => 'Select Delivery Address',
-                ];
-                return response()->json($response);
-            }
-            $address = new Address;
-            $address->customer_id = auth()->user()->id;
-            $address->latitude = $latitude;
-            $address->longitude = $longitude;
-            $address->selectedAddress = $selectedAddress;
-
-            $address->entrance = $request->entrance;
-            $address->door_code = $request->door_code;
-            $address->floor = $request->floor;
-            $address->apartment = $request->apartment;
-            $address->comment = $request->comment;
-            $address->save();
-            $address_id = $address->id;
+        $validator = Validator::make($request->all(), [
+            'name' => ['required', 'string', 'regex:/^[a-zA-Z\s]+$/'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'phone' => 'required|regex:/^[0-9]+$/',
+            'address1' => ['required'],
+            'city' => ['required'],
+            'district' => ['required'],
+        ]);
+        if ($validator->fails()) {
+            $errors = implode('<br>', $validator->errors()->all());
+            $response = [
+                'success' => false,
+                'message' => $errors,
+            ];
+            return redirect()->back()->with(['error' => $errors]);
         }
+
+        $authUser = null;
+        if (Auth::check()) {
+            $authUser = auth()->user();
+        }else{
+            $authUser = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'role_id' => 2,
+                'is_guest' => '1',
+                'is_verified' => false,
+                'verification_code' => rand(100000, 999999),
+            ]);
+            $role = Role::where('name', 'Customer')->first();
+            $authUser->assignRole($role);
+        }
+
+        if($authUser == null){
+            return redirect()->back()->with(['error' => 'Invalid operation.']);
+        }
+
 
         $latestOrder = Order::latest()->first();
         $lastOrderNumber = $latestOrder ? $latestOrder->order_number : 0;
@@ -65,143 +79,38 @@ class OrderController extends Controller
         $newOrderNumber = ++$lastOrderNumber;
         $newOrderNumber = str_pad($newOrderNumber, 6, '0', STR_PAD_LEFT);
 
+        $paymentType = 1;
+
         $order = new Order;
         $order->order_number = $newOrderNumber;
-        $order->customer_id = auth()->user()->id;
-        $order->type = $request->type;
-        $order->discount = $request->discount;
-        if ($request->deliveryCharge)
-            $order->delivery_charge = $request->deliveryCharge;
-        $order->total_amount = $request->subTotal;
-        $order->paid_amount = $request->grandTotal;
-        $order->delivery_address_id = $address_id;
+        $order->customer_id = $authUser->id;
+        $order->discount = 0;
+            $order->delivery_charge = 0;
+        $order->total_amount = getTotalcartValue();
+        $order->paid_amount = getTotalcartValue();
         $order->payment_type = $paymentType;
         if ($paymentType == 1)
             $order->is_order_valid = 1;
+        $order->address = $request->address1.' '.$request->address2;
+        $order->city = $request->city;
+        $order->district = $request->district;
+        $order->post_code = $request->post_code;
         $order->save();
 
-        // return $cart;
-        foreach ($cart as $product_id => $productWiseItem) {
-            if ($productWiseItem) {
-                foreach ($productWiseItem as $size_id => $sizeWiseItem) {
-                    if ($sizeWiseItem) {
-                        $toping_ids = [];
-                        $toping_price = 0;
-                        foreach (isset($sizeWiseItem['topings']) ? $sizeWiseItem['topings'] : [] as $toping) {
-                            if ($toping && !isset($toping_ids[$toping['id']])) {
-                                $toping_ids[$toping['id']] = $toping['id'];
-                                $toping_price += ($sizeWiseItem['toppingPrices'][$toping['id']] * $sizeWiseItem['toppingQtys'][$toping['id']]);
-                            }
-                        }
-
-                        $topping_prices = [];
-                        foreach ($sizeWiseItem['toppingPrices'] as $topingid => $price) {
-                            if ($price) {
-                                $topping_prices[$topingid] = $price;
-                            }
-                        }
-
-                        $topping_qtys = [];
-                        foreach ($sizeWiseItem['toppingQtys'] as $topingid => $qty) {
-                            if ($qty) {
-                                $topping_qtys[$topingid] = $qty;
-                            }
-                        }
-
-
-                        $option_ids = [];
-                        $option_price = 0;
-                        foreach (isset($sizeWiseItem['options']) ? $sizeWiseItem['options'] : [] as $toping) {
-                            if ($toping && !isset($option_ids[$toping['id']])) {
-                                $option_ids[$toping['id']] = $toping['id'];
-                                $option_price += ($sizeWiseItem['optionPrices'][$toping['id']] * ($sizeWiseItem['optionQtys'][$toping['id']] - $sizeWiseItem['optionFreeQtys'][$toping['id']]));
-                            }
-                        }
-
-                        $option_prices = [];
-                        foreach ($sizeWiseItem['optionPrices'] as $topingid => $price) {
-                            if ($price) {
-                                $option_prices[$topingid] = $price;
-                            }
-                        }
-
-                        $option_qtys = [];
-                        foreach ($sizeWiseItem['optionQtys'] as $topingid => $qty) {
-                            if ($qty) {
-                                $option_qtys[$topingid] = $qty;
-                            }
-                        }
-
-                        $option_free_qtys = [];
-                        foreach ($sizeWiseItem['optionFreeQtys'] as $topingid => $qty) {
-                            if ($qty != "" && $qty != null && ($qty * 1) >= 0) {
-                                $option_free_qtys[$topingid] = $qty;
-                            }
-                        }
-
-
-                        $orderItem = new OrderItem;
-                        $orderItem->order_id = $order->id;
-                        $orderItem->order_number = $order->order_number;
-                        $orderItem->product_id = $sizeWiseItem['product']['id'];
-                        $orderItem->size_id = $sizeWiseItem['size']['id'];
-                        $orderItem->quantity = $sizeWiseItem['quantity'];
-                        $orderItem->price = $sizeWiseItem['size']['price'];
-                        $orderItem->total_price = $sizeWiseItem['quantity'] * $sizeWiseItem['size']['price'];
-                        $orderItem->toping_ids = implode(',', $toping_ids);
-                        $orderItem->toping_qtys = implode(',', $topping_qtys);
-                        $orderItem->toping_prices = implode(',', $topping_prices);
-                        $orderItem->toping_price = $toping_price;
-                        $orderItem->option_ids = implode(',', $option_ids);
-                        $orderItem->option_qtys = implode(',', $option_qtys);
-                        $orderItem->option_free_qtys = implode(',', $option_free_qtys);
-                        $orderItem->option_prices = implode(',', $option_prices);
-                        $orderItem->option_price = $option_price;
-                        $orderItem->removed_tags = implode(',', $sizeWiseItem['removedTags']);
-                        $orderItem->save();
-                    }
-                }
-            }
+        foreach (cartItems() as $key => $item) {
+            $orderItem = new OrderItem;
+            $orderItem->order_id = $order->id;
+            $orderItem->order_number = $order->order_number;
+            $orderItem->product_id = $item['product']->id;
+            $orderItem->quantity = $item['qty'];
+            $orderItem->price = $item['product']->price;
+            $orderItem->total_price = $item['qty'] * $item['product']->price;
+            $orderItem->save();
         }
 
-        $url = null;
+        clearCart();
 
-        if ($paymentType == 1) {
-            $data = [];
-            Mail::to(auth()->user()->email)->send(new PlaceOrderMail($order->order_number, $data));
-            Mail::to("dev.pizzapitsa@gmail.com")->send(new PlaceOrderMail($order->order_number, $data));
-
-            $notification = new Notification;
-            $notification->message = "New Order Placed";
-            $notification->url = route('orders.index');
-            $notification->save();
-
-            $pusher = new Pusher(env('PUSHER_APP_KEY'), env('PUSHER_APP_SECRET'), env('PUSHER_APP_ID'), [
-                'cluster' => env('PUSHER_APP_CLUSTER'),
-                'encrypted' => true
-            ]);
-            $item = $order;
-            $data['order'] = (string) view('admin.pages.order.singleOrder', compact('item'));
-            $pusher->trigger('order', 'place-order', $data);
-            $data = [
-                'notification' => $notification,
-                'notification_time' => displayNotificationTime($notification->created_at),
-                'unSeenNotifications' => unSeenNotifications(),
-            ];
-            $pusher->trigger('order', 'place-order-notification', $data);
-
-            //DB::commit();
-        } else if ($paymentType == 2) {
-            $payment = new PaytrailController;
-            $url = $payment->createPayment($request, $newOrderNumber);
-        }
-
-        $response = [
-            'success' => true,
-            'message' => 'Order Placed Done',
-            'url' => $url,
-        ];
-        return response()->json($response);
+        return redirect()->back()->with(['success' => 'Pleaced order Successfully']);
     }
 
     public function getOrders()
@@ -287,7 +196,7 @@ class OrderController extends Controller
 
         if ($sendMail == true) {
             // return $getCustomerMail->email;
-            Mail::to($getCustomerMail->email)->send(new sendStatusChangeMail($orderId, $data));
+            //Mail::to($getCustomerMail->email)->send(new sendStatusChangeMail($orderId, $data));
         }
         $order = Order::where('order_number', $orderId)->where('is_order_valid', 1)->first();
         $order->order_status = $newStatus;
@@ -306,7 +215,7 @@ class OrderController extends Controller
 
         if ($sendMail == true) {
             // return $getCustomerMail->email;
-            Mail::to($getCustomerMail->email)->send(new sendPaymentStatusChangeMail($orderId, $data));
+            //Mail::to($getCustomerMail->email)->send(new sendPaymentStatusChangeMail($orderId, $data));
         }
         $order = Order::where('order_number', $orderId)->where('is_order_valid', 1)->first();
         $order->is_paid = $newStatus;

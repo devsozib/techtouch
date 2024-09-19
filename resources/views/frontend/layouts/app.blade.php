@@ -234,7 +234,7 @@
             FOR FREE SHIPPING</span>
             <span class="total-price">TOTAL: <span class="price" id="cartTotal">{{getTotalcartValue()}}৳</span></span>
             <a href="{{route('checkout')}}" class="checkout-btn cart-btn">PROCEED TO CHECKOUT</a>
-            <a href="{{route('cart')}}" class="view-btn cart-btn">VIEW CART</a>
+            <a href="{{route('cart')}}" class="view-btn cart-btn d-none">VIEW CART</a>
         </div>
     </div>
     <!-- cart area edn -->
