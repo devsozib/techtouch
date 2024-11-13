@@ -51,7 +51,7 @@
                                             <a class="nav-item" href="{{ route('shop') }}">Shop</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a class="nav-item" href="{{ route('about') }}">About Us</a>
+                                            <a class="nav-item" style="white-space: nowrap;" href="{{ route('about') }}">About Us</a>
                                         </li>
                                         <li class="menu-item">
                                             <a class="nav-item" href="{{ route('services') }}">Services</a>
@@ -81,7 +81,7 @@
                                         <i class="fa-regular fa-cart-shopping"></i>
                                     </div>
                                     @if(auth()->user())
-                                        <div class="cart cart-icon">
+                                        <div class="">
                                             <form id="logout" method="post" action="{{route('customerLogout')}}">
                                                 @csrf
                                                 <a href="javascript:void(0)" onclick="logout.submit()" style="color: #fff" class="rts-btn btn-seconday btn-transparent">Logout</a>
@@ -89,10 +89,10 @@
 
                                         </div>
                                     @else
-                                        <div class="cart cart-icon">
+                                        <div class="">
                                             <a href="{{route('customerLoginPage')}}" style="color: #fff" class="rts-btn btn-seconday btn-transparent">Login</a>
                                         </div>
-                                        <div class="cart cart-icon">
+                                        <div class="">
                                             <a href="{{route('customersignUpPage')}}" style="color: #fff" class="rts-btn btn-seconday btn-transparent">Registratin</a>
                                         </div>
                                     @endif
