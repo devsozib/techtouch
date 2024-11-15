@@ -44,12 +44,15 @@ use App\Http\Controllers\Admin\ProductMnagementController;
 Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
 Route::get('/services', [FrontendController::class, 'ourServices'])->name('services');
+Route::get('/service/{id}', [FrontendController::class, 'serviceWiseProduct'])->name('serviceWiseProduct');
 Route::get('/projects', [FrontendController::class, 'projects'])->name('projects');
 Route::get('/shop', [FrontendController::class, 'shop'])->name('shop');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 Route::get('/product/{id}', [FrontendController::class, 'productDetails'])->name('productDetails');
 Route::get('/cart', [FrontendController::class, 'cart'])->name('cart');
 Route::get('/checkout', [FrontendController::class, 'checkout'])->name('checkout');
+Route::get('/product_3d_view/{id}', [FrontendController::class, 'product3DView'])->name('product_3d_view');
+
 
 
 

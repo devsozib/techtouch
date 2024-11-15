@@ -76,4 +76,25 @@ class FrontendController extends Controller
         $singleNews = News::join('categories', 'categories.id', '=', 'news.category_id')->select('news.*', 'categories.name')->where('news.id', $id)->first();
         return view('frontend.pages.news_single', compact('singleNews'));
     }
+
+
+    public function serviceWiseProduct($id){
+       $products = Product::where('category_id', $id)->where('status','1')->get();
+       $showFor = 'serviceWiseProduct';
+       return view('frontend.pages.shop', compact('products','showFor'));
+    }
+
+    public function product3DView($id)
+{
+    // Define the path to the HTML file in the public directory
+    $filePath = public_path("frontend/f0vk6hiqpp9.html");
+
+    // Check if the file exists
+    if (!file_exists($filePath)) {
+        abort(404); // Return a 404 if the file is not found
+    }
+
+    // Redirect to the HTML file with the query parameter
+    return redirect(url("frontend/f0vk6hiqpp9.html?scene_id=107899299"));
+}
 }

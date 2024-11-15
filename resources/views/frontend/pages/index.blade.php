@@ -234,7 +234,7 @@
                                 <p class="disc">
                                     Dui lobortis scelerisque magna curabitur duis purus platea massa accumsan
                                 </p>
-                                <a href="service-details.html" class="rts-btn btn-transparent-service">View Service<i class="fa-light fa-arrow-right"></i></a>
+                                <a href="{{ route('serviceWiseProduct',$service->id) }}" class="rts-btn btn-transparent-service">View Service<i class="fa-light fa-arrow-right"></i></a>
                             </div>
                         </div>
                         <!-- single offer area end -->

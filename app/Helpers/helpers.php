@@ -220,3 +220,27 @@ function getTotalcartValue(){
   }
   return $total;
 }
+
+
+
+function getElevatorCat() {
+  // Get the "Elevator" category with its subcategories using the query builder
+  $elevator = DB::table('categories')
+      ->where('name', 'Elevator')
+      ->first();
+
+  if ($elevator) {
+      // Fetch subcategories based on the parent ID
+      $subcategories = DB::table('sub_categories')
+          ->where('category_id', $elevator->id)
+          ->get();
+
+      // Return the main category and its subcategories
+      return [
+          'category' => $elevator,
+          'subcategories' => $subcategories
+      ];
+  }
+
+  return null; // Return null if the category is not found
+}

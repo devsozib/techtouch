@@ -53,9 +53,23 @@
                                         <li class="menu-item">
                                             <a class="nav-item" style="white-space: nowrap;" href="{{ route('about') }}">About Us</a>
                                         </li>
-                                        <li class="menu-item">
+                                        {{-- <li class="menu-item">
                                             <a class="nav-item" href="{{ route('services') }}">Services</a>
-                                        </li>
+                                        </li> --}}
+                                        @php
+                                        $elevatorCat = getElevatorCat();
+                                        @endphp
+                                        
+                                        @if($elevatorCat)
+                                            <li class="has-droupdown pages">
+                                                <a class="nav-link" href="#">{{ $elevatorCat['category']->name }}</a>
+                                                <ul class="submenu inner-page">
+                                                    @foreach($elevatorCat['subcategories'] as $subcategory)
+                                                        <li><a href="{{ route('projects', ['category' => $subcategory->id]) }}">{{ $subcategory->name }}</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                        @endif
                                         <li class="has-droupdown pages">
                                             <a class="nav-link" href="#">Portfolio</a>
                                             <ul class="submenu inner-page">                                              
@@ -163,6 +177,20 @@
                                         <li class="menu-item">
                                             <a class="nav-item" href="{{ route('about') }}">About Us</a>
                                         </li>
+                                        @php
+                                        $elevatorCat = getElevatorCat();
+                                        @endphp
+                                        
+                                        @if($elevatorCat)
+                                            <li class="has-droupdown pages">
+                                                <a class="nav-link" href="#">{{ $elevatorCat['category']->name }}</a>
+                                                <ul class="submenu inner-page">
+                                                    @foreach($elevatorCat['subcategories'] as $subcategory)
+                                                        <li><a href="{{ route('projects', ['category' => $subcategory->id]) }}">{{ $subcategory->name }}</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                        @endif
                                         <li class="menu-item">
                                             <a class="nav-item" href="{{ route('services') }}">Services</a>
                                         </li>

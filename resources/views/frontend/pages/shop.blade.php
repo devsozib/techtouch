@@ -49,26 +49,32 @@
                     </div>
                     <div class="row g-24">
                         @foreach($products as $product)
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                            <!-- single blog two -->
-                            <div class="blog-single-two-wrapper shop">
-                                <div class="image-area">
-                                    <a href="" class="thumbnail">
-                                        <img src="{{ asset('frontend/product_images/'.$product->image) }}" alt="blog-image">
-                                    </a>
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                                <!-- single blog two -->
+                                <div class="blog-single-two-wrapper shop">
+                                    <div class="image-area">
+                                        <a href="" class="thumbnail">
+                                            <img src="{{ asset('frontend/product_images/'.$product->image) }}" alt="blog-image">
+                                        </a>
+                                    </div>
+                                    <div class="inner">
+                                        <span class="pre-tag">
+                                            {{$product->price}}BDT
+                                        </span>
+                                        <a href="">
+                                            <h5 class="title">{{ $product->name }}</h5>
+                                        </a>
+                                        
+                                        <!-- Add to Cart Button -->
+                                        <a href="{{ route('add_to_cart', $product->id) }}" class="btn btn-primary" style="font-size: 16px">Add to Cart <i class="fa fa-cart-shopping"></i></a>
+                                    
+                                        <!-- 3D View Button -->
+                                        <a href="{{ route('product_3d_view', $product->id) }}" class="btn btn-secondary" style="font-size: 16px">3D View <i class="fa fa-cube"></i></a>
+                                    </div>
+                                    
                                 </div>
-                                <div class="inner">
-                                    <span class="pre-tag ">
-                                    {{$product->price}}
-                                    </span>
-                                    <a href="">
-                                        <h5 class="title"> {{$product->name}}</h5>
-                                    </a>
-                                    <a href="{{route('add_to_cart', $product->id)}}" class="btn-read-more-blog">Add To Cart <i class="fa-regular fa-cart-shopping"></i></a>
-                                </div>
+                                <!-- single blog two end -->
                             </div>
-                            <!-- single blog two end -->
-                        </div>
                         @endforeach
                     </div>
                 </div>                
@@ -83,7 +89,7 @@
                             <li><button>04</button></li>
                             <li><button><i class="fa-solid fa-chevrons-right"></i></button></li>
                         </ul>
-                        {{ $products->links() }}
+                        {{-- {{ $products->links() }} --}}
                     </div>
                 </div>
             </div>
