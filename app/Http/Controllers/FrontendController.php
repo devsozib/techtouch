@@ -11,6 +11,9 @@ class FrontendController extends Controller
 {
     public function index()
     {
+
+        return redirect()->away('https://www.720yun.com/t/32vk6hiqppb?scene_id=107899358');
+
         $services = Category::get();
         return view('frontend.pages.index', compact('services'));
     }
