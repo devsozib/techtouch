@@ -1,27 +1,5 @@
 @extends('frontend.layouts.app')
 @section('content')
- <!-- Bread-Crumb style two -->
-    <!-- rts breadcrumba area start -->
-    <div class="rts-bread-crumb-area ptb--150 ptb_sm--100 bg-breadcrumb bg_image">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- bread crumb inner wrapper -->
-                    <div class="breadcrumb-inner text-center">
-                        <h1 class="title">Checkout</h1>
-                        <div class="meta">
-                            <a href="#" class="prev">Home /</a>
-                            <a href="#" class="next">Checkout</a>
-                        </div>
-                    </div>
-                    <!-- bread crumb inner wrapper end -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- rts breadcrumba area end -->
-    <!-- Bread-Crumb style two End -->
-
     <main class="ms-main">
         <div class="ms-page-content">
 
@@ -111,7 +89,7 @@
                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                         <div class="form-group">
                                                             <label>Phone *</label>
-                                                            <input id="phone" name="phone" class="form-control-mod" type="text" value="{{ auth()->check() ? auth()->user()->phone : '' }}" required {{ auth()->check() ? 'readonly' : '' }}>
+                                                            <input id="phone" name="phone" class="form-control-mod" type="text" value="{{ auth()->check() ? auth()->user()->phone : '' }}" required>
                                                         </div>
                                                     </div>
                                                 </div>

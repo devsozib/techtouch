@@ -5,34 +5,11 @@
         width: 20px;
     }
 </style>
-   <!-- Bread-Crumb style two -->
-    <!-- rts breadcrumba area start -->
-    <div class="rts-bread-crumb-area ptb--150 ptb_sm--100 bg-breadcrumb bg_image">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- bread crumb inner wrapper -->
-                    <div class="breadcrumb-inner text-center">
-                        <h1 class="title">Shop</h1>
-                        <div class="meta">
-                            <a href="#" class="prev">Home /</a>
-                            <a href="#" class="next">Shop</a>
-                        </div>
-                    </div>
-                    <!-- bread crumb inner wrapper end -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- rts breadcrumba area end -->
-    <!-- Bread-Crumb style two End -->
-
-
     <div class="rts-blog-grid-area rts-section-gap">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12 col-lg-12">
-                    <div class="row align-items-center rs-vertical-middle shorting mb-50 md-mb-30">
+                    {{-- <div class="row align-items-center rs-vertical-middle shorting mb-50 md-mb-30">
                         <div class="col-lg-6 col-12">
                             <p class="woocommerce-result-count">Showing 1-9 of 12 results</p>
                         </div>
@@ -46,7 +23,7 @@
                                 <option>Sort by price: high to low</option>
                             </select>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="row g-24">
                         @foreach($products as $product)
                             <div class="col-lg-3 col-md-3 col-sm-6 col-12">
@@ -54,7 +31,7 @@
                                 <div class="blog-single-two-wrapper shop">
                                     <div class="image-area">
                                         <a href="" class="thumbnail">
-                                            <img src="{{ asset('frontend/product_images/'.$product->image) }}" alt="blog-image">
+                                            <img style="width: 100%;max-height:300px" src="{{ asset('frontend/product_images/'.$product->image) }}" alt="blog-image">
                                         </a>
                                     </div>
                                     <div class="inner">
@@ -69,7 +46,7 @@
                                         <a href="{{ route('add_to_cart', $product->id) }}" class="btn btn-primary" style="font-size: 16px">Add to Cart <i class="fa fa-cart-shopping"></i></a>
                                     
                                         <!-- 3D View Button -->
-                                        <a href="{{ route('product_3d_view', $product->id) }}" class="btn btn-secondary" style="font-size: 16px">3D View <i class="fa fa-cube"></i></a>
+                                        <a href="{{ route('product_3d_view', $product->id) }}" target="_blank" class="btn btn-secondary" style="font-size: 16px">3D View <i class="fa fa-cube"></i></a>
                                     </div>
                                     
                                 </div>

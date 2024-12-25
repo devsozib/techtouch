@@ -7,7 +7,7 @@
                 <div class="header-main-wrapper">
                     <div class="logo-area">
                         <a href="{{ route('index') }}" class="logo">
-                            <img width="80px"  src="{{ asset('frontend') }}/assets/images/logo/techtouchlogo.png" alt="image-logo">
+                            <img width="100px"  src="{{ asset('frontend') }}/assets/images/logo/techtouchlogo.png" alt="image-logo">
                         </a>
                     </div>
                     <!-- header right start -->
@@ -65,7 +65,7 @@
                                                 <a class="nav-link" href="#">{{ $elevatorCat['category']->name }}</a>
                                                 <ul class="submenu inner-page">
                                                     @foreach($elevatorCat['subcategories'] as $subcategory)
-                                                        <li><a href="{{ route('projects', ['category' => $subcategory->id]) }}">{{ $subcategory->name }}</a></li>
+                                                        <li><a href="{{ route('categoryWiseProduct', $subcategory->slug) }}">{{ $subcategory->name }}</a></li>
                                                     @endforeach
                                                 </ul>
                                             </li>
@@ -88,28 +88,28 @@
                             <!-- header style two End -->
                             <div class="right-area">
                                 <div class="icon-area">
-                                    <div class="search" id="search">
+                                    {{-- <div class="search" id="search">
                                         <i class="fa-regular fa-magnifying-glass"></i>
-                                    </div>
-                                    <div class="cart cart-icon">
-                                        <i class="fa-regular fa-cart-shopping"></i>
-                                    </div>
-                                    @if(auth()->user())
+                                    </div> --}}
+                                    @if(auth()->user())                                   
                                         <div class="">
-                                            <form id="logout" method="post" action="{{route('customerLogout')}}">
-                                                @csrf
-                                                <a href="javascript:void(0)" onclick="logout.submit()" style="color: #fff" class="rts-btn btn-seconday btn-transparent">Logout</a>
-                                            </form>
+                                    
+                                            <a href="{{ route('customerDashboard') }}" style="color: #fff" class="rts-btn btn-seconday btn-transparent">My Account</a>                                           
 
                                         </div>
                                     @else
                                         <div class="">
                                             <a href="{{route('customerLoginPage')}}" style="color: #fff" class="rts-btn btn-seconday btn-transparent">Login</a>
                                         </div>
-                                        <div class="">
+                                        {{-- <div class="">
                                             <a href="{{route('customersignUpPage')}}" style="color: #fff" class="rts-btn btn-seconday btn-transparent">Registratin</a>
-                                        </div>
+                                        </div> --}}
                                     @endif
+                                    <div class="cart cart-icon">
+                                        <i class="fa-regular fa-cart-shopping"></i>
+                                        <span class="cart-count" id="cart-count">{{cartCount()}}</span> <!-- Cart count displayed here -->
+                                    </div>
+                                   
                                 </div>
                                 <a href="{{ route('contact') }}" class="rts-btn btn-seconday btn-transparent">Get a Quote <i class="fa-solid fa-arrow-up-right"></i></a>
                             </div>
@@ -131,7 +131,7 @@
                 <div class="header-main-wrapper">
                     <div class="logo-area">
                         <a href="{{ route('index') }}" class="logo">
-                            <img width="80px"  src="{{ asset('frontend') }}/assets/images/logo/techtouchlogo.png" alt="image-logo">
+                            <img  width="100px" src="{{ asset('frontend') }}/assets/images/logo/techtouchlogo.png" alt="image-logo">
                         </a>
                     </div>
                     <!-- header right start -->
@@ -186,7 +186,7 @@
                                                 <a class="nav-link" href="#">{{ $elevatorCat['category']->name }}</a>
                                                 <ul class="submenu inner-page">
                                                     @foreach($elevatorCat['subcategories'] as $subcategory)
-                                                        <li><a href="{{ route('projects', ['category' => $subcategory->id]) }}">{{ $subcategory->name }}</a></li>
+                                                        <li><a href="{{ route('categoryWiseProduct', $subcategory->slug) }}">{{ $subcategory->name }}</a></li>
                                                     @endforeach
                                                 </ul>
                                             </li>
@@ -211,16 +211,24 @@
                             <!-- nav-area end -->
                             <!-- header style two End -->
                             <div class="right-area">
-                                <div class="icon-area">
-                                    <div class="search" id="search">
-                                        <i class="fa-regular fa-magnifying-glass"></i>
-                                    </div>
+                                <div class="icon-area">  
+                                    @if(auth()->user())                                                                      
+                                        <div class="">
+                                            <a href="{{ route('customerDashboard') }}" class="rts-btn btn-seconday btn-transparent">My Account</a>
+                                        </div>
+                                    @else
+                                        <div class="cart cart-icon">
+                                            <a href="" class="rts-btn btn-seconday btn-transparent">Login</a>
+                                        </div>
+                                        {{-- <div class="">
+                                            <a href="{{route('customersignUpPage')}}" style="color: #fff" class="rts-btn btn-seconday btn-transparent">Registratin</a>
+                                        </div> --}}
+                                    @endif                                     
                                     <div class="cart cart-icon">
                                         <i class="fa-regular fa-cart-shopping"></i>
+                                        <span class="cart-count" id="cart-count">{{cartCount()}}</span> <!-- Cart count displayed here -->
                                     </div>
-                                    <div class="cart cart-icon">
-                                        <a href="" class="rts-btn btn-seconday btn-transparent">Login</a>
-                                    </div>
+                                                                       
                                 </div>
                                 <a href="{{ route('contact') }}" class="rts-btn btn-seconday btn-transparent">Get a Quote <i class="fa-solid fa-arrow-up-right"></i></a>
                             </div>

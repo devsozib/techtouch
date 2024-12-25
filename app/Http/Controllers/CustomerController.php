@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Order;
 use Illuminate\Http\Request;
-use App\Mail\ContactFormMail;
 
+use App\Mail\ContactFormMail;
 use App\Mail\VerificationMail;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Auth;
@@ -27,14 +28,13 @@ class CustomerController extends Controller
 
     protected function customerSignUp(Request $request)
     {
-
         $validator = Validator::make($request->all(), [
             'name' => ['required', 'string', 'regex:/^[a-zA-Z\s]+$/'],
             'email' => ['required', 'string', 'email', 'max:255'],
             'phone' => 'required|regex:/^[0-9]+$/',
             'password' => ['required', 'string', 'min:6'],
         ]);
-
+    
         if ($validator->fails()) {
             $errors = implode('<br>', $validator->errors()->all());
             $response = [
@@ -43,23 +43,23 @@ class CustomerController extends Controller
             ];
             return response()->json($response);
         }
-
+    
         $data = $request->all();
         $user = User::where('email', $data['email'])->first();
-        if($user && $user->is_guest=='0'){
+        
+        if ($user && $user->is_guest == '0') {
             $response = [
                 'success' => false,
-                'message' => 'The email already exist.',
+                'message' => 'The email already exists.',
             ];
             return response()->json($response);
-        }
-        else if($user && $user->is_guest=='1'){
+        } elseif ($user && $user->is_guest == '1') {
             $user->password = Hash::make($data['password']);
             $user->verification_code = rand(100000, 999999);
             $user->is_verified = false;
-            $user->is_guest='0';
+            $user->is_guest = '0';
             $user->save();
-        }else{
+        } else {
             $user = User::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
@@ -71,24 +71,21 @@ class CustomerController extends Controller
                 'verification_code' => rand(100000, 999999),
             ]);
         }
+    
         $role = Role::where('name', 'Customer')->first();
         $user->assignRole($role);
-
-        //Mail::to($user->email)->send(new VerificationMail($user->verification_code));
-
-
-        // $response = [
-        //     'success' => true,
-        //     'message' => 'Successfully Registered',
-        // ];
-
-        // return response()->json($response);
-
-        return redirect()->route('customerLoginPage');
+    
+        // Authenticate the user
+        Auth::login($user);
+    
+        // Redirect or return success response
+        return redirect()->route('index')->with('success', 'Successfully Registered and Logged In.');
     }
+    
 
     public function customerLogin(Request $request)
     {
+        // return $request;
         $validator = Validator::make($request->all(), [
             'email' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:6'],
@@ -386,5 +383,21 @@ class CustomerController extends Controller
             'message' => 'Form submitted successfully!',
             'data' => $request->all()
         ], 200);
+    }
+
+
+    public function dashboard(){
+        $user = Auth()->user();
+        $orders = Order::where('customer_id',$user->id)->get();
+        return view('frontend.pages.dashboard', compact('user','orders'));
+    }
+
+    public function customerProfile(){
+
+    }
+
+    
+    public function customerSupport(){
+        
     }
 }

@@ -9,8 +9,12 @@ class ExampleTest extends TestCase
     /**
      * A basic test example.
      */
-    public function test_that_true_is_true(): void
+    public function test_addtion_between_two_number(): void
     {
-        $this->assertTrue(true);
+        $num1 = 5;
+        $num2 = 10;
+        $result = $num1 + $num2;
+
+        $this->assertEquals(15, $result);
     }
 }

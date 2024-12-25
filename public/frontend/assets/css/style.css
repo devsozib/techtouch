@@ -16482,12 +16482,12 @@ header.header-one .header-top-wrapper .right ul li.last::after {
 
 @media screen and (max-width: 1300px) {
   .heder-two .header-two-container .header-main-wrapper {
-    padding: 22px 0;
+    /* padding: 22px 0; */
   }
 }
 
 .heder-two .header-two-container .header-main-wrapper .logo-area a {
-  padding: 0px 80px 0px 0;
+  padding: 0px 10px 0px 0;
   display: block;
 }
 
@@ -16540,7 +16540,7 @@ header.header-one .header-top-wrapper .right ul li.last::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #E9E9E9;
+  border: 1px solid #E9E9E9!important;
   height: 55px;
   width: 55px;
   background: #fff;
@@ -16790,11 +16790,9 @@ header.header-one .header-top-wrapper .right ul li.last::after {
   position: relative;
 }
 
-.heder-two .header-two-container .header-main-wrapper .rts-header-right .bottom .right-area .icon-area .cart i::after {
-  position: absolute;
-  content: "2";
-  right: -8px;
-  bottom: -5px;
+.cart .cart-count {
+  position: absolute;;
+  bottom: 23px;
   height: 20px;
   width: 20px;
   background: var(--color-primary);
@@ -17011,8 +17009,12 @@ header.header-one .header-top-wrapper .right ul li.last::after {
 }
 
 .header-four.header--sticky.sticky {
-  --tw-backdrop-blur: blur(32px);
-  background: hsl(0, 0%, 0%) !important;
+  .header-four.header--sticky.sticky {
+    --tw-backdrop-blur: blur(32px); /* This applies the blur effect */
+    background: rgba(0, 0, 0, 0.4) !important; /* Semi-transparent background */
+    backdrop-filter: blur(32px); /* Apply the blur effect to the background */
+    -webkit-backdrop-filter: blur(32px); /* For Safari compatibility */
+}
 }
 
 .heder-two.header-five.header--sticky {
@@ -18994,10 +18996,9 @@ edit .quantity-edit button {
   position: fixed !important;
   top: 0;
   display: block;
-  backdrop-filter: blur(9px);
+  backdrop-filter: blur(31px);
   width: 100%;
   box-shadow: 0px 7px 18px #1810100d;
-  background: #fff;
   z-index: 999;
 }
 

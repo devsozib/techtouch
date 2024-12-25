@@ -233,6 +233,8 @@ function getElevatorCat() {
       // Fetch subcategories based on the parent ID
       $subcategories = DB::table('sub_categories')
           ->where('category_id', $elevator->id)
+          ->where('status', '1')
+          ->orderBy('id', 'asc')
           ->get();
 
       // Return the main category and its subcategories

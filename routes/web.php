@@ -30,16 +30,6 @@ use App\Http\Controllers\Admin\TimeScheduleController;
 use App\Http\Controllers\Admin\DelivaryChargeController;
 use App\Http\Controllers\Admin\ProductMnagementController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
@@ -52,6 +42,7 @@ Route::get('/product/{id}', [FrontendController::class, 'productDetails'])->name
 Route::get('/cart', [FrontendController::class, 'cart'])->name('cart');
 Route::get('/checkout', [FrontendController::class, 'checkout'])->name('checkout');
 Route::get('/product_3d_view/{id}', [FrontendController::class, 'product3DView'])->name('product_3d_view');
+Route::get('category/{slug}', [FrontendController::class,'categoryWiseProduct'])->name('categoryWiseProduct');
 
 
 
@@ -143,11 +134,21 @@ Route::get('get-product-details', [ProductContoller::class, 'getProductDetails']
 Route::get('get-coupon', [CouponController::class, 'getCoupon']);
 Route::get('check-coupon', [CouponController::class, 'checkCoupon']);
 Route::get('get-currency', [CurrencyController::class, 'getCurrency'])->name('get.currency');
-Route::get('customer-signUp', [CustomerController::class, 'signUpPage'])->name('customersignUpPage');;
-Route::get('customer-signIn', [CustomerController::class, 'loginPage'])->name('customerLoginPage');
-Route::post('customer-signUp', [CustomerController::class, 'customerSignUp'])->name('customersignUp');
-Route::post('customer-signIn', [CustomerController::class, 'customerLogin'])->name('customerLogin');
-Route::post('customer-logout', [CustomerController::class, 'customerLogout'])->name('customerLogout');
+
+Route::middleware('guest')->group(function () {
+    Route::get('customer-signUp', [CustomerController::class, 'signUpPage'])->name('customersignUpPage');
+    Route::get('customer-signIn', [CustomerController::class, 'loginPage'])->name('customerLoginPage');
+    Route::post('customer-signUp', [CustomerController::class, 'customerSignUp'])->name('customersignUp');
+    Route::post('customer-signIn', [CustomerController::class, 'customerLogin'])->name('customerLogin');
+});
+
+Route::middleware('auth')->group(function () {
+    // Authenticated routes
+    Route::post('customer-logout', [CustomerController::class, 'customerLogout'])->name('customerLogout');
+    Route::get('customer-dashboard', [CustomerController::class, 'dashboard'])->name('customerDashboard'); 
+    Route::get('customer-profile', [CustomerController::class, 'customerProfile'])->name('customerProfile'); // Example authenticated route
+    Route::get('customer-support', [CustomerController::class, 'customerSupport'])->name('customerSupport'); // Example authenticated route
+});
 
 Route::post('send-verification-mail', [CustomerController::class, 'sendVerificationMail']);
 Route::post('verify-account', [CustomerController::class, 'verifyAccount']);

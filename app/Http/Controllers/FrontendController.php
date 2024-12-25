@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin\News;
 use Illuminate\Http\Request;
-use App\Models\Admin\Category;
 use App\Models\Admin\Product;
+use App\Models\Admin\Category;
+use App\Models\Admin\SubCategory;
 
 class FrontendController extends Controller
 {
@@ -85,16 +86,23 @@ class FrontendController extends Controller
     }
 
     public function product3DView($id)
-{
-    // Define the path to the HTML file in the public directory
-    $filePath = public_path("frontend/f0vk6hiqpp9.html");
+    {
+        // Define the path to the HTML file in the public directory
+        $filePath = public_path("frontend/f0vk6hiqpp9.html");
 
-    // Check if the file exists
-    if (!file_exists($filePath)) {
-        abort(404); // Return a 404 if the file is not found
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404); // Return a 404 if the file is not found
+        }
+
+        // Redirect to the HTML file with the query parameter
+        return redirect(url("frontend/f0vk6hiqpp9.html?scene_id=107899299"));
     }
 
-    // Redirect to the HTML file with the query parameter
-    return redirect(url("frontend/f0vk6hiqpp9.html?scene_id=107899299"));
-}
+    public function categoryWiseProduct($slug){
+        $subCat = SubCategory::where('slug', $slug)->first();
+        $products = Product::where('sub_category_id', $subCat->id)->where('status','1')->get();
+        $showFor = 'serviceWiseProduct';
+        return view('frontend.pages.shop', compact('products','showFor'));
+    }
 }

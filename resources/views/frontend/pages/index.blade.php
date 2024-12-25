@@ -24,29 +24,28 @@
 </div>
 <!-- header style two End -->
 <!-- rts banner area -->
-<div class="rts-banner-three-area rts-section-gap">
-  <div class="container pt--150 pb--90">
-      <div class="row">
-          <div class="banner-three-wrapper">              
-              <h1 class="title">
-                  Where fluid <br>
-                  form define <br>
-                  <span class="strock" id="fullText">
-                    ELEVATOR
-                  </span>
-              </h1>
-              <!-- to bottom icon -->
-              <div class="rts-to-bottom-start">
-                  <a href="#about"><img src="{{ asset('frontend') }}/assets/images/banner/shape/03.png" alt="shape image"></a>
-              </div>
-              <!-- to bottom icon end -->
-          </div>
-      </div>
+<div class="rts-banner-three-area rts-section-gap"  style="background-image: url('{{ asset('frontend') }}/assets/images/banner/Dhaka_Skyline_at_Night.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 50px 0;">
+    <div class="container pt--150 pb--90">
+        <div class="row">
+            <div class="banner-three-wrapper">
+                <h1 class="title">
+                    Where fluid <br>
+                    form define <br>
+                    <span class="strock" id="fullText">
+                      ELEVATOR
+                    </span>
+                </h1>
+                <!-- to bottom icon -->
+                <div class="rts-to-bottom-start">
+                    <a href="#about"><img src="{{ asset('frontend') }}/assets/images/banner/shape/03.png" alt="shape image"></a>
+                </div>
+                <!-- to bottom icon end -->
+            </div>
+        </div>
+    </div>
+   
   </div>
-  <div class="banner-image-area">
-      <img src="{{ asset('frontend') }}/assets/images/banner/Dhaka_Skyline_at_Night.jpg" alt="banner-image">
-  </div>
-</div>
+  
 <!-- rts banner area end -->
 
 <!-- rts about area start -->
@@ -447,6 +446,7 @@
             <img style="border-radius: 10px" src="{{ asset('frontend') }}/assets/images/Arshiya Binte Sakib.jpg" alt="team_area-start">            
             <a href="team-details.html">
                 <h4 class="name text-center">Arshiya Binte Sakib</h4>
+                <h5 class="text-center">Late. Ayesha Binte&nbsp;Sakib</h5>
             </a>
         </div>
         <div class="col-3">
